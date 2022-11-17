@@ -21,7 +21,7 @@ export const timelineInfo = [
         date: 1820,
         additionalInfo: '',
         imgInfo: {
-            src: './assets/img/voltaic-pile.png',
+            src: './assets/img/daniell-cell.png',
             alt: 'voltaic-pile-battery'
         }
     },
@@ -34,7 +34,7 @@ export const timelineInfo = [
         date: 1859,
         additionalInfo: '',
         imgInfo: {
-            src: './assets/img/voltaic-pile.png',
+            src: './assets/img/lead-acid-battery.png',
             alt: 'voltaic-pile-battery'
         }
     },
@@ -60,8 +60,8 @@ export const timelineInfo = [
         date: 1899,
         additionalInfo: '',
         imgInfo: {
-            src: './assets/img/voltaic-pile.png',
-            alt: 'voltaic-pile-battery'
+            src: './assets/img/nickel-cadmium.png',
+            alt: 'nickel-cadmium-battery'
         }
     },
     {

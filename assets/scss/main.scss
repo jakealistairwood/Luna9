@@ -24,6 +24,29 @@ section {
     @include lg-container(1280px);
 }
 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    background-image: url('../img/')
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 2rem;
+
+    h2 {
+        font-size: 3rem;
+        width: 50%;
+    }
+
+    p { width: 50%; }
+}
+
 .luna9 {
     @include custom-flex(row, space-between, center);
     @include lg-container(1280px);
@@ -75,6 +98,131 @@ section {
             &--yellow h3 { color: $yellow; }
             &--green h3 { color: $palegreen; }
             opacity: 1;
+        }
+    }
+}
+
+.how-they-work {
+    min-height: 100vh;
+    width: 100%;
+
+    &__summary {
+        h2 { font-size: 4rem; margin-bottom: 1.5rem; }
+
+        div {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h5 {
+            font-size: 1rem;
+            margin-top: 2rem;
+
+            .aqua { color: $aqua; }
+        }
+    }
+
+    &__diagram {
+        margin-top: 5rem;
+    }
+}
+
+.battery-timeline-container {
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 2rem;
+        h2 {
+            font-size: 3rem;
+            width: 50%;
+        }
+
+        p { width: 50%; }
+    }
+
+    .battery-timeline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__event {
+            display: flex;
+            column-gap: 2rem;
+        }
+
+        &__event:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        &__img-container {
+            width: 50%;
+        }
+
+        &__info {
+            align-self: center;
+
+            h4 {
+                color: $accent-color;
+                font-size: 2rem;
+                font-weight: 400;
+                margin-bottom: 1rem;
+            }
+
+            ul {
+                list-style: none;
+
+                li { 
+                    color: $mid-grey;
+                    line-height: 1.4;
+                    strong { color: $secondary-color; }
+                }
+            }
+        }
+    }
+}
+
+.current-issues {
+    min-height: 100vh;
+    &__diagram {
+        margin-block: 5rem;
+        position: relative;
+    }
+
+    &__diagram-img {
+        width: 100%;
+    }
+
+    &__issue-container {
+        position: absolute;
+        top: 25px;
+        left: 80px;
+        width: 91%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 1rem;
+    }
+
+    &__issue {
+        .issue-mask {
+            background-color: $yellow;
+            min-height: 360px;
+            img {
+                height: 150px;
+                margin-bottom: 1rem;
+                margin-inline: auto;
+            }
+        
+            h5 {
+                color: $yellow;
+                border-top: 1px solid $yellow;
+                padding-top: 1rem;
+                font-size: 2.3rem;
+                font-weight: 400;
+            }
+        }
+        p {
+            margin-top: 3rem;
         }
     }
 }

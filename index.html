@@ -31,44 +31,70 @@
             </div>
         </div>
     </section>
-    <section class="how-they-work">
-        <div class="how-they-work__summary">
-            <h2>How do batteries work?</h2>
-            <div>
-                <h4>When charging</h4>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel harum animi, quia voluptas nemo explicabo illo id vitae ut sed!</p>
+    <main>
+        <section class="how-they-work">
+            <div class="how-they-work__summary">
+                <h2>How do batteries work?</h2>
+                <div>
+                    <p>There are four main components to batteries; An anode, cathode, liquid electrolyte and a separator.</p>
+                    <p>The negative anode releases electrons during an electrochemical reaction while the positive cathode acquires them. The separator’s function is to prevent physical contact between the anode and cathode while allowing the ions to pass through. The liquid electrolyte acts as a highway allowing the ions to move back and forth.</p>
+                </div>
+                <h5><span class="aqua">When charging: </span>The electrolyte transfers the Ions from the cathode to the anode.</h5>
             </div>
-        </div>
-        <div class="how-they-work__diagram">
-            <!--Battery SVG to go here-->
-        </div>
-    </section>
-    <section class="battery-timeline">
-        <header>
-            <h2>The journey so far</h2>
-            <p>The history of the electrochemical cell reads as an exciting tale of innovation and discovery. Here are some key milestones in the scientific journey that lifted us out of the age of clockwork and steam power and propelled us into the realm of in-your-pocket, portable power.</p>
-        </header>
-        <div class="timeline-date">
-            <div class="img-container">
-                <img src="./assets/img/voltaic-pile.png" alt="voltaic-pile-battery">
+            <div class="how-they-work__diagram">
+                <!--Battery SVG to go here-->
+                <img class="how-they-work__diagram-img" src="./assets/img/battery-diagram.svg" alt="diagram-of-how-batteries-work">
             </div>
-            <div class="timeline-info">
-                <h4>The first electric battery</h4>
-                <ul>
-                    <li>Name:<strong>Voltaic Pile</strong></li>
-                    <li>Invented by:<strong>Alessandro Volta</strong></li>
-                    <li>In:<strong>Italy</strong></li>
-                    <li>Voltage:<strong>O.76V per cell</strong></li>
-                </ul>
-                <button>
-                    <span>Learn more</span>
-                    <img src="" alt="">
-                </button>
+        </section>
+        <section class="battery-timeline-container">
+            <header class="section-header">
+                <h2>The journey so far</h2>
+                <p>The history of the electrochemical cell reads as an exciting tale of innovation and discovery. Here are some key milestones in the scientific journey that lifted us out of the age of clockwork and steam power and propelled us into the realm of in-your-pocket, portable power.</p>
+            </header>
+            <div class="battery-timeline"></div>
+        </section>
+        <section class="current-issues">
+            <header class="section-header">
+                <h2>The issues with current batteries</h2>
+                <p>Thanks to their amazing power output and convenient portability, Lithium-ion batteries have revolutionised the way that we live, work and travel. Weight-for-weight, Li-ion batteries can store 6x the amount of energy1 than their lead-acid rivals, making them the clear choice in our constant search for electric power on the move, but what are their limitations?</p>
+            </header>
+            <div class="current-issues__diagram">
+                <img class="current-issues__diagram-img" src="./assets/img/Depleeting battery.svg" alt="battery-outline">
+                <div class="current-issues__issue-container">
+                    <div class="current-issues__issue">
+                        <div class="issue-mask">
+                            <img src="./assets/img/Energy density icon.svg" alt="icon-depicting-energy-density">
+                            <h5>Energy Density</h5>
+                        </div>
+                        <p>Despite boasting the highest energy density of all modern batteries, range anxiety is still a major limiting factor in the adoption of EVs powered by li-ion. Depending on the model, drivers can expect 100-300 miles from a full charge2.</p>
+                    </div>
+                    <div class="current-issues__issue">
+                        <div class="issue-mask">
+                            <img src="./assets/img/Cost icon.svg" alt="cost-icon">
+                            <h5>Cost</h5>
+                        </div>
+                        <p>Li-ion batteries are around 40% more expensive to manufacture than nickel-cadmium cells3 and are cheaper to replace than reuse4, meaning just 5% get recycled6. To add to the environmental cost, each tonne of lithium mined uses 2,273,000L of water5.</p>
+                    </div>
+                    <div class="current-issues__issue">
+                        <div class="issue-mask">
+                            <img src="./assets/img/Thermal stability icon.svg" alt="thermal-stability-icon">
+                            <h5>Thermal Capacity</h5>
+                        </div>
+                        <p>LI-ion batteries are sensitive to high temperatures and, despite having safety features built in, can catch fire if there are any faulty or compromised parts. This also makes recycling tricky, as they can explode if disassembled incorrectly.</p>
+                    </div>
+                    <div class="current-issues__issue">
+                        <div class="issue-mask">
+                            <img src="./assets/img/Toxic materials icon.svg" alt="hazardous-material-icon">
+                            <h5>Toxic Materials</h5>
+                        </div>
+                        <p>Extracting raw materials is a costly process and takes huge quantities of energy and water. These materials are relatively scarce, only available in certain locations and are attached to numerous human rights and environmental concerns throughout the supply chain.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js" integrity="sha512-tHvUcUQYi35zApvAa5TNR3fNhBQkVtkmWKfacnpxmix4/VTGz1lGjIVyLMp7gLgAvg+aKJjnVKokXJNS5GZ+/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        </section>
+    </main>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js" integrity="sha512-tHvUcUQYi35zApvAa5TNR3fNhBQkVtkmWKfacnpxmix4/VTGz1lGjIVyLMp7gLgAvg+aKJjnVKokXJNS5GZ+/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
     <script src="index.js" type="module"></script>
 </body>
 </html>
