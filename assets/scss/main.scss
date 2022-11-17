@@ -1,9 +1,80 @@
+@use './abstracts/variables' as *;
+@use './abstracts/mixins' as *;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: $primary-font;
 }
 
 body {
-    background: #000;
+    background: $primary-color;
+    color: $secondary-color;
+    min-height: 500vh;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+section {
+    @include lg-container(1280px);
+}
+
+.luna9 {
+    @include custom-flex(row, space-between, center);
+    @include lg-container(1280px);
+    width: 100%;
+    padding-block: 2rem;
+    position: fixed;
+    right: 0;
+    left: 0;
+
+    &__progress {
+        width: 100px;
+        height: 30px;
+        border: 1px solid $secondary-color;
+        padding: 3px;
+        position: relative;
+    }
+
+    &__progress-indicator {
+        position: absolute;
+        // left: 5px;
+        // top: 5px;
+        width: 5%;
+        max-width: 100%;
+        height: 100%;
+        max-height: 22px;
+        background-color: $secondary-color;
+    }
+}
+
+.overview {
+    @include custom-flex(column, center, flex-start);
+    min-height: 100vh;
+    width: 100%;
+
+    h1 {
+        margin-bottom: 10rem;
+        font-size: 7rem;
+        width: 80%;
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+
+    &__topics {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        .topic {
+            &--aqua h3 { color: $aqua; }
+            &--pink h3 { color: $accent-color; }
+            &--yellow h3 { color: $yellow; }
+            &--green h3 { color: $palegreen; }
+            opacity: 1;
+        }
+    }
 }

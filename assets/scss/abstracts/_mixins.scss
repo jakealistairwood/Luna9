@@ -1,0 +1,18 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin custom-flex($dir, $x, $y) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $x;
+    align-items: $y;
+}
+
+@mixin lg-container($max-width) {
+    max-width: $max-width;
+    width: 100%;
+    margin: 0 auto;
+}

@@ -1,0 +1,22 @@
+<svg id="Energy_density_icon" data-name="Energy density icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="112.001" height="112.001" viewBox="0 0 112.001 112.001">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_79" data-name="Rectangle 79" width="112.001" height="112.001" transform="translate(0 0)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_152" data-name="Group 152" clip-path="url(#clip-path)">
+    <path id="Path_25" data-name="Path 25" d="M56,4A52,52,0,1,1,4,56,52.059,52.059,0,0,1,56,4m0-4a56,56,0,1,0,56,56A56,56,0,0,0,56,0" fill="#fff500"/>
+    <circle id="Ellipse_50" data-name="Ellipse 50" cx="21" cy="21" r="21" transform="translate(28 14.001)" fill="none" stroke="#fff500" stroke-width="1"/>
+    <circle id="Ellipse_51" data-name="Ellipse 51" cx="12.25" cy="12.25" r="12.25" transform="translate(71.751 29.751)" fill="none" stroke="#fff500" stroke-width="1"/>
+    <circle id="Ellipse_52" data-name="Ellipse 52" cx="12.25" cy="12.25" r="12.25" transform="translate(15.75 57.751)" fill="none" stroke="#fff500" stroke-width="1"/>
+    <circle id="Ellipse_53" data-name="Ellipse 53" cx="5.25" cy="5.25" r="5.25" transform="translate(70.725 16.776)" fill="none" stroke="#fff500" stroke-width="1"/>
+    <circle id="Ellipse_54" data-name="Ellipse 54" cx="5.25" cy="5.25" r="5.25" transform="translate(29.75 85.751)" fill="none" stroke="#fff500" stroke-width="1"/>
+    <circle id="Ellipse_55" data-name="Ellipse 55" cx="3.5" cy="3.5" r="3.5" transform="translate(19.6 32.901)" fill="none" stroke="#fff500" stroke-width="1"/>
+    <circle id="Ellipse_56" data-name="Ellipse 56" cx="3.5" cy="3.5" r="3.5" transform="translate(86.662 72.363)" fill="none" stroke="#fff500" stroke-width="1"/>
+    <circle id="Ellipse_57" data-name="Ellipse 57" cx="3.5" cy="3.5" r="3.5" transform="translate(63 11.201)" fill="none" stroke="#fff500" stroke-width="1"/>
+    <circle id="Ellipse_58" data-name="Ellipse 58" cx="3.5" cy="3.5" r="3.5" transform="translate(42 92.751)" fill="none" stroke="#fff500" stroke-width="1"/>
+    <circle id="Ellipse_59" data-name="Ellipse 59" cx="7" cy="7" r="7" transform="translate(84.001 56.001)" fill="none" stroke="#fff500" stroke-width="1"/>
+    <circle id="Ellipse_60" data-name="Ellipse 60" cx="7" cy="7" r="7" transform="translate(14 42.001)" fill="none" stroke="#fff500" stroke-width="1"/>
+    <circle id="Ellipse_61" data-name="Ellipse 61" cx="21" cy="21" r="21" transform="translate(42.001 56.001)" fill="none" stroke="#fff500" stroke-width="1"/>
+  </g>
+</svg>
