@@ -16,3 +16,9 @@
     width: 100%;
     margin: 0 auto;
 }
+
+@mixin font-styles($size, $weight, $family) {
+    font-size: $size;
+    font-weight: $weight;
+    font-family: $family;
+}
