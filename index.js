@@ -11,11 +11,18 @@ const body = document.querySelector('body');
 const timelineContainer = document.querySelector(".battery-timeline");
 const howTheyWorkDiagram = document.querySelector('.how-they-work__diagram');
 const batteryIssuesDiagram = document.querySelector('.current-issues__diagram-img');
+const particleBox = document.querySelector('.particle-box__container');
+
 
 let bodyHeight = body.offsetHeight;
-console.log(bodyHeight);
-console.log(howTheyWorkDiagram);
 
+let currentViewport = {
+    height: window.innerHeight,
+    width: window.innerWidth
+};
+
+particleBox.style.width = currentViewport.width + 'px';
+particleBox.style.height = currentViewport.height + 'px';
 
 /*  ==============================================================================
 
@@ -55,20 +62,56 @@ const renderTimelineEvent = (el) => {
 
 const generateRandomNumberWithinRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
-const createAtom = () => {
+const createAtom = (atomOptions) => {
+    const { id, particleType, atomSize, imgOptions, coordinates } = atomOptions;
     let atom = document.createElement('img');
-    atom.classList.add('atom'); 
-    atom.src = "./assets/img/cyan-particle.svg";
-    atom.alt = "sphere-with-turqoise-gradient-depicting-an-atom";
-    atom.style.width = '20px';
-    atom.style.height = '20px';
-    atom.style.left = generateRandomNumberWithinRange(70, 350) + "px";
-    atom.style.top = generateRandomNumberWithinRange(70, 300) + "px";
+    let classesToAdd = ["atom", `${particleType}--${id}`];
+    classesToAdd.forEach(clName => {
+        atom.classList.add(clName);
+    })
+    atom.src = imgOptions.src;
+    atom.alt = imgOptions.alt;
+    atom.style.width = `${atomSize} px`;
+    atom.style.height =`${atomSize} px`;
+    atom.style.left = generateRandomNumberWithinRange(coordinates.xMin, coordinates.xMax) + "px";
+    atom.style.top = generateRandomNumberWithinRange(coordinates.yMin, coordinates.yMax) + "px";
     return atom;
 }
 
+for(let i = 0; i < generateRandomNumberWithinRange(7, 20); i++) {
+    particleBox.appendChild(createAtom({
+        id: i++,
+        particleType: 'particle',
+        atomSize: 50,
+        imgOptions: {
+            src: "./assets/img/grey-particle.svg",
+            alt: 'grey-gradient-sphere-depicting-atom'
+        },
+        coordinates: {
+            xMin: 0,
+            xMax: currentViewport.width,
+            yMin: 0,
+            yMax: currentViewport.height
+        }
+    }));
+}
+
 for(let i = 0; i < generateRandomNumberWithinRange(30, 200); i++) {
-    howTheyWorkDiagram.appendChild(createAtom());
+    howTheyWorkDiagram.appendChild(createAtom({
+        id: i++,
+        particleType: "ion",
+        atomSize: 20,
+        imgOptions: {
+            src: './assets/img/cyan-particle.svg',
+            alt: 'turquoise-gradient-sphere-depicting-atom'
+        },
+        coordinates: {
+            xMin: 70,
+            xMax: 350,
+            yMin: 70,
+            yMax: 300
+        }
+    }))
 }
 
 // renderTimelineEvents(timelineInfo);

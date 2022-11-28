@@ -24,6 +24,20 @@ a {
 section {
     @include lg-container(1280px);
     margin-block: 3rem;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: '';
+        background-image: url('../assets/img/Section\ divider.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 20px;
+    }
 }
 
 p {
@@ -92,17 +106,29 @@ img {
     @include custom-flex(column, center, flex-start);
     min-height: 100vh;
     width: 100%;
+    max-width: 100%;
 
     h1 {
         margin-bottom: 7rem;
         width: 80%;
+        @include lg-container(1280px);
         // clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+
+    .particle-box {
+        position: absolute;
+        border: 1px solid yellow;
+        z-index: -1;
+
+        &__container { position: relative; }
+        &__container .atom { position: absolute; }
     }
 
     &__topics {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         column-gap: 2rem;
+        @include lg-container(1280px);
 
         .topic {
             min-height: 200px;
@@ -177,13 +203,10 @@ img {
             z-index: 10;
             padding: 0.5rem 1rem;
 
-            &--cathode {
-                left: 190px;
-            }
-
-            &--anode {
-                left: 985px;
-            }
+            &--cathode { left: 190px; }
+            &--anode { left: 985px; }
+            &--seperator { left: 50%; transform: translateX(-50%); top: 3rem; }
+            &--electrolyte { left: 50%; transform: translateX(-50%); bottom: 0; height: fit-content; }
         }
     }
 }
