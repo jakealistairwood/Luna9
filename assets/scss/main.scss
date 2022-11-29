@@ -36,7 +36,7 @@ section {
         bottom: 0;
         left: 0;
         right: 0;
-        height: 20px;
+        height: 5px;
     }
 }
 
@@ -261,6 +261,7 @@ img {
         &__info {
             align-self: center;
             position: relative;
+            width: 50%;
 
             h3 {
                 color: $accent-color;
@@ -277,6 +278,12 @@ img {
                 }
             }
         }
+
+        &__additional-info {
+            display: none;
+        }
+
+        &__additional-info.active { display: block;}
     }
 }
 
@@ -287,10 +294,12 @@ img {
         padding-top: 5rem;
     }
 
-    // .current-issues-header {
-    //     visibility: hidden;
-    //     opacity: 0;
-    // }
+    .current-issues-header {
+        visibility: hidden;
+        opacity: 0;
+
+        h2 { max-width: 502px; }
+    }
 
     &__diagram {
         margin-bottom: 5rem;
@@ -352,6 +361,7 @@ img {
     .innovative-solutions {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        padding-bottom: 8rem;
 
         &__solution {
             h5 {
@@ -361,6 +371,24 @@ img {
                 font-weight: 500;
             }
         }
+
+        &__animation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            // height: 100%;
+            width: fit-content;
+
+            .battery-cell {
+                position: absolute;
+            }
+
+            .lottie-animation {
+                position: absolute;
+            }
+        }
+
         .silicon-without-the-cons {
             grid-column: 2/3;
             grid-row: 1/2;
@@ -421,7 +449,9 @@ img {
         position: absolute;
         height: 100%;
         top: 0;
-        right: -6%;
+        // right: -6%;
+        left: -4rem;
+        z-index: -1;
     }
 
     &__btn {

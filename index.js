@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 ==============================================================================  */
 
 const body = document.querySelector('body');
+const navbar = document.querySelector('.luna9');
 const timelineContainer = document.querySelector(".battery-timeline");
 const howTheyWorkDiagram = document.querySelector('.how-they-work__diagram');
 const batteryIssuesDiagram = document.querySelector('.current-issues__diagram-img');
@@ -76,8 +77,27 @@ for(let i = 0; i < generateRandomNumberWithinRange(30, 200); i++) {
 timelineInfo.map(el => {
     let batteryEvent = new BatteryEvents(el);
     timelineContainer.innerHTML += batteryEvent.renderEvent();
+    let elRef = document.querySelector(`.btn--${batteryEvent.id}`);
+    console.log(elRef);
+    elRef.addEventListener('click', e => {
+        console.log(e);
+    })
+    // elRef.addEventListener('click', (e) => {
+    //     const { target } = e;
+    //     console.log(target);
+    //     console.log("button clicked");
+    //     // batteryEvent.toggleDropdown();
+    // });
 });
 
+timelineInfo.forEach(el => {
+    let btnRef = document.querySelector(`.btn--${el.id}`);
+    let infoToDisplay = document.querySelector(`.additional-info--${el.id}`);
+    btnRef.addEventListener('click', () => {
+        document.querySelector(`.additional-info--${el.id}`).classList.toggle('active');
+        infoToDisplay.classList.contains("active") ? btnRef.innerText = "Close" : btnRef.innerText = "Learn More";
+    })
+})
 
 /*  ==============================================================================
 

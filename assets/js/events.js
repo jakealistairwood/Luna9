@@ -38,10 +38,6 @@ class BatteryEvents {
             </div>
         </div>`;
     }
-    toggleDropdown() {
-        return console.log("button clicked");
-    //    return !this.infoDisplayed;
-    }
 }
 
 export default BatteryEvents;

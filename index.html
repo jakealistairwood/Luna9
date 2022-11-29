@@ -115,22 +115,38 @@
         </header>
         <div class="innovative-solutions">
             <div class="innovative-solutions__solution silicon-without-the-cons">
-                <img src="./assets/img/Button battery-2.svg" alt="battery-cell">
+                <div class="innovative-solutions__animation">
+                    <img class="battery-slot" src="./assets/img/battery-slot.svg" alt="battery-slot">
+                    <img class="battery-cell" src="./assets/img/battery-cell.svg" alt="battery-cell">
+                    <lottie-player class="lottie-animation" src="./assets/animations/Silicon - 1.json" background="transparent" speed="1" style="width: 152px; height: 152px;" loop autoplay></lottie-player>
+                </div>
                 <h5>Silicon without the cons</h5>
                 <p>Silicon lithium ion batteries use a silicon anode to create higher energy density. One small problem? Silicon swells by 300% when charged. Enovix have solved these growing pains with an innovative constraint system that stops the battery from going supersized. It means 50% more energy than what’s on the market and lighter electronics with longer battery life.</p>
             </div>
             <div class="innovative-solutions__solution solid-state">
-                <img src="./assets/img/Button battery-2.svg" alt="battery-cell">
+                <div class="innovative-solutions__animation">
+                    <img class="battery-slot" src="./assets/img/battery-slot.svg" alt="battery-slot">
+                    <img class="battery-cell" src="./assets/img/battery-cell.svg" alt="battery-cell">
+                    <lottie-player class="lottie-animation" src="./assets/animations/Solid_state.json" background="transparent" speed="1" style="width: 152px; height: 152px;" loop autoplay></lottie-player>
+                </div>
                 <h5>Solid state</h5>
                 <p>Lithium metal anodes offer significantly more energy density than their carbon based cousins, but lithium tends to react with the liquid electrolyte, causing it to degrade, short-circuit, or even explode. Quantumscape’s solution is to swap the liquid with a solid ceramic electrolyte that lets the ions pass through it just as easily. The outcome? Higher energy density, lower cost, longer life and enhanced safety.</p>
             </div>
             <div class="innovative-solutions__solution sustainable-solutions">
-                <img src="./assets/img/Button battery-2.svg" alt="battery-cell">
+                <div class="innovative-solutions__animation">
+                    <img class="battery-slot" src="./assets/img/battery-slot.svg" alt="battery-slot">
+                    <img class="battery-cell" src="./assets/img/battery-cell.svg" alt="battery-cell">
+                    <lottie-player class="lottie-animation" src="./assets/animations/Sodium_ion.json" background="transparent" speed="1" style="width: 152px; height: 152px;" loop autoplay></lottie-player>
+                </div>
                 <h5>Sustainable Solutions</h5>
                 <p>Sodium ion batteries offer a cheap, abundant, and environmentally friendly alternative to their contentious lithium counterparts. But limited energy density and a much shorter cycle life have held them back. The Pacific Northwest National Laboratory are changing this with a new electrolyte recipe and a design that holds 90% of its capacity after 300 cycles. It’s also impervious to temperature changes and can operate at high voltages making it an increasingly viable and stable option.</p>
             </div>
             <div class="innovative-solutions__solution seaweed-seperator">
-                <img src="./assets/img/Button battery-2.svg" alt="battery-cell">
+                <div class="innovative-solutions__animation">
+                    <img class="battery-slot" src="./assets/img/battery-slot.svg" alt="battery-slot">
+                    <img class="battery-cell" src="./assets/img/battery-cell.svg" alt="battery-cell">
+                    <lottie-player class="lottie-animation" src="./assets/animations/Seaweed.json" background="transparent" speed="1" style="width: 152px; height: 152px;" loop autoplay></lottie-player>
+                </div>
                 <h5>Seaweed Seperator</h5>
                 <p>A team from the University of Bristol are using nanomaterials from seaweed as a solution to the dendrite growth that causes sodium metal batteries to short-circuit. Not only does the innovative separator stop the crystals but it also improves the performance of the batteries. Enhancing our capability to move away from the scarce materials and unethical practices linked to Lithium ion batteries.</p>
             </div>
@@ -153,6 +169,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js" integrity="sha512-tHvUcUQYi35zApvAa5TNR3fNhBQkVtkmWKfacnpxmix4/VTGz1lGjIVyLMp7gLgAvg+aKJjnVKokXJNS5GZ+/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js" integrity="sha512-jq8sZI0I9Og0nnZ+CfJRnUzNSDKxr/5Bvha5bn7AHzTnRyxUfpUArMzfH++mwE/hb2efOo1gCAgI+1RMzf8F7g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="index.js" type="module"></script>
     <script>
         particlesJS("particles-js", {
@@ -183,7 +200,7 @@
                 }
               },
               "opacity": {
-                "value": 0.5,
+                "value": 0.2,
                 "random": false,
                 "anim": {
                   "enable": false,

@@ -74,7 +74,7 @@ section::after {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 20px;
+  height: 5px;
 }
 
 p {
@@ -330,6 +330,7 @@ img {
 .battery-timeline-container .battery-timeline__info {
   align-self: center;
   position: relative;
+  width: 50%;
 }
 .battery-timeline-container .battery-timeline__info h3 {
   color: #FF00BA;
@@ -345,12 +346,25 @@ img {
 .battery-timeline-container .battery-timeline__info ul li strong {
   color: #fff;
 }
+.battery-timeline-container .battery-timeline__additional-info {
+  display: none;
+}
+.battery-timeline-container .battery-timeline__additional-info.active {
+  display: block;
+}
 
 .current-issues {
   min-height: 100vh;
 }
 .current-issues .section-header {
   padding-top: 5rem;
+}
+.current-issues .current-issues-header {
+  visibility: hidden;
+  opacity: 0;
+}
+.current-issues .current-issues-header h2 {
+  max-width: 502px;
 }
 .current-issues__diagram {
   margin-bottom: 5rem;
@@ -405,12 +419,26 @@ img {
 .innovative-solutions-container .innovative-solutions {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 8rem;
 }
 .innovative-solutions-container .innovative-solutions__solution h5 {
   color: #00FF6C;
   font-size: 1.4rem;
   margin-block: 2rem;
   font-weight: 500;
+}
+.innovative-solutions-container .innovative-solutions__animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+}
+.innovative-solutions-container .innovative-solutions__animation .battery-cell {
+  position: absolute;
+}
+.innovative-solutions-container .innovative-solutions__animation .lottie-animation {
+  position: absolute;
 }
 .innovative-solutions-container .innovative-solutions .silicon-without-the-cons {
   grid-column: 2/3;
@@ -464,7 +492,8 @@ img {
   position: absolute;
   height: 100%;
   top: 0;
-  right: -6%;
+  left: -4rem;
+  z-index: -1;
 }
 .contact__btn {
   padding: 0.5rem 1rem;
