@@ -16,25 +16,29 @@
     </header>
     <section class="overview">
         <div class="particle-box">
-            <div class="particle-box__container"></div>
+            <div class="particle-box__container" id="particles-js"></div>
         </div>
         <h1>The past and the future of the battery</h1>
         <div class="overview__topics">
             <div class="topic topic--aqua">
                 <div class="mask"></div>
-                <h3 class="topic-header">How do batteries work?</h3>
+                <h3 class="topic-header text-sm">How do <span>batteries work?</span></h3>
+                <img src="./assets/img/claret-down.svg" alt="down-arrow">
             </div>
             <div class="topic topic--pink">
                 <div class="mask"></div>
-                <h3 class="topic-header">The journey so far</h3>
+                <h3 class="topic-header text-sm">The journey <span>so far</span></h3>
+                <img src="./assets/img/claret-down.svg" alt="down-arrow">
             </div>
             <div class="topic topic--yellow">
                 <div class="mask"></div>
-                <h3 class="topic-header">The issues with current batteries</h3>
+                <h3 class="topic-header text-sm">The issues with <span>current batteries</span></h3>
+                <img src="./assets/img/claret-down.svg" alt="down-arrow">
             </div>
             <div class="topic topic--green">
                 <div class="mask"></div>
-                <h3 class="topic-header">How innovative solutions could power the future</h3>
+                <h3 class="topic-header text-sm">How innovative solutions <span>could power the future</span></h3>
+                <img src="./assets/img/claret-down.svg" alt="down-arrow">
             </div>
         </div>
     </section>
@@ -67,7 +71,7 @@
         <section class="current-issues">
             <header class="section-header current-issues-header">
                 <h2>The issues with current batteries</h2>
-                <p>Thanks to their amazing power output and convenient portability, Lithium-ion batteries have revolutionised the way that we live, work and travel. Weight-for-weight, Li-ion batteries can store 6x the amount of energy1 than their lead-acid rivals, making them the clear choice in our constant search for electric power on the move, but what are their limitations?</p>
+                <p class="text-lg">Thanks to their amazing power output and convenient portability, Lithium-ion batteries have revolutionised the way that we live, work and travel. Weight-for-weight, Li-ion batteries can store 6x the amount of energy1 than their lead-acid rivals, making them the clear choice in our constant search for electric power on the move, but what are their limitations?</p>
             </header>
             <div class="current-issues__diagram">
                 <img class="current-issues__diagram-img" src="./assets/img/Depleeting battery.svg" alt="battery-outline">
@@ -107,7 +111,7 @@
     <section class="innovative-solutions-container">
         <header class="section-header solutions-header">
             <h2>How innovative solutions could power the future</h2>
-            <p>Exciting innovations are on the horizon, with the potential to revolutionise batteries and how we use them, here are a few we’re particularly excited about.</p>
+            <p class="text-lg">Exciting innovations are on the horizon, with the potential to revolutionise batteries and how we use them, here are a few we're particularly excited about.</p>
         </header>
         <div class="innovative-solutions">
             <div class="innovative-solutions__solution silicon-without-the-cons">
@@ -147,6 +151,120 @@
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js" integrity="sha512-tHvUcUQYi35zApvAa5TNR3fNhBQkVtkmWKfacnpxmix4/VTGz1lGjIVyLMp7gLgAvg+aKJjnVKokXJNS5GZ+/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js" integrity="sha512-jq8sZI0I9Og0nnZ+CfJRnUzNSDKxr/5Bvha5bn7AHzTnRyxUfpUArMzfH++mwE/hb2efOo1gCAgI+1RMzf8F7g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="index.js" type="module"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+              "number": {
+                "value": 20,
+                "density": {
+                  "enable": true,
+                  "value_area": 1200
+                }
+              },
+              "color": {
+                "value": "#ffffff"
+              },
+              "shape": {
+                "type": "circle",
+                "stroke": {
+                  "width": 0,
+                  "color": "#000000"
+                },
+                "polygon": {
+                  "nb_sides": 5
+                },
+                "image": {
+                  "src": "./assets/img/grey-particle.svg",
+                  "width": 100,
+                  "height": 100
+                }
+              },
+              "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                  "enable": false,
+                  "speed": 1,
+                  "opacity_min": 0.1,
+                  "sync": false
+                }
+              },
+              "size": {
+                "value": 40,
+                "random": true,
+                "anim": {
+                  "enable": false,
+                  "speed": 40,
+                  "size_min": 0.1,
+                  "sync": false
+                }
+              },
+              "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.1,
+                "width": 1
+              },
+              "move": {
+                "enable": true,
+                "speed": 6,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                  "enable": false,
+                  "rotateX": 600,
+                  "rotateY": 1200
+                }
+              }
+            },
+            "interactivity": {
+              "detect_on": "canvas",
+              "events": {
+                "onhover": {
+                  "enable": true,
+                  "mode": "grab"
+                },
+                "onclick": {
+                  "enable": true,
+                  "mode": "push"
+                },
+                "resize": true
+              },
+              "modes": {
+                "grab": {
+                  "distance": 140,
+                  "line_linked": {
+                    "opacity": 1
+                  }
+                },
+                "bubble": {
+                  "distance": 400,
+                  "size": 40,
+                  "duration": 2,
+                  "opacity": 8,
+                  "speed": 3
+                },
+                "repulse": {
+                  "distance": 200,
+                  "duration": 0.4
+                },
+                "push": {
+                  "particles_nb": 4
+                },
+                "remove": {
+                  "particles_nb": 2
+                }
+              }
+            },
+            "retina_detect": true
+          });
+    </script>
 </body>
 </html>

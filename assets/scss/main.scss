@@ -117,7 +117,7 @@ img {
 
     .particle-box {
         position: absolute;
-        border: 1px solid yellow;
+        inset: 0;
         z-index: -1;
 
         &__container { position: relative; }
@@ -133,8 +133,11 @@ img {
         .topic {
             min-height: 200px;
             position: relative;
+            margin-top: 4rem;
 
-            .mask { position: absolute; inset: 0; z-index: 10; clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);}
+            .mask { position: absolute; inset: 0; z-index: 10; clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+            
+            h3 { display: flex; flex-direction: column; }
 
             &--aqua .mask { background-color: $aqua; } 
             &--aqua h3 { color: $aqua; }
@@ -144,6 +147,8 @@ img {
             &--yellow h3 { color: $yellow; }
             &--green .mask { background-color: $palegreen; } 
             &--green h3 { color: $palegreen; }
+
+            img { margin-top: 1rem; }
         }
     }
 }

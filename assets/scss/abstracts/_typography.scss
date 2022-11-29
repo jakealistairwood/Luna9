@@ -9,8 +9,8 @@ h1 {
 h2 { @include font-styles($font-xl, $fw-400, $primary-font); }
 h3 { @include font-styles($font-lg, $fw-400, $primary-font); }
 
-p.text-sm { @include font-styles($font-rg, $fw-400, $secondary-font); }
+.text-sm { @include font-styles($font-rg, $fw-400, $secondary-font); }
 
-p.text-lg { @include font-styles($font-md-24, $fw-400, $primary-font); }
+.text-lg { @include font-styles($font-md-24, $fw-400, $primary-font); }
 
 li { @include font-styles($font-rg, $fw-400, $secondary-font); }

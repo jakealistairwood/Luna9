@@ -20,13 +20,13 @@ h3 {
   font-family: "Sora", sans-serif;
 }
 
-p.text-sm {
+.text-sm {
   font-size: 1.125rem;
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
 }
 
-p.text-lg {
+.text-lg {
   font-size: 1.5rem;
   font-weight: 400;
   font-family: "Sora", sans-serif;
@@ -157,7 +157,7 @@ img {
 }
 .overview .particle-box {
   position: absolute;
-  border: 1px solid yellow;
+  inset: 0;
   z-index: -1;
 }
 .overview .particle-box__container {
@@ -177,12 +177,17 @@ img {
 .overview__topics .topic {
   min-height: 200px;
   position: relative;
+  margin-top: 4rem;
 }
 .overview__topics .topic .mask {
   position: absolute;
   inset: 0;
   z-index: 10;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.overview__topics .topic h3 {
+  display: flex;
+  flex-direction: column;
 }
 .overview__topics .topic--aqua .mask {
   background-color: #00FFF5;
@@ -207,6 +212,9 @@ img {
 }
 .overview__topics .topic--green h3 {
   color: #00FF6C;
+}
+.overview__topics .topic img {
+  margin-top: 1rem;
 }
 
 .how-they-work {

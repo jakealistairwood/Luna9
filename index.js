@@ -1,5 +1,8 @@
 import { timelineInfo } from "./assets/js/data.js";
+// import Particle from './assets/js/particle.js';
+import BatteryEvents from './assets/js/events.js';
 gsap.registerPlugin(ScrollTrigger);
+
 
 /*  ==============================================================================
 
@@ -12,7 +15,6 @@ const timelineContainer = document.querySelector(".battery-timeline");
 const howTheyWorkDiagram = document.querySelector('.how-they-work__diagram');
 const batteryIssuesDiagram = document.querySelector('.current-issues__diagram-img');
 const particleBox = document.querySelector('.particle-box__container');
-
 
 let bodyHeight = body.offsetHeight;
 
@@ -30,35 +32,8 @@ particleBox.style.height = currentViewport.height + 'px';
 
 ==============================================================================  */
 
-const toggleDropdown = (eventName) => console.log(eventName);
+// const toggleDropdown = (eventName) => console.log(eventName);
 // const toggleDropdown = (eventName) => document.querySelector(`.additional-info--${eventName}`).classList.toggle("active");
-
-const renderTimelineEvent = (el) => {
-		let eventHTML = `<div class="battery-timeline__event">
-            <div class="battery-timeline__img-container">
-                <img src="${el.imgInfo.src}" alt="${el.imgInfo.alt}" />
-            </div>
-            <div class="battery-timeline__info">
-                <div class="battery-timeline__date">
-                    ${Array.from(String(el.date)).map(char => {
-                        return `<span>${char}</span>`
-                    }).join("")}
-                </div>
-                <h3>${el.title}</h3>
-                <ul>
-                    <li>Name:<strong>${el.name}</strong></li>
-                    <li>Invented by:<strong>${el.inventedBy}</strong></li>
-                    <li>In:<strong>${el.location}</strong></li>
-                    <li>Voltage:<strong>${el.voltageOutput}</strong></li>
-                </ul>
-                <button class="battery-timeline__btn">Learn More</button>
-                <div class="battery-timeline__additional-info additional-info--${el.name}">
-                    <p>${el.additionalInfo}</p>
-                </div>
-            </div>
-        </div>`;
-        return eventHTML;
-};
 
 const generateRandomNumberWithinRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
@@ -76,24 +51,6 @@ const createAtom = (atomOptions) => {
     atom.style.left = generateRandomNumberWithinRange(coordinates.xMin, coordinates.xMax) + "px";
     atom.style.top = generateRandomNumberWithinRange(coordinates.yMin, coordinates.yMax) + "px";
     return atom;
-}
-
-for(let i = 0; i < generateRandomNumberWithinRange(7, 20); i++) {
-    particleBox.appendChild(createAtom({
-        id: i++,
-        particleType: 'particle',
-        atomSize: 50,
-        imgOptions: {
-            src: "./assets/img/grey-particle.svg",
-            alt: 'grey-gradient-sphere-depicting-atom'
-        },
-        coordinates: {
-            xMin: 0,
-            xMax: currentViewport.width,
-            yMin: 0,
-            yMax: currentViewport.height
-        }
-    }));
 }
 
 for(let i = 0; i < generateRandomNumberWithinRange(30, 200); i++) {
@@ -115,7 +72,11 @@ for(let i = 0; i < generateRandomNumberWithinRange(30, 200); i++) {
 }
 
 // renderTimelineEvents(timelineInfo);
-timelineContainer.innerHTML += timelineInfo.map(el => renderTimelineEvent(el)).join("");
+// timelineContainer.innerHTML += timelineInfo.map(el => renderTimelineEvent(el)).join("");
+timelineInfo.map(el => {
+    let batteryEvent = new BatteryEvents(el);
+    timelineContainer.innerHTML += batteryEvent.renderEvent();
+});
 
 
 /*  ==============================================================================
