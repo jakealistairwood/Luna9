@@ -16,6 +16,10 @@ body {
     width: 100%;
 }
 
+body, html {
+    scroll-behavior: smooth;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -59,7 +63,7 @@ img {
     column-gap: 2rem;
 
     h2 {
-        font-size: 3rem;
+        // font-size: 3rem;
         width: 50%;
     }
 
@@ -76,6 +80,10 @@ img {
     left: 0;
     top: 0rem;
     z-index: 1000;
+
+    &__logo {
+        max-width: 75px;
+    }
 
     &__progress {
         width: 100px;
@@ -139,16 +147,28 @@ img {
             
             h3 { display: flex; flex-direction: column; }
 
-            &--aqua .mask { background-color: $aqua; } 
-            &--aqua h3 { color: $aqua; }
-            &--pink .mask { background-color: $accent-color; }
-            &--pink h3 { color: $accent-color; }
-            &--yellow .mask { background-color: $yellow; } 
-            &--yellow h3 { color: $yellow; }
-            &--green .mask { background-color: $palegreen; } 
-            &--green h3 { color: $palegreen; }
+            &--aqua {
+                .mask { background-color: $aqua; }
+                h3 { color: $aqua; }
+                a:hover svg path { fill: $aqua; }
+            }
+            &--pink { 
+                .mask { background-color: $accent-color; }
+                h3 { color: $accent-color; }
+                a:hover svg path { fill: $accent-color; }
+            }
+            &--yellow {
+                .mask { background-color: $yellow; }
+                h3 { color: $yellow; }
+                a:hover svg path { fill: $yellow; }
+            }
+            &--green {
+                .mask { background-color: $palegreen; }
+                h3 { color: $palegreen; }
+                a:hover svg path { fill: $palegreen; }
+            }
 
-            img { margin-top: 1rem; }
+            svg { margin-top: 1rem; }
         }
     }
 }
@@ -156,12 +176,13 @@ img {
 .how-they-work {
     min-height: 100vh;
     width: 100%;
+    @include custom-flex(column, center, flex-start);
 
     &__summary {
         opacity: 0;
         visibility: hidden;
 
-        h2 { font-size: 4rem; margin-bottom: 1.5rem; padding-top: 5rem; }
+        h2 { font-size: 4rem; margin-bottom: 1.5rem; }
 
         div {
             display: flex;
@@ -183,9 +204,24 @@ img {
         }
 
         h5 {
+            position: relative;
+            min-height: 1.5rem;
             font-size: 1.5rem;
             margin-block: 2rem;
             font-weight: 400;
+
+            .point--one {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .point--two {
+                // opacity: 0;
+                // visibility: hidden;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
 
             .aqua { color: $aqua; }
         }
@@ -204,7 +240,7 @@ img {
             top: 50%;
             transform: translateY(-50%);
             background-color: $primary-color;
-            border: 1px solid rgba($secondary-color, 0.4);
+            // border: 1px solid rgba($secondary-color, 0.4);
             z-index: 10;
             padding: 0.5rem 1rem;
 
@@ -223,8 +259,9 @@ img {
         justify-content: space-between;
         column-gap: 2rem;
         h2 {
-            font-size: 3rem;
-            width: 50%;
+            // font-size: 3rem;
+            width: 100%;
+            max-width: 505px;
         }
 
         p { width: 50%; }
@@ -238,6 +275,8 @@ img {
         &__event {
             display: flex;
             column-gap: 4rem;
+            opacity: 0;
+            visibility: hidden;
         }
         
         &__date {
@@ -283,20 +322,43 @@ img {
             display: none;
         }
 
-        &__additional-info.active { display: block;}
+        &__additional-info.active { 
+            display: block; 
+            margin-top: 1rem;
+            animation: fadeInElement ease 1s;
+        }
+
+        &__btn {
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+            color: $secondary-color;
+            border-bottom: 2px solid $secondary-color;
+            margin-top: 2rem;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            padding-bottom: 0.5rem;
+            @include font-styles($font-sm, $fw-800, $primary-font);
+
+            &:hover {
+                border-bottom: 2px solid $accent-color;
+            }
+        }
     }
 }
 
 .current-issues {
     min-height: 100vh;
+    padding-bottom: 10rem;
 
     .section-header {
         padding-top: 5rem;
     }
 
     .current-issues-header {
-        visibility: hidden;
-        opacity: 0;
+        // visibility: hidden;
+        // opacity: 0;
 
         h2 { max-width: 502px; }
     }
@@ -309,22 +371,24 @@ img {
 
     &__diagram-img {
         width: 100%;
+        position: absolute;
+        top: 3rem;
     }
 
     &__issue-container {
-        position: absolute;
-        top: 6.5rem;
-        left: 80px;
-        width: 91%;
+        position: relative;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         column-gap: 2rem;
+        width: 90%;
+        margin-left: auto;
+        margin-right: 2.5rem;
     }
 
     &__issue {
         .issue-mask {
             background-color: $yellow;
-            min-height: 360px;
+            min-height: 340px;
             img {
                 height: 150px;
                 margin-bottom: 1rem;
@@ -338,14 +402,19 @@ img {
             }
         }
         p {
-            margin-top: 3rem;
-            text-align: justify;
+            margin-top: 4rem;
+            // text-align: justify;
         }
+    }
+
+    &__issue-content {
+        opacity: 0;
+        visibility: hidden;
     }
 }
 
 .innovative-solutions-container {
-    margin-top: 20rem;
+    margin-top: 10rem;
     .section-header {
         display: flex;
         flex-direction: column;
@@ -450,7 +519,7 @@ img {
         height: 100%;
         top: 0;
         // right: -6%;
-        left: -4rem;
+        left: -8rem;
         z-index: -1;
     }
 
@@ -472,3 +541,15 @@ img {
 //     30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
 //     40%, 60% { transform: translate3d(4px, 0, 0); } 
 // }
+
+@keyframes fadeInElement {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}

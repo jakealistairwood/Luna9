@@ -34,7 +34,9 @@ class BatteryEvents {
                 <div class="battery-timeline__additional-info additional-info--${this.id}">
                     <p>${this.additionalInfo}</p>
                 </div>
-                <button class="battery-timeline__btn btn--${this.id}">${this.infoDisplayed ? "Close": "Learn More"}</button>
+                <button class="battery-timeline__btn btn--${this.id} btn-rg">
+                    ${this.infoDisplayed ? "Close": "Learn More"}
+                </button>
             </div>
         </div>`;
     }

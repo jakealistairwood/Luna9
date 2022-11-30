@@ -15,17 +15,6 @@ const navbar = document.querySelector('.luna9');
 const timelineContainer = document.querySelector(".battery-timeline");
 const howTheyWorkDiagram = document.querySelector('.how-they-work__diagram');
 const batteryIssuesDiagram = document.querySelector('.current-issues__diagram-img');
-const particleBox = document.querySelector('.particle-box__container');
-
-let bodyHeight = body.offsetHeight;
-
-let currentViewport = {
-    height: window.innerHeight,
-    width: window.innerWidth
-};
-
-particleBox.style.width = currentViewport.width + 'px';
-particleBox.style.height = currentViewport.height + 'px';
 
 /*  ==============================================================================
 
@@ -33,8 +22,7 @@ particleBox.style.height = currentViewport.height + 'px';
 
 ==============================================================================  */
 
-// const toggleDropdown = (eventName) => console.log(eventName);
-// const toggleDropdown = (eventName) => document.querySelector(`.additional-info--${eventName}`).classList.toggle("active");
+let bodyHeight = body.offsetHeight;
 
 const generateRandomNumberWithinRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
@@ -72,22 +60,9 @@ for(let i = 0; i < generateRandomNumberWithinRange(30, 200); i++) {
     }))
 }
 
-// renderTimelineEvents(timelineInfo);
-// timelineContainer.innerHTML += timelineInfo.map(el => renderTimelineEvent(el)).join("");
 timelineInfo.map(el => {
     let batteryEvent = new BatteryEvents(el);
     timelineContainer.innerHTML += batteryEvent.renderEvent();
-    let elRef = document.querySelector(`.btn--${batteryEvent.id}`);
-    console.log(elRef);
-    elRef.addEventListener('click', e => {
-        console.log(e);
-    })
-    // elRef.addEventListener('click', (e) => {
-    //     const { target } = e;
-    //     console.log(target);
-    //     console.log("button clicked");
-    //     // batteryEvent.toggleDropdown();
-    // });
 });
 
 timelineInfo.forEach(el => {
@@ -113,6 +88,8 @@ timelineInfo.forEach(el => {
     4. 
 */
 
+/* ====  Navbar ==== */
+
 let navTimeline = gsap.timeline({
     scrollTrigger: {
         trigger: 'body',
@@ -121,20 +98,207 @@ let navTimeline = gsap.timeline({
     }
 });
 
-
-
 navTimeline.to('.luna9__progress-indicator', {
     width: 96,
     scrollTrigger: {
         trigger: 'body',
         start: "top 1%",
         end: `+=${bodyHeight + 4000}`,
+        scrub: true
+    }
+})
+
+/*
+* SECTION - Hero 
+*/
+
+let heroTimeline = gsap.timeline();
+heroTimeline.from('.topic-header', {
+    y: 500,
+    duration: 1,
+    height: 500 
+}).to('.mask', {
+    clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)',
+});
+
+/*
+* SECTION - How Batteries Work? 
+*/
+
+let htwTl = gsap.timeline();
+htwTl.to('.how-they-work__summary', {
+    autoAlpha: 1,
+    duration: 1,
+    scrollTrigger: {
+        trigger: '.how-they-work__summary',
+        start: 'top bottom',
+        scrub: true
+    }
+});
+// }).to('.atom', {
+//     x: generateRandomNumberWithinRange(750, 830) + "px",
+//     stagger: 0.2,
+//     duration: 1,
+//     scrollTrigger: {
+//         trigger: '.how-they-work',
+//         start: "top top", 
+//         end: "+=4000px",
+//         pin: true,
+//         duration: 5,
+//         scrub: true
+//     }
+// });
+
+
+// const moveAtoms = (atomsArr) => {
+//     atomsArr.forEach(atom => {
+//         cathodeToAnodeTl.to(atom, {
+//             x: generateRandomNumberWithinRange(750, 830) + "px",
+//             stagger: 0.2,
+//             duration: 1
+//         })
+//     })
+// }
+
+
+let atoms = gsap.utils.toArray('.atom');
+let cathodeToAnodeTl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.how-they-work',
+        start: "top top",
+        end: "+=4000px",
+        pin: true,
+        duration: 5,
+        scrub: true,
+    }
+})
+
+atoms.forEach(atom => {
+    cathodeToAnodeTl.to(atom, {
+        x: generateRandomNumberWithinRange(750, 830) + "px",
+        stagger: 0.2,
+        duration: 1
+    })
+})
+
+
+/* 
+* SECTION - Journey So Far 
+*/
+
+let jsfEvents = gsap.utils.toArray('.battery-timeline__event');
+jsfEvents.forEach(jsfEvent => {
+    gsap.to(jsfEvent, {
+        autoAlpha: 1,
+        scrollTrigger: {
+            trigger: jsfEvent,
+            start: "top bottom",
+            scrub: true
+        }
+    });
+});
+
+// jsfEvents.forEach(tlEvent => {
+//     let jsfTl = gsap.timeline({
+//         scrollTrigger: {
+//             trigger: '.battery-timeline__event',
+//             start: 'top top',
+//             markers: true,
+//             scrub: true
+//         }
+//     });
+//     jsfTl.staggerTo(tlEvent, 0.5, {
+//         autoAlpha: 1,
+//     })
+// })
+
+/* 
+* SECTION - Current Issues 
+*/
+
+
+let batteryIssuesMask = gsap.utils.toArray('.issue-mask');
+let batteryIssuesContent = gsap.utils.toArray('.current-issues__issue-content');
+
+let batteryIssuesTl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.current-issues__diagram',
+        start: "top 25%",
+        end: `+=${3000}px`,
+        markers: true,
+        pin: true,
+        scrub: true,
+        onEnter: (e) => {
+            console.log(e)
+            triggerIssueAnimation(batteryIssuesMask, batteryIssuesContent);
+        }
+    }
+})
+
+const triggerIssueAnimation = (issuesArr, contentArr) => {
+    console.log("trigger ran");
+    issuesArr.forEach(issue => {
+        batteryIssuesTl.to(issue, {
+            backgroundColor: "transparent",
+            stagger: 1,
+        })
+    })
+    contentArr.forEach(issue => {
+        batteryIssuesTl.to(issue, {
+            autoAlpha: 1,
+        }, '+=100%')
+    })
+}
+
+// batteryIssues.forEach(issue => {
+//     gsap.to(issue, {
+//         backgroundColor: "transparent",
+//         scrollTrigger: {
+//             trigger: 'issue',
+//             markers: true,
+//             start: "top top",
+//             scrub: true,
+//             pin: true,
+//         }
+//     })
+// })
+
+
+
+// gsap.set(batteryIssues, { backgroundColor: '#FFF501' });
+// console.log(batteryIssues);
+
+// batteryIssues.forEach(battery => {
+//     let batteryIssueTl = gsap.timeline({
+//         scrollTrigger: {
+//             trigger: '.current-issues__diagram',
+//             start: "center top",
+//             pin: true,
+//             scrub: true,
+//         }
+//     })
+//     batteryIssueTl.to(battery, {
+//         backgroundColor: "transparent",
+//     })
+// })
+
+/*
+* SECTION - Innovative Solutions 
+*/
+
+let isTl = gsap.timeline();
+isTl.to('.solutions-header', {
+    autoAlpha: 1,
+    duration: 1,
+    scrollTrigger: {
+        trigger: '.current-issues',
+        start: "bottom 60%",
         markers: true,
         scrub: true
     }
 })
 
-
+/* ====  Contact ==== */
 
 
 
@@ -178,15 +342,6 @@ navTimeline.to('.luna9__progress-indicator', {
 //     opacity: 0
 // });
 
-/* HERO/OVERVIEW SECTION */
-let heroTimeline = gsap.timeline();
-heroTimeline.from('.topic-header', {
-    y: 500,
-    duration: 1,
-    height: 500 
-}).to('.mask', {
-    clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)',
-});
 
 // .to('.topic-header', {
 //     stagger: 1,
@@ -197,51 +352,6 @@ heroTimeline.from('.topic-header', {
 //     },
 //     backgroundColor: "transparent",
 // })
-
-let howTheyWorkTimeline = gsap.timeline();
-howTheyWorkTimeline.to('.how-they-work__summary', {
-    autoAlpha: 1,
-    duration: 1,
-    scrollTrigger: {
-        trigger: '.how-they-work__summary',
-        start: 'top bottom',
-        scrub: true
-    }
-}).to('.atom', {
-    x: generateRandomNumberWithinRange(750, 830) + "px",
-    stagger: 0.2,
-    duration: 1,
-    scrollTrigger: {
-        trigger: '.how-they-work',
-        start: "top top", 
-        end: "+=4000px",
-        pin: true,
-        duration: 5,
-        scrub: true
-    }
-});
-
-
-let batteryIssues = gsap.utils.toArray('.issue-mask');
-gsap.set(batteryIssues, { backgroundColor: '#FFF501' });
-console.log(batteryIssues);
-
-batteryIssues.forEach(battery => {
-    let batteryIssueTl = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.current-issues__diagram',
-            start: "center top",
-            pin: true,
-            scrub: true,
-            markers: true,
-        }
-    })
-    batteryIssueTl.to(battery, {
-        backgroundColor: "transparent",
-    })
-})
-
-
 
 
 

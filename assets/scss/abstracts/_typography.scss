@@ -6,8 +6,14 @@ h1 {
     line-height: 1.1;
 }
 
-h2 { @include font-styles($font-xl, $fw-400, $primary-font); }
+h2 { 
+    @include font-styles($font-xl, $fw-400, $primary-font); 
+    line-height: 4.8125rem;
+}
+
 h3 { @include font-styles($font-lg, $fw-400, $primary-font); }
+
+p { @include font-styles($font-rg, $fw-400, $secondary-font); }
 
 .text-sm { @include font-styles($font-rg, $fw-400, $secondary-font); }
 
