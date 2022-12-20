@@ -6,12 +6,27 @@ h1 {
   font-family: "Sora", sans-serif;
   line-height: 1.1;
 }
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 3.2rem;
+    width: 80% !important;
+    margin-left: 0 !important;
+  }
+}
 
 h2 {
   font-size: 4.375rem;
   font-weight: 400;
   font-family: "Sora", sans-serif;
   line-height: 4.8125rem;
+}
+@media screen and (max-width: 500px) {
+  h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    width: 50%;
+    margin-top: 4rem;
+  }
 }
 
 h3 {
@@ -42,6 +57,7 @@ li {
   font-size: 1.125rem;
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
+  line-height: 27px;
 }
 
 * {
@@ -73,6 +89,12 @@ section {
   margin: 0 auto;
   margin-block: 3rem;
   position: relative;
+}
+@media screen and (max-width: 500px) {
+  section {
+    width: 90%;
+    margin-inline: auto;
+  }
 }
 section::after {
   position: absolute;
@@ -130,21 +152,6 @@ img {
 .luna9__logo {
   max-width: 75px;
 }
-.luna9__progress {
-  width: 100px;
-  height: 30px;
-  border: 1px solid #fff;
-  padding: 3px;
-  position: relative;
-}
-.luna9__progress-indicator {
-  position: absolute;
-  width: 5%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 22px;
-  background-color: #fff;
-}
 
 .luna9.active {
   background-color: rgba(0, 0, 0, 0.4);
@@ -159,6 +166,13 @@ img {
   min-height: 100vh;
   width: 100%;
   max-width: 100%;
+}
+@media screen and (max-width: 500px) {
+  .overview {
+    max-width: 500px;
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 .overview h1 {
   margin-bottom: 7rem;
@@ -186,10 +200,23 @@ img {
   width: 100%;
   margin: 0 auto;
 }
+@media screen and (max-width: 500px) {
+  .overview__topics {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 4rem;
+    row-gap: 1rem;
+  }
+}
 .overview__topics .topic {
   min-height: 200px;
   position: relative;
   margin-top: 4rem;
+}
+@media screen and (max-width: 500px) {
+  .overview__topics .topic {
+    min-height: 100px;
+    margin-top: 0rem;
+  }
 }
 .overview__topics .topic .mask {
   position: absolute;
@@ -200,6 +227,7 @@ img {
 .overview__topics .topic h3 {
   display: flex;
   flex-direction: column;
+  font-size: 0.8rem;
 }
 .overview__topics .topic--aqua .mask {
   background-color: #00FFF5;
@@ -249,12 +277,18 @@ img {
   justify-content: center;
   align-items: flex-start;
 }
+@media screen and (max-width: 500px) {
+  .how-they-work {
+    max-width: 500px;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
 .how-they-work__summary {
   opacity: 0;
   visibility: hidden;
 }
 .how-they-work__summary h2 {
-  font-size: 4rem;
   margin-bottom: 1.5rem;
 }
 .how-they-work__summary div {
@@ -264,14 +298,32 @@ img {
   margin-top: 3rem;
   margin-bottom: 5rem;
 }
+@media screen and (max-width: 500px) {
+  .how-they-work__summary div {
+    flex-direction: column;
+  }
+}
 .how-they-work__summary div p {
   line-height: 1.6;
   width: 50%;
   font-size: 1.125rem;
 }
+@media screen and (max-width: 500px) {
+  .how-they-work__summary div p {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
 .how-they-work__summary div p:first-child {
   width: 35%;
   font-size: 1.5rem;
+}
+@media screen and (max-width: 500px) {
+  .how-they-work__summary div p:first-child {
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
 }
 .how-they-work__summary h5 {
   position: relative;
@@ -281,10 +333,12 @@ img {
   font-weight: 400;
 }
 .how-they-work__summary h5 .point--one {
-  visibility: visible;
-  opacity: 1;
+  visibility: hidden;
+  opacity: 0;
 }
 .how-they-work__summary h5 .point--two {
+  opacity: 0;
+  visibility: hidden;
   position: absolute;
   left: 0;
   top: 0;
@@ -298,6 +352,14 @@ img {
 }
 .how-they-work__diagram .atom {
   position: absolute;
+  height: 20px;
+  width: 20px;
+}
+@media screen and (max-width: 500px) {
+  .how-they-work__diagram .atom {
+    height: 5px;
+    width: 5px;
+  }
 }
 .how-they-work__diagram .diagram-label {
   position: absolute;
@@ -306,6 +368,11 @@ img {
   background-color: #000;
   z-index: 10;
   padding: 0.5rem 1rem;
+}
+@media screen and (max-width: 500px) {
+  .how-they-work__diagram .diagram-label {
+    font-size: 0.7rem;
+  }
 }
 .how-they-work__diagram .diagram-label--cathode {
   left: 190px;
@@ -324,6 +391,17 @@ img {
   bottom: 0;
   height: fit-content;
 }
+@media screen and (max-width: 500px) {
+  .how-they-work__diagram .diagram-label--cathode {
+    left: 25px;
+  }
+  .how-they-work__diagram .diagram-label--anode {
+    left: 245px;
+  }
+  .how-they-work__diagram .diagram-label--seperator {
+    top: -2.5rem;
+  }
+}
 
 .battery-timeline-container {
   padding-block: 5rem;
@@ -333,6 +411,11 @@ img {
   justify-content: space-between;
   column-gap: 2rem;
 }
+@media screen and (max-width: 500px) {
+  .battery-timeline-container header {
+    flex-direction: column;
+  }
+}
 .battery-timeline-container header h2 {
   width: 100%;
   max-width: 505px;
@@ -340,16 +423,33 @@ img {
 .battery-timeline-container header p {
   width: 50%;
 }
+@media screen and (max-width: 500px) {
+  .battery-timeline-container header p {
+    width: 100%;
+    font-size: 1rem;
+    padding-top: 2rem;
+  }
+}
 .battery-timeline-container .battery-timeline {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media screen and (max-width: 500px) {
+  .battery-timeline-container .battery-timeline {
+    row-gap: 6rem;
+  }
 }
 .battery-timeline-container .battery-timeline__event {
   display: flex;
   column-gap: 4rem;
   opacity: 0;
   visibility: hidden;
+}
+@media screen and (max-width: 500px) {
+  .battery-timeline-container .battery-timeline__event {
+    flex-direction: column;
+  }
 }
 .battery-timeline-container .battery-timeline__date {
   display: flex;
@@ -360,16 +460,44 @@ img {
   border: 1px solid #FF00BA;
   padding: 0.5rem;
 }
+@media screen and (max-width: 500px) {
+  .battery-timeline-container .battery-timeline__date {
+    left: -4rem;
+  }
+}
+.battery-timeline-container .battery-timeline__date span {
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-family: "Sora", sans-serif;
+  line-height: 1.875rem;
+}
 .battery-timeline-container .battery-timeline__event:nth-child(even) {
   flex-direction: row-reverse;
 }
+@media screen and (max-width: 500px) {
+  .battery-timeline-container .battery-timeline__event:nth-child(even) {
+    flex-direction: column;
+  }
+}
 .battery-timeline-container .battery-timeline__img-container {
   width: 50%;
+}
+@media screen and (max-width: 500px) {
+  .battery-timeline-container .battery-timeline__img-container {
+    width: 90%;
+    margin-left: auto;
+  }
 }
 .battery-timeline-container .battery-timeline__info {
   align-self: center;
   position: relative;
   width: 50%;
+}
+@media screen and (max-width: 500px) {
+  .battery-timeline-container .battery-timeline__info {
+    width: 80%;
+    margin-left: auto;
+  }
 }
 .battery-timeline-container .battery-timeline__info h3 {
   color: #FF00BA;
@@ -419,6 +547,12 @@ img {
 .current-issues .section-header {
   padding-top: 5rem;
 }
+@media screen and (max-width: 500px) {
+  .current-issues .current-issues-header {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .current-issues .current-issues-header h2 {
   max-width: 502px;
 }
@@ -432,6 +566,15 @@ img {
   position: absolute;
   top: 3rem;
 }
+@media screen and (max-width: 500px) {
+  .current-issues__diagram-img {
+    transform: rotate(90deg);
+  }
+  .current-issues__diagram-img img {
+    width: 100%;
+    height: 100%;
+  }
+}
 .current-issues__issue-container {
   position: relative;
   display: grid;
@@ -441,9 +584,21 @@ img {
   margin-left: auto;
   margin-right: 2.5rem;
 }
+@media screen and (max-width: 500px) {
+  .current-issues__issue-container {
+    grid-template-columns: 1fr;
+  }
+}
 .current-issues__issue .issue-mask {
   background-color: #FFF501;
   min-height: 340px;
+}
+@media screen and (max-width: 500px) {
+  .current-issues__issue .issue-mask {
+    display: flex;
+    flex-direction: row-reverse;
+    border-bottom: 1px solid #FFF501;
+  }
 }
 .current-issues__issue .issue-mask img {
   height: 150px;
@@ -454,6 +609,11 @@ img {
   color: #FFF501;
   border-top: 1px solid #FFF501;
   padding-top: 1rem;
+}
+@media screen and (max-width: 500px) {
+  .current-issues__issue .issue-mask h3 {
+    border-top: 0;
+  }
 }
 .current-issues__issue p {
   margin-top: 4rem;
@@ -482,9 +642,12 @@ img {
   grid-template-columns: repeat(2, 1fr);
   padding-bottom: 8rem;
 }
-.innovative-solutions-container .innovative-solutions__solution h5 {
+.innovative-solutions-container .innovative-solutions__solution {
+  opacity: 0;
+  visibility: hidden;
+}
+.innovative-solutions-container .innovative-solutions__solution h3 {
   color: #00FF6C;
-  font-size: 1.4rem;
   margin-block: 2rem;
   font-weight: 500;
 }
@@ -519,7 +682,7 @@ img {
 }
 
 .contact {
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -537,6 +700,8 @@ img {
   transform: translate(-50%, -50%);
   width: 60%;
   margin: 0 auto;
+  visibility: hidden;
+  opacity: 0;
 }
 .contact__content h2 {
   font-size: 4rem;
@@ -565,6 +730,25 @@ img {
   max-width: 204px;
   width: 100%;
   text-align: center;
+}
+
+.timeline-svg {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+}
+@media screen and (max-width: 500px) {
+  .timeline-svg {
+    display: none;
+  }
+}
+
+.timeline-svg.fixed {
+  position: fixed !important;
+}
+
+.footer {
+  min-height: 100vh;
 }
 
 @keyframes fadeInElement {

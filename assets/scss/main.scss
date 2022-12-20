@@ -29,6 +29,10 @@ section {
     @include lg-container(1280px);
     margin-block: 3rem;
     position: relative;
+    @include for-lg-mobiles {
+        width: 90%;
+        margin-inline: auto;
+    }
 
     &::after {
         position: absolute;
@@ -84,25 +88,6 @@ img {
     &__logo {
         max-width: 75px;
     }
-
-    &__progress {
-        width: 100px;
-        height: 30px;
-        border: 1px solid $secondary-color;
-        padding: 3px;
-        position: relative;
-    }
-
-    &__progress-indicator {
-        position: absolute;
-        // left: 5px;
-        // top: 5px;
-        width: 5%;
-        max-width: 100%;
-        height: 100%;
-        max-height: 22px;
-        background-color: $secondary-color;
-    }
 }
 
 .luna9.active {
@@ -115,6 +100,10 @@ img {
     min-height: 100vh;
     width: 100%;
     max-width: 100%;
+
+    @include for-lg-mobiles {
+        @include sm-container(500px);
+    }
 
     h1 {
         margin-bottom: 7rem;
@@ -137,15 +126,29 @@ img {
         grid-template-columns: repeat(4, 1fr);
         column-gap: 2rem;
         @include lg-container(1280px);
+        @include for-lg-mobiles {
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: 4rem;
+            row-gap: 1rem;
+        }
 
         .topic {
             min-height: 200px;
             position: relative;
             margin-top: 4rem;
 
+            @include for-lg-mobiles {
+                min-height: 100px;
+                margin-top: 0rem;
+            }
+
             .mask { position: absolute; inset: 0; z-index: 10; clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
             
-            h3 { display: flex; flex-direction: column; }
+            h3 { 
+                display: flex; 
+                flex-direction: column; 
+                font-size: 0.8rem;
+            }
 
             &--aqua {
                 .mask { background-color: $aqua; }
@@ -177,12 +180,15 @@ img {
     min-height: 100vh;
     width: 100%;
     @include custom-flex(column, center, flex-start);
+    @include for-lg-mobiles {
+        @include sm-container(500px);
+    }
 
     &__summary {
         opacity: 0;
         visibility: hidden;
 
-        h2 { font-size: 4rem; margin-bottom: 1.5rem; }
+        h2 { margin-bottom: 1.5rem; }
 
         div {
             display: flex;
@@ -190,16 +196,26 @@ img {
             column-gap: 5rem;
             margin-top: 3rem;
             margin-bottom: 5rem;
+            @include for-lg-mobiles { flex-direction: column; }
 
             p {
                 line-height: 1.6;
                 width: 50%;
                 font-size: 1.125rem;
+                @include for-lg-mobiles { 
+                    width: 100%; 
+                    font-size: 1rem;
+                }
             }
 
             p:first-child {
                 width: 35%;
                 font-size: 1.5rem;
+                @include for-lg-mobiles { 
+                    width: 100%; 
+                    font-size: 1rem; 
+                    margin-bottom: 1rem;
+                }
             }
         }
 
@@ -211,13 +227,13 @@ img {
             font-weight: 400;
 
             .point--one {
-                visibility: visible;
-                opacity: 1;
+                visibility: hidden;
+                opacity: 0;
             }
 
             .point--two {
-                // opacity: 0;
-                // visibility: hidden;
+                opacity: 0;
+                visibility: hidden;
                 position: absolute;
                 left: 0;
                 top: 0;
@@ -233,6 +249,12 @@ img {
 
         .atom {
             position: absolute;
+            height: 20px;
+            width: 20px;
+            @include for-lg-mobiles {
+                height: 5px;
+                width: 5px;
+            }
         }
 
         .diagram-label {
@@ -244,10 +266,17 @@ img {
             z-index: 10;
             padding: 0.5rem 1rem;
 
+            @include for-lg-mobiles { font-size: 0.7rem; }
+
             &--cathode { left: 190px; }
             &--anode { left: 985px; }
             &--seperator { left: 50%; transform: translateX(-50%); top: 3rem; }
             &--electrolyte { left: 50%; transform: translateX(-50%); bottom: 0; height: fit-content; }
+            @include for-lg-mobiles {
+                &--cathode { left: 25px; }
+                &--anode { left: 245px; }
+                &--seperator { top: -2.5rem; }
+            }
         }
     }
 }
@@ -258,25 +287,35 @@ img {
         display: flex;
         justify-content: space-between;
         column-gap: 2rem;
+        @include for-lg-mobiles { flex-direction: column; }
         h2 {
             // font-size: 3rem;
             width: 100%;
             max-width: 505px;
         }
 
-        p { width: 50%; }
+        p { 
+            width: 50%; 
+            @include for-lg-mobiles {
+                width: 100%;
+                font-size: 1rem;
+                padding-top: 2rem;
+            }
+        }
     }
 
     .battery-timeline {
         display: flex;
         flex-direction: column;
         align-items: center;
+        @include for-lg-mobiles { row-gap: 6rem; }
         
         &__event {
             display: flex;
             column-gap: 4rem;
             opacity: 0;
             visibility: hidden;
+            @include for-lg-mobiles { flex-direction: column; }
         }
         
         &__date {
@@ -287,20 +326,30 @@ img {
             left: -5rem;
             border: 1px solid $accent-color;
             padding: 0.5rem;
+
+            @include for-lg-mobiles { left: -4rem; }
+            
+            span { @include font-styles($font-rg, $fw-700, $primary-font); line-height: $font-lg; }
         }
         
         &__event:nth-child(even) {
             flex-direction: row-reverse;
+            @include for-lg-mobiles { flex-direction: column; }
         }
         
         &__img-container {
             width: 50%;
+            @include for-lg-mobiles {
+                width: 90%;
+                margin-left: auto;
+            }
         }
         
         &__info {
             align-self: center;
             position: relative;
             width: 50%;
+            @include for-lg-mobiles { width: 80%; margin-left: auto; }
 
             h3 {
                 color: $accent-color;
@@ -359,7 +408,7 @@ img {
     .current-issues-header {
         // visibility: hidden;
         // opacity: 0;
-
+        @include for-lg-mobiles { display: flex; flex-direction: column; }
         h2 { max-width: 502px; }
     }
 
@@ -372,7 +421,13 @@ img {
     &__diagram-img {
         width: 100%;
         position: absolute;
+        // height: 100vh;
         top: 3rem;
+        @include for-lg-mobiles {
+            transform: rotate(90deg);
+
+            img { width: 100%; height: 100%; }
+        }
     }
 
     &__issue-container {
@@ -383,12 +438,21 @@ img {
         width: 90%;
         margin-left: auto;
         margin-right: 2.5rem;
+        @include for-lg-mobiles {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__issue {
         .issue-mask {
             background-color: $yellow;
             min-height: 340px;
+            @include for-lg-mobiles {
+                display: flex;
+                flex-direction: row-reverse;
+                border-bottom: 1px solid $yellow;
+            }
+
             img {
                 height: 150px;
                 margin-bottom: 1rem;
@@ -399,6 +463,7 @@ img {
                 color: $yellow;
                 border-top: 1px solid $yellow;
                 padding-top: 1rem;
+                @include for-lg-mobiles { border-top: 0; }
             }
         }
         p {
@@ -433,9 +498,10 @@ img {
         padding-bottom: 8rem;
 
         &__solution {
-            h5 {
+            opacity: 0;
+            visibility: hidden;
+            h3 {
                 color: $palegreen;
-                font-size: 1.4rem;
                 margin-block: 2rem;
                 font-weight: 500;
             }
@@ -478,7 +544,7 @@ img {
 }
 
 .contact {
-    min-height: 100vh;
+    min-height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -498,6 +564,8 @@ img {
         transform: translate(-50%, -50%);
         width: 60%;
         margin: 0 auto;
+        visibility: hidden;
+        opacity: 0;
 
         h2 {
             font-size: 4rem;
@@ -534,6 +602,21 @@ img {
         text-align: center;
     }
 }
+
+.timeline-svg {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.5;
+    @include for-lg-mobiles {
+        display: none;
+    }
+}
+
+.timeline-svg.fixed {
+    position: fixed !important;
+}
+
+.footer { min-height: 100vh;}
 
 // @keyframes shakeAtom {
 //     10%, 90% { transform: translate3d(-1px, 0, 0); }

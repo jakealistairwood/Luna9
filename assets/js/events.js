@@ -26,10 +26,10 @@ class BatteryEvents {
                 </div>
                 <h3>${this.title}</h3>
                 <ul>
-                    <li>Name:<strong>${this.name}</strong></li>
-                    <li>Invented by:<strong>${this.inventedBy}</strong></li>
-                    <li>In:<strong>${this.location}</strong></li>
-                    <li>Voltage:<strong>${this.voltageOutput}</strong></li>
+                    <li>Name: <strong>${this.name}</strong></li>
+                    <li>Invented by: <strong>${this.inventedBy}</strong></li>
+                    <li>In: <strong>${this.location}</strong></li>
+                    <li>Voltage: <strong>${this.voltageOutput}</strong></li>
                 </ul>
                 <div class="battery-timeline__additional-info additional-info--${this.id}">
                     <p>${this.additionalInfo}</p>

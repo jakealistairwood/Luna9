@@ -8,447 +8,459 @@
 		<link rel="stylesheet" href="main.css" />
 	</head>
 	<body>
-		<header class="luna9">
-			<a class="luna9__logo" href="https://www.luna9design.com/" target="_blank" rel="noopener">
-                <img src="./assets/img/luna9-logo.png" alt="luna9-logo">
-            </a>
-			<div class="luna9__progress">
-				<div class="luna9__progress-indicator"></div>
-			</div>
-		</header>
-		<section class="overview">
-			<div class="particle-box">
-				<div class="particle-box__container" id="particles-js"></div>
-			</div>
-			<h1>The past and the future of the battery</h1>
-			<div class="overview__topics">
-				<div class="topic topic--aqua">
-					<div class="mask"></div>
-					<a href="#howBatteriesWork">
-						<h3 class="topic-header text-sm">
-							How do <span>batteries work?</span>
-						</h3>
-						<svg
-							width="16"
-							height="16"
-							viewBox="0 0 16 16"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M3.20398 5H12.796L7.99998 10.481L3.20398 5ZM2.45098 5.659L7.24698 11.139C7.34084 11.2464 7.4566 11.3325 7.58647 11.3915C7.71635 11.4505 7.85734 11.481 7.99998 11.481C8.14262 11.481 8.28362 11.4505 8.41349 11.3915C8.54337 11.3325 8.65912 11.2464 8.75298 11.139L13.549 5.659C14.115 5.012 13.655 4 12.796 4H3.20398C3.01174 3.99984 2.82352 4.05509 2.66187 4.15914C2.50022 4.26319 2.37199 4.41164 2.29253 4.58669C2.21308 4.76175 2.18577 4.956 2.21387 5.14618C2.24197 5.33636 2.32429 5.5144 2.45098 5.659V5.659Z"
-								fill="white"
-							/>
-						</svg>
+		<div id="smooth-wrapper">
+			<div id="smooth-content">
+				<header class="luna9">
+					<a class="luna9__logo" href="https://www.luna9design.com/" target="_blank" rel="noopener">
+						<img src="./assets/img/luna9-logo.png" alt="luna9-logo">
 					</a>
-				</div>
-				<div class="topic topic--pink">
-					<div class="mask"></div>
-					<a href="#journeySoFar">
-						<h3 class="topic-header text-sm">
-							The journey <span>so far</span>
-						</h3>
-						<svg
-							width="16"
-							height="16"
-							viewBox="0 0 16 16"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M3.20398 5H12.796L7.99998 10.481L3.20398 5ZM2.45098 5.659L7.24698 11.139C7.34084 11.2464 7.4566 11.3325 7.58647 11.3915C7.71635 11.4505 7.85734 11.481 7.99998 11.481C8.14262 11.481 8.28362 11.4505 8.41349 11.3915C8.54337 11.3325 8.65912 11.2464 8.75298 11.139L13.549 5.659C14.115 5.012 13.655 4 12.796 4H3.20398C3.01174 3.99984 2.82352 4.05509 2.66187 4.15914C2.50022 4.26319 2.37199 4.41164 2.29253 4.58669C2.21308 4.76175 2.18577 4.956 2.21387 5.14618C2.24197 5.33636 2.32429 5.5144 2.45098 5.659V5.659Z"
-								fill="white"
-							/>
-						</svg>
-					</a>
-				</div>
-				<div class="topic topic--yellow">
-					<div class="mask"></div>
-					<a href="#currentIssues">
-						<h3 class="topic-header text-sm">
-							The issues with <span>current batteries</span>
-						</h3>
-						<svg
-							width="16"
-							height="16"
-							viewBox="0 0 16 16"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M3.20398 5H12.796L7.99998 10.481L3.20398 5ZM2.45098 5.659L7.24698 11.139C7.34084 11.2464 7.4566 11.3325 7.58647 11.3915C7.71635 11.4505 7.85734 11.481 7.99998 11.481C8.14262 11.481 8.28362 11.4505 8.41349 11.3915C8.54337 11.3325 8.65912 11.2464 8.75298 11.139L13.549 5.659C14.115 5.012 13.655 4 12.796 4H3.20398C3.01174 3.99984 2.82352 4.05509 2.66187 4.15914C2.50022 4.26319 2.37199 4.41164 2.29253 4.58669C2.21308 4.76175 2.18577 4.956 2.21387 5.14618C2.24197 5.33636 2.32429 5.5144 2.45098 5.659V5.659Z"
-								fill="white"
-							/>
-						</svg>
-					</a>
-				</div>
-				<div class="topic topic--green">
-					<div class="mask"></div>
-					<a href="#innovativeSolutions">
-						<h3 class="topic-header text-sm">
-							How innovative solutions
-							<span>could power the future</span>
-						</h3>
-						<svg
-							width="16"
-							height="16"
-							viewBox="0 0 16 16"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M3.20398 5H12.796L7.99998 10.481L3.20398 5ZM2.45098 5.659L7.24698 11.139C7.34084 11.2464 7.4566 11.3325 7.58647 11.3915C7.71635 11.4505 7.85734 11.481 7.99998 11.481C8.14262 11.481 8.28362 11.4505 8.41349 11.3915C8.54337 11.3325 8.65912 11.2464 8.75298 11.139L13.549 5.659C14.115 5.012 13.655 4 12.796 4H3.20398C3.01174 3.99984 2.82352 4.05509 2.66187 4.15914C2.50022 4.26319 2.37199 4.41164 2.29253 4.58669C2.21308 4.76175 2.18577 4.956 2.21387 5.14618C2.24197 5.33636 2.32429 5.5144 2.45098 5.659V5.659Z"
-								fill="white"
-							/>
-						</svg>
-					</a>
-				</div>
-			</div>
-		</section>
-		<main>
-			<section class="how-they-work" id="howBatteriesWork">
-				<div class="how-they-work__summary">
-					<h2>How do batteries work?</h2>
-					<div>
-						<p>
-							There are four main components to batteries; An
-							anode, cathode, liquid electrolyte and a separator.
-						</p>
-						<p>
-							The negative anode releases electrons during an
-							electrochemical reaction while the positive cathode
-							acquires them. The separator's function is to
-							prevent physical contact between the anode and
-							cathode while allowing the ions to pass through. The
-							liquid electrolyte acts as a highway allowing the
-							ions to move back and forth.
-						</p>
-					</div>
-					<h5>
-						<p class="point point--one">
-                            <span class="aqua">When charging: </span>
-                            The electrolyte transfers the Ions from the cathode to the anode.
-                        </p>
-                        <p class="point point--two">
-                            <span class="aqua">When the battery is in use: </span>
-                            The electrolyte then transfers the Ions back to the cathode to produce power. 
-                        </p>
-					</h5>
-				</div>
-				<div class="how-they-work__diagram">
-					<!--Battery SVG to go here-->
-					<img
-						class="how-they-work__diagram-img"
-						src="./assets/img/battery-diagram.svg"
-						alt="diagram-of-how-batteries-work"
-					/>
-					<span class="diagram-label diagram-label--cathode"
-						>Cathode</span
-					>
-					<span class="diagram-label diagram-label--anode"
-						>Anode</span
-					>
-					<span class="diagram-label diagram-label--seperator"
-						>Seperator</span
-					>
-					<span class="diagram-label diagram-label--electrolyte"
-						>Electrolyte</span
-					>
-				</div>
-			</section>
-			<section class="battery-timeline-container" id="journeySoFar">
-				<header class="section-header">
-					<h2>The journey so far</h2>
-					<p class="text-lg">
-						The history of the electrochemical cell reads as an
-						exciting tale of innovation and discovery. Here are some
-						key milestones in the scientific journey that lifted us
-						out of the age of clockwork and steam power and
-						propelled us into the realm of in-your-pocket, portable
-						power.
-					</p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="16" viewBox="0 0 48 16">
+						<g id="Battery_icon" data-name="Battery icon" transform="translate(-99.931 -480)">
+							<rect id="Rectangle_36" data-name="Rectangle 36" width="42" height="16" rx="2" transform="translate(99.931 480)" fill="#fff"/>
+							<path id="Rectangle_37" data-name="Rectangle 37" d="M0,0H2A1,1,0,0,1,3,1V9a1,1,0,0,1-1,1H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(144.931 483)" fill="#fff"/>
+							<rect class="luna9__progress-indicator"  id="Rectangle_38" data-name="Rectangle 38" width="2" height="10" transform="translate(101.931 483)" />
+						</g>
+					</svg>
 				</header>
-				<div class="battery-timeline"></div>
-			</section>
-			<section class="current-issues" id="currentIssues">
-				<header class="section-header current-issues-header">
-					<h2>The issues with current batteries</h2>
-					<p class="text-lg">
-						Thanks to their amazing power output and convenient
-						portability, Lithium-ion batteries have revolutionised
-						the way that we live, work and travel.
-						Weight-for-weight, Li-ion batteries can store 6x the
-						amount of energy1 than their lead-acid rivals, making
-						them the clear choice in our constant search for
-						electric power on the move, but what are their
-						limitations?
-					</p>
-				</header>
-				<div class="current-issues__diagram">
-					<img
-						class="current-issues__diagram-img"
-						src="./assets/img/Depleeting battery.svg"
-						alt="battery-outline"
-					/>
-					<div class="current-issues__issue-container">
-						<div class="current-issues__issue">
-							<div class="issue-mask">
-								<img
-									src="./assets/img/Energy density icon.svg"
-									alt="icon-depicting-energy-density"
-								/>
-								<h3>Energy Density</h3>
-							</div>
-							<p class="current-issues__issue-content text-sm">
-								Despite boasting the highest energy density of
-								all modern batteries, range anxiety is still a
-								major limiting factor in the adoption of EVs
-								powered by li-ion. Depending on the model,
-								drivers can expect 100-300 miles from a full
-								charge2.
-							</p>
+				<section class="overview">
+					<div class="particle-box">
+						<div class="particle-box__container" id="particles-js"></div>
+					</div>
+					<h1>The past and the future of the battery</h1>
+					<div class="overview__topics">
+						<div class="topic topic--aqua">
+							<div class="mask"></div>
+							<a href="#howBatteriesWork">
+								<h3 class="topic-header text-sm">
+									How do <span>batteries work?</span>
+								</h3>
+								<svg
+									width="16"
+									height="16"
+									viewBox="0 0 16 16"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M3.20398 5H12.796L7.99998 10.481L3.20398 5ZM2.45098 5.659L7.24698 11.139C7.34084 11.2464 7.4566 11.3325 7.58647 11.3915C7.71635 11.4505 7.85734 11.481 7.99998 11.481C8.14262 11.481 8.28362 11.4505 8.41349 11.3915C8.54337 11.3325 8.65912 11.2464 8.75298 11.139L13.549 5.659C14.115 5.012 13.655 4 12.796 4H3.20398C3.01174 3.99984 2.82352 4.05509 2.66187 4.15914C2.50022 4.26319 2.37199 4.41164 2.29253 4.58669C2.21308 4.76175 2.18577 4.956 2.21387 5.14618C2.24197 5.33636 2.32429 5.5144 2.45098 5.659V5.659Z"
+										fill="white"
+									/>
+								</svg>
+							</a>
 						</div>
-						<div class="current-issues__issue">
-							<div class="issue-mask">
-								<img
-									src="./assets/img/Cost icon.svg"
-									alt="cost-icon"
-								/>
-								<h3>Cost</h3>
-							</div>
-							<p class="current-issues__issue-content text-sm">
-								Li-ion batteries are around 40% more expensive
-								to manufacture than nickel-cadmium cells3 and
-								are cheaper to replace than reuse4, meaning just
-								5% get recycled6. To add to the environmental
-								cost, each tonne of lithium mined uses
-								2,273,000L of water5.
-							</p>
+						<div class="topic topic--pink">
+							<div class="mask"></div>
+							<a href="#journeySoFar">
+								<h3 class="topic-header text-sm">
+									The journey <span>so far</span>
+								</h3>
+								<svg
+									width="16"
+									height="16"
+									viewBox="0 0 16 16"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M3.20398 5H12.796L7.99998 10.481L3.20398 5ZM2.45098 5.659L7.24698 11.139C7.34084 11.2464 7.4566 11.3325 7.58647 11.3915C7.71635 11.4505 7.85734 11.481 7.99998 11.481C8.14262 11.481 8.28362 11.4505 8.41349 11.3915C8.54337 11.3325 8.65912 11.2464 8.75298 11.139L13.549 5.659C14.115 5.012 13.655 4 12.796 4H3.20398C3.01174 3.99984 2.82352 4.05509 2.66187 4.15914C2.50022 4.26319 2.37199 4.41164 2.29253 4.58669C2.21308 4.76175 2.18577 4.956 2.21387 5.14618C2.24197 5.33636 2.32429 5.5144 2.45098 5.659V5.659Z"
+										fill="white"
+									/>
+								</svg>
+							</a>
 						</div>
-						<div class="current-issues__issue">
-							<div class="issue-mask">
-								<img
-									src="./assets/img/Thermal stability icon.svg"
-									alt="thermal-stability-icon"
-								/>
-								<h3>Thermal Capacity</h3>
-							</div>
-							<p class="current-issues__issue-content text-sm">
-								LI-ion batteries are sensitive to high
-								temperatures and, despite having safety features
-								built in, can catch fire if there are any faulty
-								or compromised parts. This also makes recycling
-								tricky, as they can explode if disassembled
-								incorrectly.
-							</p>
+						<div class="topic topic--yellow">
+							<div class="mask"></div>
+							<a href="#currentIssues">
+								<h3 class="topic-header text-sm">
+									The issues with <span>current batteries</span>
+								</h3>
+								<svg
+									width="16"
+									height="16"
+									viewBox="0 0 16 16"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M3.20398 5H12.796L7.99998 10.481L3.20398 5ZM2.45098 5.659L7.24698 11.139C7.34084 11.2464 7.4566 11.3325 7.58647 11.3915C7.71635 11.4505 7.85734 11.481 7.99998 11.481C8.14262 11.481 8.28362 11.4505 8.41349 11.3915C8.54337 11.3325 8.65912 11.2464 8.75298 11.139L13.549 5.659C14.115 5.012 13.655 4 12.796 4H3.20398C3.01174 3.99984 2.82352 4.05509 2.66187 4.15914C2.50022 4.26319 2.37199 4.41164 2.29253 4.58669C2.21308 4.76175 2.18577 4.956 2.21387 5.14618C2.24197 5.33636 2.32429 5.5144 2.45098 5.659V5.659Z"
+										fill="white"
+									/>
+								</svg>
+							</a>
 						</div>
-						<div class="current-issues__issue">
-							<div class="issue-mask">
-								<img
-									src="./assets/img/Toxic materials icon.svg"
-									alt="hazardous-material-icon"
-								/>
-								<h3>Toxic Materials</h3>
-							</div>
-							<p class="current-issues__issue-content text-sm">
-								Extracting raw materials is a costly process and
-								takes huge quantities of energy and water. These
-								materials are relatively scarce, only available
-								in certain locations and are attached to
-								numerous human rights and environmental concerns
-								throughout the supply chain.
-							</p>
+						<div class="topic topic--green">
+							<div class="mask"></div>
+							<a href="#innovativeSolutions">
+								<h3 class="topic-header text-sm">
+									How innovative solutions
+									<span>could power the future</span>
+								</h3>
+								<svg
+									width="16"
+									height="16"
+									viewBox="0 0 16 16"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M3.20398 5H12.796L7.99998 10.481L3.20398 5ZM2.45098 5.659L7.24698 11.139C7.34084 11.2464 7.4566 11.3325 7.58647 11.3915C7.71635 11.4505 7.85734 11.481 7.99998 11.481C8.14262 11.481 8.28362 11.4505 8.41349 11.3915C8.54337 11.3325 8.65912 11.2464 8.75298 11.139L13.549 5.659C14.115 5.012 13.655 4 12.796 4H3.20398C3.01174 3.99984 2.82352 4.05509 2.66187 4.15914C2.50022 4.26319 2.37199 4.41164 2.29253 4.58669C2.21308 4.76175 2.18577 4.956 2.21387 5.14618C2.24197 5.33636 2.32429 5.5144 2.45098 5.659V5.659Z"
+										fill="white"
+									/>
+								</svg>
+							</a>
 						</div>
 					</div>
-				</div>
-			</section>
-		</main>
-		<section
-			class="innovative-solutions-container"
-			id="innovativeSolutions"
-		>
-			<header class="section-header solutions-header">
-				<h2>How innovative solutions could power the future</h2>
-				<p class="text-lg">
-					Exciting innovations are on the horizon, with the potential
-					to revolutionise batteries and how we use them, here are a
-					few we're particularly excited about.
-				</p>
-			</header>
-			<div class="innovative-solutions">
-				<div
-					class="innovative-solutions__solution silicon-without-the-cons"
+				</section>
+				<main>
+					<section class="how-they-work" id="howBatteriesWork">
+						<div class="how-they-work__summary">
+							<h2>How do batteries work?</h2>
+							<div>
+								<p>
+									There are four main components to batteries; An
+									anode, cathode, liquid electrolyte and a separator.
+								</p>
+								<p>
+									The negative anode releases electrons during an
+									electrochemical reaction while the positive cathode
+									acquires them. The separator's function is to
+									prevent physical contact between the anode and
+									cathode while allowing the ions to pass through. The
+									liquid electrolyte acts as a highway allowing the
+									ions to move back and forth.
+								</p>
+							</div>
+							<h5>
+								<p class="point point--one">
+									<span class="aqua">When charging: </span>
+									The electrolyte transfers the Ions from the cathode to the anode.
+								</p>
+								<p class="point point--two">
+									<span class="aqua">When the battery is in use: </span>
+									The electrolyte then transfers the Ions back to the cathode to produce power. 
+								</p>
+							</h5>
+						</div>
+						<div class="how-they-work__diagram">
+							<!--Battery SVG to go here-->
+							<img
+								class="how-they-work__diagram-img"
+								src="./assets/img/battery-diagram.svg"
+								alt="diagram-of-how-batteries-work"
+							/>
+							<span class="diagram-label diagram-label--cathode"
+								>Cathode</span
+							>
+							<span class="diagram-label diagram-label--anode"
+								>Anode</span
+							>
+							<span class="diagram-label diagram-label--seperator"
+								>Seperator</span
+							>
+							<span class="diagram-label diagram-label--electrolyte"
+								>Electrolyte</span
+							>
+						</div>
+					</section>
+					<section class="battery-timeline-container" id="journeySoFar">
+						<header class="section-header">
+							<h2>The journey so far</h2>
+							<p class="text-lg">
+								The history of the electrochemical cell reads as an
+								exciting tale of innovation and discovery. Here are some
+								key milestones in the scientific journey that lifted us
+								out of the age of clockwork and steam power and
+								propelled us into the realm of in-your-pocket, portable
+								power.
+							</p>
+						</header>
+						<div class="battery-timeline"></div>
+					</section>
+					<section class="current-issues" id="currentIssues">
+						<header class="section-header current-issues-header">
+							<h2>The issues with current batteries</h2>
+							<p class="text-lg">
+								Thanks to their amazing power output and convenient
+								portability, Lithium-ion batteries have revolutionised
+								the way that we live, work and travel.
+								Weight-for-weight, Li-ion batteries can store 6x the
+								amount of energy1 than their lead-acid rivals, making
+								them the clear choice in our constant search for
+								electric power on the move, but what are their
+								limitations?
+							</p>
+						</header>
+						<div class="current-issues__diagram">
+							<img
+								class="current-issues__diagram-img"
+								src="./assets/img/Depleeting battery.svg"
+								alt="battery-outline"
+							/>
+							<div class="current-issues__issue-container">
+								<div class="current-issues__issue">
+									<div class="issue-mask">
+										<img
+											src="./assets/img/Energy density icon.svg"
+											alt="icon-depicting-energy-density"
+										/>
+										<h3>Energy Density</h3>
+									</div>
+									<p class="current-issues__issue-content text-sm">
+										Despite boasting the highest energy density of
+										all modern batteries, range anxiety is still a
+										major limiting factor in the adoption of EVs
+										powered by li-ion. Depending on the model,
+										drivers can expect 100-300 miles from a full
+										charge2.
+									</p>
+								</div>
+								<div class="current-issues__issue">
+									<div class="issue-mask">
+										<img
+											src="./assets/img/Cost icon.svg"
+											alt="cost-icon"
+										/>
+										<h3>Cost</h3>
+									</div>
+									<p class="current-issues__issue-content text-sm">
+										Li-ion batteries are around 40% more expensive
+										to manufacture than nickel-cadmium cells3 and
+										are cheaper to replace than reuse4, meaning just
+										5% get recycled6. To add to the environmental
+										cost, each tonne of lithium mined uses
+										2,273,000L of water5.
+									</p>
+								</div>
+								<div class="current-issues__issue">
+									<div class="issue-mask">
+										<img
+											src="./assets/img/Thermal stability icon.svg"
+											alt="thermal-stability-icon"
+										/>
+										<h3>Thermal Capacity</h3>
+									</div>
+									<p class="current-issues__issue-content text-sm">
+										LI-ion batteries are sensitive to high
+										temperatures and, despite having safety features
+										built in, can catch fire if there are any faulty
+										or compromised parts. This also makes recycling
+										tricky, as they can explode if disassembled
+										incorrectly.
+									</p>
+								</div>
+								<div class="current-issues__issue">
+									<div class="issue-mask">
+										<img
+											src="./assets/img/Toxic materials icon.svg"
+											alt="hazardous-material-icon"
+										/>
+										<h3>Toxic Materials</h3>
+									</div>
+									<p class="current-issues__issue-content text-sm">
+										Extracting raw materials is a costly process and
+										takes huge quantities of energy and water. These
+										materials are relatively scarce, only available
+										in certain locations and are attached to
+										numerous human rights and environmental concerns
+										throughout the supply chain.
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+				</main>
+				<section
+					class="innovative-solutions-container"
+					id="innovativeSolutions"
 				>
-					<div class="innovative-solutions__animation">
-						<img
-							class="battery-slot"
-							src="./assets/img/battery-slot.svg"
-							alt="battery-slot"
-						/>
-						<img
-							class="battery-cell"
-							src="./assets/img/battery-cell.svg"
-							alt="battery-cell"
-						/>
-						<lottie-player
-							class="lottie-animation"
-							src="./assets/animations/Silicon - 1.json"
-							background="transparent"
-							speed="1"
-							style="width: 152px; height: 152px"
-							loop
-							autoplay
-						></lottie-player>
-					</div>
-					<h5>Silicon without the cons</h5>
-					<p>
-						Silicon lithium ion batteries use a silicon anode to
-						create higher energy density. One small problem? Silicon
-						swells by 300% when charged. Enovix have solved these
-						growing pains with an innovative constraint system that
-						stops the battery from going supersized. It means 50%
-						more energy than what’s on the market and lighter
-						electronics with longer battery life.
-					</p>
-				</div>
-				<div class="innovative-solutions__solution solid-state">
-					<div class="innovative-solutions__animation">
-						<img
-							class="battery-slot"
-							src="./assets/img/battery-slot.svg"
-							alt="battery-slot"
-						/>
-						<img
-							class="battery-cell"
-							src="./assets/img/battery-cell.svg"
-							alt="battery-cell"
-						/>
-						<lottie-player
-							class="lottie-animation"
-							src="./assets/animations/Solid_state.json"
-							background="transparent"
-							speed="1"
-							style="width: 152px; height: 152px"
-							loop
-							autoplay
-						></lottie-player>
-					</div>
-					<h5>Solid state</h5>
-					<p>
-						Lithium metal anodes offer significantly more energy
-						density than their carbon based cousins, but lithium
-						tends to react with the liquid electrolyte, causing it
-						to degrade, short-circuit, or even explode.
-						Quantumscape’s solution is to swap the liquid with a
-						solid ceramic electrolyte that lets the ions pass
-						through it just as easily. The outcome? Higher energy
-						density, lower cost, longer life and enhanced safety.
-					</p>
-				</div>
-				<div
-					class="innovative-solutions__solution sustainable-solutions"
-				>
-					<div class="innovative-solutions__animation">
-						<img
-							class="battery-slot"
-							src="./assets/img/battery-slot.svg"
-							alt="battery-slot"
-						/>
-						<img
-							class="battery-cell"
-							src="./assets/img/battery-cell.svg"
-							alt="battery-cell"
-						/>
-						<lottie-player
-							class="lottie-animation"
-							src="./assets/animations/Sodium_ion.json"
-							background="transparent"
-							speed="1"
-							style="width: 152px; height: 152px"
-							loop
-							autoplay
-						></lottie-player>
-					</div>
-					<h5>Sustainable Solutions</h5>
-					<p>
-						Sodium ion batteries offer a cheap, abundant, and
-						environmentally friendly alternative to their
-						contentious lithium counterparts. But limited energy
-						density and a much shorter cycle life have held them
-						back. The Pacific Northwest National Laboratory are
-						changing this with a new electrolyte recipe and a design
-						that holds 90% of its capacity after 300 cycles. It’s
-						also impervious to temperature changes and can operate
-						at high voltages making it an increasingly viable and
-						stable option.
-					</p>
-				</div>
-				<div class="innovative-solutions__solution seaweed-seperator">
-					<div class="innovative-solutions__animation">
-						<img
-							class="battery-slot"
-							src="./assets/img/battery-slot.svg"
-							alt="battery-slot"
-						/>
-						<img
-							class="battery-cell"
-							src="./assets/img/battery-cell.svg"
-							alt="battery-cell"
-						/>
-						<lottie-player
-							class="lottie-animation"
-							src="./assets/animations/Seaweed.json"
-							background="transparent"
-							speed="1"
-							style="width: 152px; height: 152px"
-							loop
-							autoplay
-						></lottie-player>
-					</div>
-					<h5>Seaweed Seperator</h5>
-					<p>
-						A team from the University of Bristol are using
-						nanomaterials from seaweed as a solution to the dendrite
-						growth that causes sodium metal batteries to
-						short-circuit. Not only does the innovative separator
-						stop the crystals but it also improves the performance
-						of the batteries. Enhancing our capability to move away
-						from the scarce materials and unethical practices linked
-						to Lithium ion batteries.
-					</p>
-				</div>
-			</div>
-		</section>
-		<section class="contact">
-			<div class="contact__container">
-				<img
-					class="contact__img"
-					src="./assets/img/Contact battery.svg"
-					alt="battery-outline"
-				/>
-				<img
-					class="contact__img-spring"
-					src="./assets/img/Sping_uncompressed.svg"
-					alt="battery-spring-compressed"
-				/>
-				<div class="contact__content">
-					<h2>Contact</h2>
-					<div>
-						<p>
-							To find out more about how we’re showcasing
-							tomorrow’s technology, get in touch at:
+					<header class="section-header solutions-header">
+						<h2>How innovative solutions could power the future</h2>
+						<p class="text-lg">
+							Exciting innovations are on the horizon, with the potential
+							to revolutionise batteries and how we use them, here are a
+							few we're particularly excited about.
 						</p>
-						<a
-							class="contact__btn"
-							href="https://www.luna9design.com/"
-							target="_blank"
-							rel="noopener"
-							>luna9design.com</a
+					</header>
+					<div class="innovative-solutions">
+						<div
+							class="innovative-solutions__solution silicon-without-the-cons"
 						>
+							<div class="innovative-solutions__animation">
+								<img
+									class="battery-slot"
+									src="./assets/img/battery-slot.svg"
+									alt="battery-slot"
+								/>
+								<img
+									class="battery-cell"
+									src="./assets/img/battery-cell.svg"
+									alt="battery-cell"
+								/>
+								<lottie-player
+									class="lottie-animation"
+									src="./assets/animations/Silicon - 1.json"
+									background="transparent"
+									speed="1"
+									style="width: 152px; height: 152px"
+									loop
+									autoplay
+								></lottie-player>
+							</div>
+							<h3>Silicon without the cons</h3>
+							<p>
+								Silicon lithium ion batteries use a silicon anode to
+								create higher energy density. One small problem? Silicon
+								swells by 300% when charged. Enovix have solved these
+								growing pains with an innovative constraint system that
+								stops the battery from going supersized. It means 50%
+								more energy than what’s on the market and lighter
+								electronics with longer battery life.
+							</p>
+						</div>
+						<div class="innovative-solutions__solution solid-state">
+							<div class="innovative-solutions__animation">
+								<img
+									class="battery-slot"
+									src="./assets/img/battery-slot.svg"
+									alt="battery-slot"
+								/>
+								<img
+									class="battery-cell"
+									src="./assets/img/battery-cell.svg"
+									alt="battery-cell"
+								/>
+								<lottie-player
+									class="lottie-animation"
+									src="./assets/animations/Solid_state.json"
+									background="transparent"
+									speed="1"
+									style="width: 152px; height: 152px"
+									loop
+									autoplay
+								></lottie-player>
+							</div>
+							<h3>Solid state</h3>
+							<p>
+								Lithium metal anodes offer significantly more energy
+								density than their carbon based cousins, but lithium
+								tends to react with the liquid electrolyte, causing it
+								to degrade, short-circuit, or even explode.
+								Quantumscape’s solution is to swap the liquid with a
+								solid ceramic electrolyte that lets the ions pass
+								through it just as easily. The outcome? Higher energy
+								density, lower cost, longer life and enhanced safety.
+							</p>
+						</div>
+						<div
+							class="innovative-solutions__solution sustainable-solutions"
+						>
+							<div class="innovative-solutions__animation">
+								<img
+									class="battery-slot"
+									src="./assets/img/battery-slot.svg"
+									alt="battery-slot"
+								/>
+								<img
+									class="battery-cell"
+									src="./assets/img/battery-cell.svg"
+									alt="battery-cell"
+								/>
+								<lottie-player
+									class="lottie-animation"
+									src="./assets/animations/Sodium_ion.json"
+									background="transparent"
+									speed="1"
+									style="width: 152px; height: 152px"
+									loop
+									autoplay
+								></lottie-player>
+							</div>
+							<h3>Sustainable Solutions</h3>
+							<p>
+								Sodium ion batteries offer a cheap, abundant, and
+								environmentally friendly alternative to their
+								contentious lithium counterparts. But limited energy
+								density and a much shorter cycle life have held them
+								back. The Pacific Northwest National Laboratory are
+								changing this with a new electrolyte recipe and a design
+								that holds 90% of its capacity after 300 cycles. It’s
+								also impervious to temperature changes and can operate
+								at high voltages making it an increasingly viable and
+								stable option.
+							</p>
+						</div>
+						<div class="innovative-solutions__solution seaweed-seperator">
+							<div class="innovative-solutions__animation">
+								<img
+									class="battery-slot"
+									src="./assets/img/battery-slot.svg"
+									alt="battery-slot"
+								/>
+								<img
+									class="battery-cell"
+									src="./assets/img/battery-cell.svg"
+									alt="battery-cell"
+								/>
+								<lottie-player
+									class="lottie-animation"
+									src="./assets/animations/Seaweed.json"
+									background="transparent"
+									speed="1"
+									style="width: 152px; height: 152px"
+									loop
+									autoplay
+								></lottie-player>
+							</div>
+							<h3>Seaweed Seperator</h3>
+							<p>
+								A team from the University of Bristol are using
+								nanomaterials from seaweed as a solution to the dendrite
+								growth that causes sodium metal batteries to
+								short-circuit. Not only does the innovative separator
+								stop the crystals but it also improves the performance
+								of the batteries. Enhancing our capability to move away
+								from the scarce materials and unethical practices linked
+								to Lithium ion batteries.
+							</p>
+						</div>
 					</div>
-				</div>
+				</section>
+				<section class="contact">
+					<div class="contact__container">
+						<img
+							class="contact__img"
+							src="./assets/img/Contact battery.svg"
+							alt="battery-outline"
+						/>
+						<img
+							class="contact__img-spring"
+							src="./assets/img/Sping_uncompressed.svg"
+							alt="battery-spring-compressed"
+						/>
+						<div class="contact__content">
+							<h2>Contact</h2>
+							<div>
+								<p>
+									To find out more about how we’re showcasing
+									tomorrow’s technology, get in touch at:
+								</p>
+								<a
+									class="contact__btn"
+									href="https://www.luna9design.com/"
+									target="_blank"
+									rel="noopener"
+									>luna9design.com</a
+								>
+							</div>
+						</div>
+					</div>
+				</section>
+				<svg class="timeline-svg" xmlns="http://www.w3.org/2000/svg" width="776.305" height="5741.607" viewBox="0 0 776.305 5741.607">
+					<path id="timeline" d="M-17721.5-19366v1090.146H-18271v629.225h770.3v726.01H-18271v721.628h549.5v814.313H-18271v759.993h769.523l-.023,800.787h-551.434v199.506" transform="translate(18274 19366)" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="6"/>
+				</svg>		  
+				<footer class="footer"></footer>
 			</div>
-		</section>
+		</div>
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
 			integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="

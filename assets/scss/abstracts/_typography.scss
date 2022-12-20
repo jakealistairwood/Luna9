@@ -4,11 +4,22 @@
 h1 {
     @include font-styles($font-xxl, $fw-400, $primary-font);
     line-height: 1.1;
+    @include for-lg-mobiles {
+        font-size: 3.2rem;
+        width: 80% !important;
+        margin-left: 0 !important;
+    }
 }
 
 h2 { 
     @include font-styles($font-xl, $fw-400, $primary-font); 
     line-height: 4.8125rem;
+    @include for-lg-mobiles {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        width: 50%;
+        margin-top: 4rem;
+    }
 }
 
 h3 { @include font-styles($font-lg, $fw-400, $primary-font); }
@@ -19,4 +30,4 @@ p { @include font-styles($font-rg, $fw-400, $secondary-font); }
 
 .text-lg { @include font-styles($font-md-24, $fw-400, $primary-font); }
 
-li { @include font-styles($font-rg, $fw-400, $secondary-font); }
+li { @include font-styles($font-rg, $fw-400, $secondary-font); line-height: 27px; }

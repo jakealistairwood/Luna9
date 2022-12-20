@@ -17,8 +17,20 @@
     margin: 0 auto;
 }
 
+@mixin sm-container($max-width) {
+    max-width: $max-width;
+    width: 90%;
+    margin: 0 auto;
+}
+
 @mixin font-styles($size, $weight, $family) {
     font-size: $size;
     font-weight: $weight;
     font-family: $family;
+}
+
+@mixin for-lg-mobiles {
+    @media screen and (max-width: 500px) {
+        @content;
+    }
 }
