@@ -37,7 +37,14 @@ console.log(isMobileDevice, isNotMobileDevice);
 
 let atomNodesArr = [];
 
-const toggleSourcesDropdown = () => document.querySelector('.footer__sources').classList.toggle('active');
+const toggleSourcesDropdown = () => {
+    document.querySelector('.footer__sources').classList.toggle('active');
+    if(document.querySelector('.footer__sources').classList.contains('active')) {
+        document.querySelector('.footer__arrow-icon').style.transform = 'rotate(180deg)';
+    } else {
+        document.querySelector('.footer__arrow-icon').style.transform = 'rotate(0deg)';
+    }
+};
 
 const generateRandomNumberWithinRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
