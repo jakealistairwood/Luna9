@@ -601,6 +601,25 @@ img {
             grid-row: 4/5;
             @include for-lg-mobiles { margin-right: auto; }
         }
+
+        &__reference {
+            @include custom-flex(row, space-between, center);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid $secondary-color;
+            max-width: 120px;
+            margin-top: 2rem;
+            transition: all 0.3s ease-in-out;
+
+            span { font-weight: $fw-700;}
+
+            &:hover {
+                border-bottom: 1px solid $palegreen;
+
+                svg path {
+                    fill: $palegreen;
+                }
+            }
+        }
     }
 }
 
@@ -681,7 +700,69 @@ img {
     position: fixed !important;
 }
 
-.footer { min-height: 100vh;}
+.footer { 
+    // min-height: 100vh;
+    padding-block: 5rem;
+    @include lg-container(1280px);
+    @include for-lg-mobiles {
+        width: 90%;
+        margin-inline: auto;
+    }
+
+    &__btn {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid $secondary-color;
+        @include custom-flex(row, flex-start, center);
+        column-gap: 2rem;
+        width: 100%;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        padding-bottom: 0.5rem;
+
+        h3 { color: $secondary-color; }
+
+        &:hover {
+            border-bottom: 1px solid $yellow;
+
+            svg path {
+                fill: $yellow;
+            }
+        }
+    }
+
+    &__sources { 
+        display: none;
+        padding-block: 3rem;
+
+        li {
+            font-size: 1rem;
+            list-style-position: inside;
+            padding-left: 5rem; 
+            @include for-lg-mobiles { padding-left: 0; }
+            a {
+                color: $yellow;
+                text-decoration: underline;
+            }
+            span { color: $secondary-color; }
+        }
+    }
+
+    &__sources.active {
+        display: flex;
+        flex-direction: column;
+        column-gap: 5rem;
+        animation: fadeInElement ease 1s;
+        padding-inline: 15%;
+        margin-inline: auto;
+        border-bottom: 1px solid $secondary-color;
+
+        @include for-lg-mobiles {
+            padding-inline: 0;
+            row-gap: 1rem;
+        }
+    }
+}
 
 // @keyframes shakeAtom {
 //     10%, 90% { transform: translate3d(-1px, 0, 0); }

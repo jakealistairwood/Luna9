@@ -17,6 +17,7 @@ const howTheyWorkDiagram = document.querySelector('.how-they-work__diagram');
 const jsfContainer = document.querySelector('.battery-timeline-container');
 const batteryIssuesDiagram = document.querySelector('.current-issues__diagram-img');
 const timelineSVG = document.querySelector('.timeline-svg');
+const sourcesBtn = document.querySelector('.footer__btn');
 
 /*  ==============================================================================
 
@@ -35,6 +36,8 @@ let isNotMobileDevice = window.matchMedia('(min-width: 501px)');
 console.log(isMobileDevice, isNotMobileDevice);
 
 let atomNodesArr = [];
+
+const toggleSourcesDropdown = () => document.querySelector('.footer__sources').classList.toggle('active');
 
 const generateRandomNumberWithinRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
@@ -110,6 +113,12 @@ console.log(htwDiagramDocHeight);
 timelineSVG.style.position = "absolute";
 timelineSVG.style.top = htwDiagramDocHeight;
 timelineSVG.style.bottom - jsfContainerBottomPos;
+
+
+sourcesBtn.addEventListener('click', toggleSourcesDropdown);
+
+
+
 
 /*  ==============================================================================
 

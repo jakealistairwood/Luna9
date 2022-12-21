@@ -805,6 +805,26 @@ img {
     margin-right: auto;
   }
 }
+.innovative-solutions-container .innovative-solutions__reference {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #fff;
+  max-width: 120px;
+  margin-top: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+.innovative-solutions-container .innovative-solutions__reference span {
+  font-weight: 700;
+}
+.innovative-solutions-container .innovative-solutions__reference:hover {
+  border-bottom: 1px solid #00FF6C;
+}
+.innovative-solutions-container .innovative-solutions__reference:hover svg path {
+  fill: #00FF6C;
+}
 
 .contact {
   min-height: 60vh;
@@ -884,7 +904,75 @@ img {
 }
 
 .footer {
-  min-height: 100vh;
+  padding-block: 5rem;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 500px) {
+  .footer {
+    width: 90%;
+    margin-inline: auto;
+  }
+}
+.footer__btn {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 2rem;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  padding-bottom: 0.5rem;
+}
+.footer__btn h3 {
+  color: #fff;
+}
+.footer__btn:hover {
+  border-bottom: 1px solid #FFF501;
+}
+.footer__btn:hover svg path {
+  fill: #FFF501;
+}
+.footer__sources {
+  display: none;
+  padding-block: 3rem;
+}
+.footer__sources li {
+  font-size: 1rem;
+  list-style-position: inside;
+  padding-left: 5rem;
+}
+@media screen and (max-width: 500px) {
+  .footer__sources li {
+    padding-left: 0;
+  }
+}
+.footer__sources li a {
+  color: #FFF501;
+  text-decoration: underline;
+}
+.footer__sources li span {
+  color: #fff;
+}
+.footer__sources.active {
+  display: flex;
+  flex-direction: column;
+  column-gap: 5rem;
+  animation: fadeInElement ease 1s;
+  padding-inline: 15%;
+  margin-inline: auto;
+  border-bottom: 1px solid #fff;
+}
+@media screen and (max-width: 500px) {
+  .footer__sources.active {
+    padding-inline: 0;
+    row-gap: 1rem;
+  }
 }
 
 @keyframes fadeInElement {
