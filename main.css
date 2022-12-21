@@ -129,8 +129,19 @@ img {
 .section-header h2 {
   width: 50%;
 }
+@media screen and (max-width: 500px) {
+  .section-header h2 {
+    width: 100%;
+  }
+}
 .section-header p {
   width: 50%;
+}
+@media screen and (max-width: 500px) {
+  .section-header p {
+    width: 100%;
+    font-size: 1rem;
+  }
 }
 
 .luna9 {
@@ -148,6 +159,11 @@ img {
   left: 0;
   top: 0rem;
   z-index: 1000;
+}
+@media screen and (max-width: 500px) {
+  .luna9 {
+    padding-inline: 5%;
+  }
 }
 .luna9__logo {
   max-width: 75px;
@@ -288,8 +304,18 @@ img {
   opacity: 0;
   visibility: hidden;
 }
+@media screen and (max-width: 500px) {
+  .how-they-work__summary {
+    margin-top: -5rem;
+  }
+}
 .how-they-work__summary h2 {
   margin-bottom: 1.5rem;
+}
+@media screen and (max-width: 500px) {
+  .how-they-work__summary h2 {
+    margin-block: 0.5rem;
+  }
 }
 .how-they-work__summary div {
   display: flex;
@@ -301,6 +327,8 @@ img {
 @media screen and (max-width: 500px) {
   .how-they-work__summary div {
     flex-direction: column;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
   }
 }
 .how-they-work__summary div p {
@@ -311,7 +339,7 @@ img {
 @media screen and (max-width: 500px) {
   .how-they-work__summary div p {
     width: 100%;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 .how-they-work__summary div p:first-child {
@@ -321,7 +349,7 @@ img {
 @media screen and (max-width: 500px) {
   .how-they-work__summary div p:first-child {
     width: 100%;
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-bottom: 1rem;
   }
 }
@@ -331,6 +359,14 @@ img {
   font-size: 1.5rem;
   margin-block: 2rem;
   font-weight: 400;
+}
+@media screen and (max-width: 500px) {
+  .how-they-work__summary h5 {
+    margin-top: 0;
+  }
+  .how-they-work__summary h5 .point {
+    font-size: 0.9rem;
+  }
 }
 .how-they-work__summary h5 .point--one {
   visibility: hidden;
@@ -598,12 +634,12 @@ img {
     display: flex;
     flex-direction: row-reverse;
     border-bottom: 1px solid #FFF501;
+    background-color: transparent;
   }
 }
 .current-issues__issue .issue-mask img {
   height: 150px;
   margin-bottom: 1rem;
-  margin-inline: auto;
 }
 .current-issues__issue .issue-mask h3 {
   color: #FFF501;
@@ -621,6 +657,12 @@ img {
 .current-issues__issue-content {
   opacity: 0;
   visibility: hidden;
+}
+@media screen and (max-width: 500px) {
+  .current-issues__issue-content {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .innovative-solutions-container {
@@ -690,6 +732,11 @@ img {
 .contact__container {
   position: relative;
 }
+@media screen and (max-width: 500px) {
+  .contact__img {
+    display: none;
+  }
+}
 .contact__content {
   display: flex;
   justify-content: center;
@@ -721,6 +768,11 @@ img {
   left: -8rem;
   z-index: -1;
 }
+@media screen and (max-width: 500px) {
+  .contact__img-spring {
+    display: none;
+  }
+}
 .contact__btn {
   padding: 0.5rem 1rem;
   background-color: #fff;
@@ -733,6 +785,7 @@ img {
 }
 
 .timeline-svg {
+  display: none;
   position: absolute;
   z-index: -1;
   opacity: 0.5;

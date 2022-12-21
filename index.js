@@ -29,28 +29,36 @@ let bodyScrollHeight = body.scrollHeight;
 
 console.log(bodyHeight, bodyScrollHeight);
 
+let isMobileDevice = window.matchMedia('(max-width: 500px)');
+let isNotMobileDevice = window.matchMedia('(min-width: 501px)');
+
+console.log(isMobileDevice, isNotMobileDevice);
+
 let atomNodesArr = [];
 
 const generateRandomNumberWithinRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
-const createAtom = (atomOptions) => {
+const createAtom = (atomOptions, isMob) => {
     const { id, particleType, atomSize, imgOptions, coordinates } = atomOptions;
     let atom = document.createElement('img');
     let classesToAdd = ["atom", `${particleType}--${id}`];
-    classesToAdd.forEach(clName => {
-        atom.classList.add(clName);
-    })
+    classesToAdd.forEach(clName => atom.classList.add(clName));
     atom.src = imgOptions.src;
     atom.alt = imgOptions.alt;
     atom.style.width = `${atomSize} px`;
     atom.style.height =`${atomSize} px`;
-    atom.style.left = generateRandomNumberWithinRange(coordinates.xMin, coordinates.xMax) + "px";
-    atom.style.top = generateRandomNumberWithinRange(coordinates.yMin, coordinates.yMax) + "px";
+
+    if(isMob.matches) {
+        atom.style.left = generateRandomNumberWithinRange(coordinates.mobile.xMin, coordinates.mobile.xMax) + "px";
+        atom.style.top = generateRandomNumberWithinRange(coordinates.mobile.yMin, coordinates.mobile.yMax) + "px";
+    } else {
+        atom.style.left = generateRandomNumberWithinRange(coordinates.desktop.xMin, coordinates.desktop.xMax) + "px"; 
+        atom.style.top = generateRandomNumberWithinRange(coordinates.desktop.yMin, coordinates.desktop.yMax) + "px";
+    }
     atomNodesArr.push({
         id: id,
         x: atom.style.left
     });
-    console.log(atomNodesArr);
     return atom;
 }
 
@@ -64,12 +72,20 @@ for(let i = 0; i < generateRandomNumberWithinRange(30, 200); i++) {
             alt: 'turquoise-gradient-sphere-depicting-atom'
         },
         coordinates: {
-            xMin: 70,
-            xMax: 350,
-            yMin: 70,
-            yMax: 300
+            mobile: {
+                xMin: 20,
+                xMax: 100,
+                yMin: 20,
+                yMax: 88
+            },
+            desktop: {
+                xMin: 70,
+                xMax: 350,
+                yMin: 70,
+                yMax: 300
+            }
         }
-    }))
+    }, isMobileDevice))
 }
 
 timelineInfo.map(el => {
@@ -112,18 +128,6 @@ timelineSVG.style.bottom - jsfContainerBottomPos;
 let mq = gsap.matchMedia();
 console.log(mq);
 
-
-
-// // Mobile GSAP
-// mq.add("(max-width: 500px)", () => {
-
-// })
-
-
-
-
-
-
 /* ====  Navbar ==== */
 
 let navTimeline = gsap.timeline({
@@ -140,7 +144,7 @@ navTimeline.to('.luna9__progress-indicator', {
     scrollTrigger: {
         trigger: 'body',
         start: "top 1%",
-        end: `+=20916`,
+        end: `+=45916`,
         scrub: true
     }
 })
@@ -162,7 +166,10 @@ heroTimeline.from('.topic-header', {
 * SECTION - How Batteries Work? 
 */
 
+
 let htwTl = gsap.timeline();
+let atoms = gsap.utils.toArray('.atom');
+
 htwTl.to('.how-they-work__summary', {
     autoAlpha: 1,
     duration: 1,
@@ -172,75 +179,118 @@ htwTl.to('.how-they-work__summary', {
         scrub: true
     }
 });
-// }).to('.atom', {
-//     x: generateRandomNumberWithinRange(750, 830) + "px",
-//     stagger: 0.2,
-//     duration: 1,
-//     scrollTrigger: {
-//         trigger: '.how-they-work',
-//         start: "top top", 
-//         end: "+=4000px",
-//         pin: true,
-//         duration: 5,
-//         scrub: true
-//     }
-// });
 
-
-// const moveAtoms = (atomsArr) => {
-//     atomsArr.forEach(atom => {
-//         cathodeToAnodeTl.to(atom, {
-//             x: generateRandomNumberWithinRange(30, 70) + "px",
-//             stagger: 1,
-//             duration: 30
-//         })
-//     })
-// }
-let atoms = gsap.utils.toArray('.atom');
 
 const getStartingXPos = (el) => {
     let elID = Number(el.classList[1].toString().substring(5, 7));
     let atomInQuestion = atomNodesArr.filter(atom => atom.id == elID);
     console.log(atomInQuestion[0].x)
     return atomInQuestion[0].x;
-    
 } 
 
-let htwDiagramTl = gsap.timeline({
-    scrollTrigger: {
-        trigger: '.how-they-work',
-        start: 'top top',
-        end: '+=20000px',
-        pin: true,
-        scrub: true
-    }
+
+mq.add({
+    isMobile: "(max-width: 500px)",
+    isDesktop: "(min-width: 501px)",
+}, (context) => {
+    let { isMobile, isDesktop } = context.conditions;
+    let htwDiagramTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: isDesktop ? '.how-they-work' : '.how-they-work',
+            start: isDesktop ? 'top top' : 'center center',
+            end: isDesktop ? '+=20000px' : '+=10000px',
+            pin: true,
+            markers: true,
+            scrub: true,
+            pinSpacing: true
+        }
+    })
+    htwDiagramTl.to('.point--one', {
+        autoAlpha: 1
+    })
+    atoms.forEach(atom => {
+        htwDiagramTl.to(atom, {
+            // x: isDesktop ? generateRandomNumberWithinRange(750, 830) + 'px' : isMobile ? generateRandomNumberWithinRange(0, 10) + 'px' : 0,
+            x: isMobile ? generateRandomNumberWithinRange(210, 230) + 'px' : generateRandomNumberWithinRange(750, 830) + "px",
+            stagger: 0.2
+        }, '>-80%')
+    })
+    htwDiagramTl.to('.point--one', {
+        autoAlpha: 0
+    })
+    htwDiagramTl.to('.point--two', {
+        autoAlpha: 1
+    })
+    atoms.forEach(atom => {
+        htwDiagramTl.to(atom, {
+            // x: getStartingXPos(atom),
+            x: 0
+        }, '>-80%')
+    })
 })
 
-htwDiagramTl.to('.point--one', {
-    autoAlpha: 1
-})
 
-atoms.forEach(atom => {
-    htwDiagramTl.to(atom, {
-        x: generateRandomNumberWithinRange(750, 830) + 'px',
-        stagger: 0.2
-    }, '>-80%')
-})
 
-htwDiagramTl.to('.point--one', {
-    autoAlpha: 0
-})
 
-htwDiagramTl.to('.point--two', {
-    autoAlpha: 1
-})
 
-atoms.forEach(atom => {
-    htwDiagramTl.to(atom, {
-        // x: getStartingXPos(atom),
-        x: 0
-    }, '>-80%')
-})
+
+// mq.add("(min-width: 501px)", () => {
+//     let htwDiagramTl = gsap.timeline({
+//         scrollTrigger: {
+//             trigger: '.how-they-work',
+//             start: 'top top',
+//             end: '+=20000px',
+//             pin: true,
+//             scrub: true
+//         }
+//     })
+    
+//     htwDiagramTl.to('.point--one', {
+//         autoAlpha: 1
+//     })
+    
+//     atoms.forEach(atom => {
+//         htwDiagramTl.to(atom, {
+//             x: generateRandomNumberWithinRange(750, 830) + 'px',
+//             stagger: 0.2
+//         }, '>-80%')
+//     })
+    
+//     htwDiagramTl.to('.point--one', {
+//         autoAlpha: 0
+//     })
+    
+//     htwDiagramTl.to('.point--two', {
+//         autoAlpha: 1
+//     })
+    
+//     atoms.forEach(atom => {
+//         htwDiagramTl.to(atom, {
+//             // x: getStartingXPos(atom),
+//             x: 0
+//         }, '>-80%')
+//     })
+// })
+
+// mq.add("(max-width: 500px)", () => {
+//     let htwDiagramTl = gsap.timeline({
+//         scrollTrigger: {
+//             trigger: '.how-they-work',
+//             start: "top top",
+//             end: '+=40vh',
+//             markers: true
+//         }
+//     })
+//     htwDiagramTl.to('.point--one', {
+//         autoAlpha: 1
+//     })
+//     atoms.forEach(atom => {
+//         htwDiagramTl.to(atom, {
+//             x: generateRandomNumberWithinRange(50, 100) + "px",
+//             stagger: 0.2
+//         }, '>-80%')
+//     })
+// })
 
 
 
@@ -287,32 +337,70 @@ jsfEvents.forEach(jsfEvent => {
 let batteryIssuesMask = gsap.utils.toArray('.issue-mask');
 let batteryIssuesContent = gsap.utils.toArray('.current-issues__issue-content');
 
-let batteryIssuesTl = gsap.timeline({
-    scrollTrigger: {
-        trigger: '.current-issues__diagram',
-        start: "top 10%",
-        end: '+=15000px',
-        markers: true,
-        pin: true,
-        scrub: true,
-    }
-})
 
-batteryIssuesTl.to('.current__issues-header', {
-    autoAlpha: 0,
-})
 
-batteryIssuesMask.forEach(mask => {
-    batteryIssuesTl.to(mask, {
-        backgroundColor: 'transparent',
+
+mq.add({
+    isMobile: "(max-width: 500px)",
+    isDesktop: "(min-width: 501px)",
+}, (context) => {
+    let { isMobile, isDesktop } = context.conditions;
+    let batteryIssuesTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.current-issues__diagram',
+            start: "top 10%",
+            end: isDesktop ? "+=15000px" : "",
+            pin: isDesktop ? true : false,
+            scrub: isDesktop ? true : false
+        }
+    })
+    batteryIssuesTl.to('.current__issues-header', {
+        autoAlpha: isDesktop ? 0 : 1
+    })
+    batteryIssuesMask.forEach(mask => {
+        batteryIssuesTl.to(mask, {
+            backgroundColor: 'transparent',
+        })
+    })
+    batteryIssuesContent.forEach(content => {
+        batteryIssuesTl.to(content, {
+            autoAlpha: 1
+        }, ">-10%")
     })
 })
 
-batteryIssuesContent.forEach(content => {
-    batteryIssuesTl.to(content, {
-        autoAlpha: 1
-    }, ">-10%")
-})
+
+
+
+
+
+
+
+// let batteryIssuesTl = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: '.current-issues__diagram',
+//         start: "top 10%",
+//         end: '+=15000px',
+//         pin: true,
+//         scrub: true,
+//     }
+// })
+
+// batteryIssuesTl.to('.current__issues-header', {
+//     autoAlpha: 0,
+// })
+
+// batteryIssuesMask.forEach(mask => {
+//     batteryIssuesTl.to(mask, {
+//         backgroundColor: 'transparent',
+//     })
+// })
+
+// batteryIssuesContent.forEach(content => {
+//     batteryIssuesTl.to(content, {
+//         autoAlpha: 1
+//     }, ">-10%")
+// })
 
 
 
@@ -405,7 +493,6 @@ let contactTl = gsap.timeline({
         trigger: '.contact',
         start: "center bottom",
         end: "bottom center",
-        markers: true,
         scrub: true
     }
 }).from('.contact__img', {
