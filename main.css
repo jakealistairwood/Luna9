@@ -584,6 +584,11 @@ img {
   padding-top: 5rem;
 }
 @media screen and (max-width: 500px) {
+  .current-issues .section-header {
+    padding-top: 3rem;
+  }
+}
+@media screen and (max-width: 500px) {
   .current-issues .current-issues-header {
     display: flex;
     flex-direction: column;
@@ -591,6 +596,12 @@ img {
 }
 .current-issues .current-issues-header h2 {
   max-width: 502px;
+}
+@media screen and (max-width: 500px) {
+  .current-issues .current-issues-header h2 {
+    margin-top: 0;
+    padding-bottom: 2rem;
+  }
 }
 .current-issues__diagram {
   margin-bottom: 5rem;
@@ -605,6 +616,7 @@ img {
 @media screen and (max-width: 500px) {
   .current-issues__diagram-img {
     transform: rotate(90deg);
+    position: relative;
   }
   .current-issues__diagram-img img {
     width: 100%;
@@ -623,6 +635,9 @@ img {
 @media screen and (max-width: 500px) {
   .current-issues__issue-container {
     grid-template-columns: 1fr;
+    row-gap: 5rem;
+    margin-inline: auto;
+    width: 80%;
   }
 }
 .current-issues__issue .issue-mask {
@@ -633,13 +648,23 @@ img {
   .current-issues__issue .issue-mask {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid #FFF501;
     background-color: transparent;
+    min-height: unset;
+    padding-bottom: 1rem;
   }
 }
 .current-issues__issue .issue-mask img {
   height: 150px;
   margin-bottom: 1rem;
+}
+@media screen and (max-width: 500px) {
+  .current-issues__issue .issue-mask img {
+    height: 70px;
+    margin-top: 0;
+  }
 }
 .current-issues__issue .issue-mask h3 {
   color: #FFF501;
@@ -649,6 +674,10 @@ img {
 @media screen and (max-width: 500px) {
   .current-issues__issue .issue-mask h3 {
     border-top: 0;
+    padding-top: 0;
+    font-size: 1.4rem;
+    align-self: flex-start;
+    width: 50%;
   }
 }
 .current-issues__issue p {
@@ -668,6 +697,11 @@ img {
 .innovative-solutions-container {
   margin-top: 10rem;
 }
+@media screen and (max-width: 500px) {
+  .innovative-solutions-container {
+    margin-top: 3rem;
+  }
+}
 .innovative-solutions-container .section-header {
   display: flex;
   flex-direction: column;
@@ -684,9 +718,23 @@ img {
   grid-template-columns: repeat(2, 1fr);
   padding-bottom: 8rem;
 }
+@media screen and (max-width: 500px) {
+  .innovative-solutions-container .innovative-solutions {
+    grid-template-columns: 1fr;
+    row-gap: 5rem;
+    margin-top: 5rem;
+  }
+}
 .innovative-solutions-container .innovative-solutions__solution {
   opacity: 0;
   visibility: hidden;
+}
+@media screen and (max-width: 500px) {
+  .innovative-solutions-container .innovative-solutions__solution {
+    grid-column: unset !important;
+    grid-row: unset !important;
+    width: 80% !important;
+  }
 }
 .innovative-solutions-container .innovative-solutions__solution h3 {
   color: #00FF6C;
@@ -700,27 +748,62 @@ img {
   position: relative;
   width: fit-content;
 }
+@media screen and (max-width: 500px) {
+  .innovative-solutions-container .innovative-solutions__animation {
+    width: 70%;
+  }
+}
 .innovative-solutions-container .innovative-solutions__animation .battery-cell {
   position: absolute;
 }
+@media screen and (max-width: 500px) {
+  .innovative-solutions-container .innovative-solutions__animation .battery-cell {
+    width: 60%;
+  }
+}
 .innovative-solutions-container .innovative-solutions__animation .lottie-animation {
   position: absolute;
+}
+@media screen and (max-width: 500px) {
+  .innovative-solutions-container .innovative-solutions__animation .lottie-animation {
+    width: 40% !important;
+  }
 }
 .innovative-solutions-container .innovative-solutions .silicon-without-the-cons {
   grid-column: 2/3;
   grid-row: 1/2;
 }
+@media screen and (max-width: 500px) {
+  .innovative-solutions-container .innovative-solutions .silicon-without-the-cons {
+    margin-left: auto;
+  }
+}
 .innovative-solutions-container .innovative-solutions .solid-state {
   grid-column: 1/2;
   grid-row: 2/3;
+}
+@media screen and (max-width: 500px) {
+  .innovative-solutions-container .innovative-solutions .solid-state {
+    margin-right: auto;
+  }
 }
 .innovative-solutions-container .innovative-solutions .sustainable-solutions {
   grid-column: 2/3;
   grid-row: 3/4;
 }
+@media screen and (max-width: 500px) {
+  .innovative-solutions-container .innovative-solutions .sustainable-solutions {
+    margin-left: auto;
+  }
+}
 .innovative-solutions-container .innovative-solutions .seaweed-seperator {
   grid-column: 1/2;
   grid-row: 4/5;
+}
+@media screen and (max-width: 500px) {
+  .innovative-solutions-container .innovative-solutions .seaweed-seperator {
+    margin-right: auto;
+  }
 }
 
 .contact {
