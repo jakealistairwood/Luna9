@@ -29,6 +29,11 @@ section {
     @include lg-container(1280px);
     margin-block: 3rem;
     position: relative;
+
+    @media screen and (min-width: 1280px) and (max-width: 1440px) {
+        @include lg-container(1100px);
+    }
+
     @include for-lg-mobiles {
         width: 90%;
         margin-inline: auto;
@@ -76,29 +81,30 @@ img {
     p { width: 50%; @include for-lg-mobiles { width: 100%; font-size: 1rem; } }
 }
 
-.luna9 {
-    @include custom-flex(row, space-between, center);
-    @include lg-container(1280px);
-    width: 100%;
-    padding-block: 1rem;
+.header {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
     position: fixed;
     right: 0;
     left: 0;
     top: 0rem;
     z-index: 1000;
-    @include for-lg-mobiles {
-        padding-inline: 5%;
-    }
-
-    &__logo {
-        max-width: 75px;
+    width: 100%;
+    
+    .navbar {
+        @include custom-flex(row, space-between, center);
+        @include lg-container(1280px);
+        padding-block: 1rem;
+        @include for-lg-mobiles {
+            padding-inline: 5%;
+        }
+    
+        &__logo {
+            max-width: 75px;
+        }
     }
 }
 
-.luna9.active {
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
-}
 
 .overview {
     @include custom-flex(column, center, flex-start);
@@ -196,6 +202,9 @@ img {
 
         h2 { 
             margin-bottom: 1.5rem; 
+            @media screen and (min-width: 1280px) and (max-width: 1440px) {
+                font-size: 3rem;
+            }
             @include for-lg-mobiles { margin-block: 0.5rem; }
         }
 
@@ -215,6 +224,10 @@ img {
                 line-height: 1.6;
                 width: 50%;
                 font-size: 1.125rem;
+                @media screen and (min-width: 1280px) and (max-width: 1440px) {
+                    font-size: 1rem;
+                }
+
                 @include for-lg-mobiles { 
                     width: 100%; 
                     font-size: 0.9rem;
@@ -224,6 +237,11 @@ img {
             p:first-child {
                 width: 35%;
                 font-size: 1.5rem;
+
+                @media screen and (min-width: 1280px) and (max-width: 1440px) {
+                    font-size: 1.2rem;
+                }
+
                 @include for-lg-mobiles { 
                     width: 100%; 
                     font-size: 0.9rem; 

@@ -11,7 +11,6 @@ gsap.registerPlugin(ScrollTrigger);
 ==============================================================================  */
 
 const body = document.querySelector('body');
-const navbar = document.querySelector('.luna9');
 const timelineContainer = document.querySelector(".battery-timeline");
 const howTheyWorkDiagram = document.querySelector('.how-they-work__diagram');
 const jsfContainer = document.querySelector('.battery-timeline-container');
@@ -154,7 +153,7 @@ let navTimeline = gsap.timeline({
     }
 });
 
-navTimeline.to('.luna9__progress-indicator', {
+navTimeline.to('.navbar__progress-indicator', {
     width: 38,
     fill: 'green',
     scrollTrigger: {

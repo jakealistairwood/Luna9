@@ -90,6 +90,13 @@ section {
   margin-block: 3rem;
   position: relative;
 }
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  section {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
 @media screen and (max-width: 500px) {
   section {
     width: 90%;
@@ -144,7 +151,17 @@ img {
   }
 }
 
-.luna9 {
+.header {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0rem;
+  z-index: 1000;
+  width: 100%;
+}
+.header .navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -152,26 +169,15 @@ img {
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  width: 100%;
   padding-block: 1rem;
-  position: fixed;
-  right: 0;
-  left: 0;
-  top: 0rem;
-  z-index: 1000;
 }
 @media screen and (max-width: 500px) {
-  .luna9 {
+  .header .navbar {
     padding-inline: 5%;
   }
 }
-.luna9__logo {
+.header .navbar__logo {
   max-width: 75px;
-}
-
-.luna9.active {
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(5px);
 }
 
 .overview {
@@ -312,6 +318,11 @@ img {
 .how-they-work__summary h2 {
   margin-bottom: 1.5rem;
 }
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .how-they-work__summary h2 {
+    font-size: 3rem;
+  }
+}
 @media screen and (max-width: 500px) {
   .how-they-work__summary h2 {
     margin-block: 0.5rem;
@@ -336,6 +347,11 @@ img {
   width: 50%;
   font-size: 1.125rem;
 }
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .how-they-work__summary div p {
+    font-size: 1rem;
+  }
+}
 @media screen and (max-width: 500px) {
   .how-they-work__summary div p {
     width: 100%;
@@ -345,6 +361,11 @@ img {
 .how-they-work__summary div p:first-child {
   width: 35%;
   font-size: 1.5rem;
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .how-they-work__summary div p:first-child {
+    font-size: 1.2rem;
+  }
 }
 @media screen and (max-width: 500px) {
   .how-they-work__summary div p:first-child {
