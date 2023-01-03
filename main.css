@@ -20,6 +20,12 @@ h2 {
   font-family: "Sora", sans-serif;
   line-height: 4.8125rem;
 }
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+}
 @media screen and (max-width: 500px) {
   h2 {
     font-size: 2rem;
@@ -171,6 +177,13 @@ img {
   margin: 0 auto;
   padding-block: 1rem;
 }
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .header .navbar {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
 @media screen and (max-width: 500px) {
   .header .navbar {
     padding-inline: 5%;
@@ -203,6 +216,13 @@ img {
   width: 100%;
   margin: 0 auto;
 }
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .overview h1 {
+    max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
 .overview .particle-box {
   position: absolute;
   inset: 0;
@@ -221,6 +241,13 @@ img {
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .overview__topics {
+    max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 @media screen and (max-width: 500px) {
   .overview__topics {
@@ -367,6 +394,11 @@ img {
     font-size: 1.2rem;
   }
 }
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .how-they-work__summary div p:first-child {
+    width: 50%;
+  }
+}
 @media screen and (max-width: 500px) {
   .how-they-work__summary div p:first-child {
     width: 100%;
@@ -413,6 +445,14 @@ img {
   margin-top: 3rem;
   position: relative;
 }
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .how-they-work__diagram {
+    margin-top: 1rem;
+    min-height: 150px;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
 .how-they-work__diagram .atom {
   position: absolute;
   height: 20px;
@@ -454,6 +494,14 @@ img {
   bottom: 0;
   height: fit-content;
 }
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .how-they-work__diagram .diagram-label--cathode {
+    left: 165px;
+  }
+  .how-they-work__diagram .diagram-label--anode {
+    left: 842px;
+  }
+}
 @media screen and (max-width: 500px) {
   .how-they-work__diagram .diagram-label--cathode {
     left: 25px;
@@ -463,6 +511,22 @@ img {
   }
   .how-they-work__diagram .diagram-label--seperator {
     top: -2.5rem;
+  }
+}
+.how-they-work__diagram-img--default {
+  display: block;
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .how-they-work__diagram-img--default {
+    display: none;
+  }
+}
+.how-they-work__diagram-img--compressed {
+  display: none;
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .how-they-work__diagram-img--compressed {
+    display: block;
   }
 }
 
@@ -684,6 +748,11 @@ img {
   min-height: 340px;
   padding-top: 2rem;
 }
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .current-issues__issue .issue-mask {
+    min-height: 286px;
+  }
+}
 @media screen and (max-width: 500px) {
   .current-issues__issue .issue-mask {
     display: flex;
@@ -701,6 +770,11 @@ img {
   height: 160px;
   margin-bottom: 1rem;
   padding-bottom: 2rem;
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .current-issues__issue .issue-mask img {
+    height: 120px;
+  }
 }
 @media screen and (max-width: 500px) {
   .current-issues__issue .issue-mask img {
@@ -733,6 +807,11 @@ img {
 .current-issues__issue-content {
   opacity: 0;
   visibility: hidden;
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .current-issues__issue-content {
+    font-size: 0.9rem;
+  }
 }
 @media screen and (max-width: 500px) {
   .current-issues__issue-content {
@@ -879,6 +958,11 @@ img {
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .contact {
+    padding-block: 10rem;
+  }
+}
 @media screen and (max-width: 500px) {
   .contact {
     flex-direction: column;
@@ -985,8 +1069,7 @@ img {
 .timeline-svg {
   position: absolute;
   z-index: -1;
-  visibility: hidden;
-  opacity: 0;
+  display: none;
 }
 @media screen and (max-width: 500px) {
   .timeline-svg {
@@ -1003,6 +1086,13 @@ img {
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .footer {
+    max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 @media screen and (max-width: 500px) {
   .footer {

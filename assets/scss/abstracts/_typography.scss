@@ -14,6 +14,10 @@ h1 {
 h2 { 
     @include font-styles($font-xl, $fw-400, $primary-font); 
     line-height: 4.8125rem;
+    @include for-sm-desktops {
+        font-size: 3rem;
+        line-height: 1.2;
+    }
     @include for-lg-mobiles {
         font-size: 2rem;
         line-height: 2.5rem;

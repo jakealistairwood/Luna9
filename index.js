@@ -30,6 +30,7 @@ let bodyScrollHeight = body.scrollHeight;
 console.log(bodyHeight, bodyScrollHeight);
 
 let isMobileDevice = window.matchMedia('(max-width: 500px)');
+let isSmDesktopDevice = window.matchMedia('(min-width: 1280px) and (max-width: 1440px)');
 let isNotMobileDevice = window.matchMedia('(min-width: 501px)');
 
 let atomNodesArr = [];
@@ -45,7 +46,7 @@ const toggleSourcesDropdown = () => {
 
 const generateRandomNumberWithinRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
-const createAtom = (atomOptions, isMob) => {
+const createAtom = (atomOptions, isMob, isSmDesk ) => {
     const { id, particleType, atomSize, imgOptions, coordinates } = atomOptions;
     let atom = document.createElement('img');
     let classesToAdd = ["atom", `${particleType}--${id}`];
@@ -58,9 +59,13 @@ const createAtom = (atomOptions, isMob) => {
     if(isMob.matches) {
         atom.style.left = generateRandomNumberWithinRange(coordinates.mobile.xMin, coordinates.mobile.xMax) + "px";
         atom.style.top = generateRandomNumberWithinRange(coordinates.mobile.yMin, coordinates.mobile.yMax) + "px";
+    } else if (isSmDesk.matches) {
+        atom.style.left = generateRandomNumberWithinRange(coordinates.smDesktop.xMin, coordinates.smDesktop.xMax) + "px";
+        atom.style.top = generateRandomNumberWithinRange(coordinates.smDesktop.yMin, coordinates.smDesktop.yMax) + "px";
     } else {
         atom.style.left = generateRandomNumberWithinRange(coordinates.desktop.xMin, coordinates.desktop.xMax) + "px"; 
         atom.style.top = generateRandomNumberWithinRange(coordinates.desktop.yMin, coordinates.desktop.yMax) + "px";
+        
     }
     atomNodesArr.push({
         id: id,
@@ -85,6 +90,12 @@ for(let i = 0; i < generateRandomNumberWithinRange(30, 200); i++) {
                 yMin: 20,
                 yMax: 88
             },
+            smDesktop: {
+                xMin: 55,
+                xMax: 330,
+                yMin: 50,
+                yMax: 175
+            },
             desktop: {
                 xMin: 70,
                 xMax: 350,
@@ -92,7 +103,7 @@ for(let i = 0; i < generateRandomNumberWithinRange(30, 200); i++) {
                 yMax: 300
             }
         }
-    }, isMobileDevice))
+    }, isMobileDevice, isSmDesktopDevice))
 }
 
 timelineInfo.map(el => {
@@ -202,9 +213,10 @@ const getStartingXPos = (el) => {
 
 mq.add({
     isMobile: "(max-width: 500px)",
+    isSmDesktop: "(min-width: 1280px) and (max-width: 1440px)",
     isDesktop: "(min-width: 501px)",
 }, (context) => {
-    let { isMobile, isDesktop } = context.conditions;
+    let { isMobile, isSmDesktop, isDesktop } = context.conditions;
     let htwDiagramTl = gsap.timeline({
         scrollTrigger: {
             trigger: isDesktop ? '.how-they-work' : '.how-they-work',
@@ -222,7 +234,8 @@ mq.add({
     atoms.forEach(atom => {
         htwDiagramTl.to(atom, {
             // x: isDesktop ? generateRandomNumberWithinRange(750, 830) + 'px' : isMobile ? generateRandomNumberWithinRange(0, 10) + 'px' : 0,
-            x: isMobile ? generateRandomNumberWithinRange(210, 230) + 'px' : generateRandomNumberWithinRange(750, 830) + "px",
+            // x: isMobile ? generateRandomNumberWithinRange(210, 230) + 'px' : generateRandomNumberWithinRange(750, 830) + "px",
+            x: isMobile ? generateRandomNumberWithinRange(210, 230) + 'px' : isSmDesktop ? generateRandomNumberWithinRange(640, 690) + 'px' : generateRandomNumberWithinRange(750, 830) + 'px',
             stagger: 0.2
         }, '>-80%')
     })
@@ -411,7 +424,6 @@ const triggerIssueAnimation = (issuesArr, contentArr) => {
 //         }
 //     })
 // })
-
 
 
 // gsap.set(batteryIssues, { backgroundColor: '#FFF501' });

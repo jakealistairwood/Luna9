@@ -30,7 +30,7 @@ section {
     margin-block: 3rem;
     position: relative;
 
-    @media screen and (min-width: 1280px) and (max-width: 1440px) {
+    @include for-sm-desktops {
         @include lg-container(1100px);
     }
 
@@ -95,6 +95,10 @@ img {
         @include custom-flex(row, space-between, center);
         @include lg-container(1280px);
         padding-block: 1rem;
+
+        @include for-sm-desktops {
+            @include lg-container(1100px);
+        }
         @include for-lg-mobiles {
             padding-inline: 5%;
         }
@@ -120,6 +124,10 @@ img {
         margin-bottom: 7rem;
         width: 80%;
         @include lg-container(1280px);
+
+        @include for-sm-desktops {
+            @include lg-container(1110px);
+        }
         // clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
     }
 
@@ -137,6 +145,11 @@ img {
         grid-template-columns: repeat(4, 1fr);
         column-gap: 2rem;
         @include lg-container(1280px);
+
+        @include for-sm-desktops {
+            @include lg-container(1110px);
+        }
+
         @include for-lg-mobiles {
             grid-template-columns: repeat(2, 1fr);
             margin-top: 4rem;
@@ -242,6 +255,10 @@ img {
                     font-size: 1.2rem;
                 }
 
+                @include for-sm-desktops {
+                    width: 50%;
+                }
+
                 @include for-lg-mobiles { 
                     width: 100%; 
                     font-size: 0.9rem; 
@@ -286,6 +303,14 @@ img {
         margin-top: 3rem;
         position: relative;
 
+        @include for-sm-desktops {
+            margin-top: 1rem;
+            // width: 80%;
+            min-height: 150px;
+            width: 100%;
+            margin-inline: auto;
+        }
+
         .atom {
             position: absolute;
             height: 20px;
@@ -311,11 +336,28 @@ img {
             &--anode { left: 985px; }
             &--seperator { left: 50%; transform: translateX(-50%); top: 3rem; }
             &--electrolyte { left: 50%; transform: translateX(-50%); bottom: 0; height: fit-content; }
+
+            @include for-sm-desktops {
+                &--cathode { left: 165px }
+                &--anode { left: 842px; }
+            }
+
             @include for-lg-mobiles {
                 &--cathode { left: 25px; }
                 &--anode { left: 245px; }
                 &--seperator { top: -2.5rem; }
             }
+        }
+    }
+
+    &__diagram-img {
+        &--default {
+            display: block;
+            @include for-sm-desktops { display: none; }
+        }
+        &--compressed {
+            display: none;
+            @include for-sm-desktops { display: block; }
         }
     }
 }
@@ -508,6 +550,10 @@ img {
             background-color: $yellow;
             min-height: 340px;
             padding-top: 2rem;
+            @include for-sm-desktops {
+                min-height: 286px;
+            }
+
             @include for-lg-mobiles {
                 @include custom-flex(row-reverse, space-between, center);
                 border-bottom: 1px solid $yellow;
@@ -521,6 +567,7 @@ img {
                 height: 160px;
                 margin-bottom: 1rem;
                 padding-bottom: 2rem;
+                @include for-sm-desktops { height: 120px; }
                 @include for-lg-mobiles { height: 70px; margin-top: 0; }
                 // margin-inline: auto;
             }
@@ -548,6 +595,11 @@ img {
     &__issue-content {
         opacity: 0;
         visibility: hidden;
+
+        @include for-sm-desktops {
+            font-size: 0.9rem;
+        }
+
         @include for-lg-mobiles {
             opacity: 1;
             visibility: visible;
@@ -667,6 +719,9 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    @include for-sm-desktops {
+        padding-block: 10rem; 
+    }
     @include for-lg-mobiles { 
         flex-direction: column; 
         align-items: unset; 
@@ -764,8 +819,7 @@ img {
 .timeline-svg {
     position: absolute;
     z-index: -1;
-    visibility: hidden;
-    opacity: 0;
+    display: none;
     @include for-lg-mobiles {
         display: none;
     }
@@ -780,6 +834,11 @@ img {
     // min-height: 100vh;
     padding-block: 5rem;
     @include lg-container(1280px);
+
+    @include for-sm-desktops {
+        @include lg-container(1110px);
+    }
+
     @include for-lg-mobiles {
         width: 90%;
         margin-inline: auto;
