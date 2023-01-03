@@ -32,8 +32,6 @@ console.log(bodyHeight, bodyScrollHeight);
 let isMobileDevice = window.matchMedia('(max-width: 500px)');
 let isNotMobileDevice = window.matchMedia('(min-width: 501px)');
 
-console.log(isMobileDevice, isNotMobileDevice);
-
 let atomNodesArr = [];
 
 const toggleSourcesDropdown = () => {
@@ -141,7 +139,6 @@ sourcesBtn.addEventListener('click', toggleSourcesDropdown);
 */
 
 let mq = gsap.matchMedia();
-console.log(mq);
 
 /* ====  Navbar ==== */
 
@@ -199,7 +196,6 @@ htwTl.to('.how-they-work__summary', {
 const getStartingXPos = (el) => {
     let elID = Number(el.classList[1].toString().substring(5, 7));
     let atomInQuestion = atomNodesArr.filter(atom => atom.id == elID);
-    console.log(atomInQuestion[0].x)
     return atomInQuestion[0].x;
 } 
 
@@ -385,40 +381,6 @@ mq.add({
 })
 
 
-
-
-
-
-
-
-// let batteryIssuesTl = gsap.timeline({
-//     scrollTrigger: {
-//         trigger: '.current-issues__diagram',
-//         start: "top 10%",
-//         end: '+=15000px',
-//         pin: true,
-//         scrub: true,
-//     }
-// })
-
-// batteryIssuesTl.to('.current__issues-header', {
-//     autoAlpha: 0,
-// })
-
-// batteryIssuesMask.forEach(mask => {
-//     batteryIssuesTl.to(mask, {
-//         backgroundColor: 'transparent',
-//     })
-// })
-
-// batteryIssuesContent.forEach(content => {
-//     batteryIssuesTl.to(content, {
-//         autoAlpha: 1
-//     }, ">-10%")
-// })
-
-
-
 const triggerIssueAnimation = (issuesArr, contentArr) => {
     batteryIssuesTl.to('.current-issues-header', {
         autoAlpha: 0,
@@ -503,117 +465,28 @@ inSolutions.forEach(solution => {
 * SECTION: CONTACT
 */
 
-let contactTl = gsap.timeline({
-    scrollTrigger: {
-        trigger: '.contact',
-        start: "center bottom",
-        end: "bottom center",
-        scrub: true
+mq.add({
+    isMobile: "(max-width: 500px)",
+    isDesktop: "(min-width: 501px)",
+}, (context) => {
+    let { isMobile, isDesktop } = context.conditions;
+
+    if(isDesktop) {
+        let contactTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.contact',
+                start: "center bottom",
+                end: "bottom center",
+                scrub: true,
+            }
+        })
+        contactTl.from('.contact__img', {
+            x: 200
+        }).from('.contact__img-spring', {
+            x: -200
+        }, '<').to('.contact__content', {
+            autoAlpha: 1,
+            duration: 1
+        })
     }
-}).from('.contact__img', {
-    x: 200
-}).from('.contact__img-spring', {
-    x: -200
-}, "<").to('.contact__content', {
-    autoAlpha: 1,
-    duration: 1
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ScrollTrigger.create({
-//     start: "top top",
-//     // end: `+=${bodyHeight}px`,
-//     markers: true,
-//     trigger: ".luna9",
-//     toggleClass: { targets: ".luna9", className: "active"}
-// });
-
-
-
-// tl.to('.luna9__progress-indicator', {
-//     width: 96,
-//     backgroundColor: 'green',
-//     scrollTrigger: {
-//         trigger: 'body',
-//         start: "top 1%",
-//         scrub: 1,
-//     }
-// }).from('.topic', {
-//     stagger: 1,
-//     duration: 1,
-//     ease: "power3.out",
-//     y: -100,
-//     opacity: 0
-// });
-
-
-// .to('.topic-header', {
-//     stagger: 1,
-//     duration: 1,
-//     delay: 0.5,
-//     onEnter: {
-//         toggleClass: 'active',
-//     },
-//     backgroundColor: "transparent",
-// })
-
-
-
-// let batteryIssuesTimeline = gsap.timeline({
-//     scrollTrigger: {
-//         trigger: '.current-issues__diagram',
-//         start: "top top",
-//         end: "+=5000px",
-//         markers: true,
-//         pin: true,
-//         pinSpacing: true,
-//         scrub: true
-//     }
-// })
-
-// let innovativeSolutionsTimeline = gsap.timeline();
-// batteryIssuesTimeline.to('.solutions-header', {
-//     autoAlpha: 1,
-//     duration: 1,
-//     scrollTrigger: {
-//         trigger: '.solutions-header',
-//         start: "top bottom",
-//         scrub: true
-//     }
-// }).to('.current-issues__issue', {
-//     scrollTrigger: {
-//         trigger: '.current-issues__diagram',
-//         start: 'top top',
-//         end: "+=5000px",
-//         markers: true,
-//         pin: true,
-//         pinSpacing: true
-//     }
-// });
-// .to('.atom', {
-//     stagger: 0.2,
-//     duration: 1,
-//     x: generateRandomNumberWithinRange(700, 900) + 'px',
-//     scrollTrigger: {
-//         trigger: '.how-they-work',
-//         start: "top top",
-//         end: "top top",
-//         pin: true,
-//         markers: true,
-//     }
-// })

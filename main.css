@@ -381,6 +381,12 @@ img {
   margin-block: 2rem;
   font-weight: 400;
 }
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .how-they-work__summary h5 {
+    font-size: 1.2rem;
+    margin-block: 1rem;
+  }
+}
 @media screen and (max-width: 500px) {
   .how-they-work__summary h5 {
     margin-top: 0;
@@ -616,7 +622,7 @@ img {
   }
 }
 .current-issues .current-issues-header h2 {
-  max-width: 502px;
+  max-width: 600px;
 }
 @media screen and (max-width: 500px) {
   .current-issues .current-issues-header h2 {
@@ -629,6 +635,11 @@ img {
   position: relative;
   padding-top: 5rem;
 }
+@media screen and (max-width: 500px) {
+  .current-issues__diagram {
+    margin-top: 5rem;
+  }
+}
 .current-issues__diagram-img {
   width: 100%;
   position: absolute;
@@ -636,11 +647,17 @@ img {
 }
 @media screen and (max-width: 500px) {
   .current-issues__diagram-img {
-    transform: rotate(90deg);
-    position: relative;
+    display: none;
   }
-  .current-issues__diagram-img img {
-    width: 100%;
+}
+.current-issues__diagram-img-mob {
+  display: none;
+}
+@media screen and (max-width: 500px) {
+  .current-issues__diagram-img-mob {
+    display: block;
+    position: absolute;
+    inset: 0;
     height: 100%;
   }
 }
@@ -656,14 +673,16 @@ img {
 @media screen and (max-width: 500px) {
   .current-issues__issue-container {
     grid-template-columns: 1fr;
-    row-gap: 5rem;
+    row-gap: 3rem;
     margin-inline: auto;
     width: 80%;
+    padding-block: 3rem;
   }
 }
 .current-issues__issue .issue-mask {
   background-color: #FFF501;
   min-height: 340px;
+  padding-top: 2rem;
 }
 @media screen and (max-width: 500px) {
   .current-issues__issue .issue-mask {
@@ -675,11 +694,13 @@ img {
     background-color: transparent;
     min-height: unset;
     padding-bottom: 1rem;
+    padding-top: 0rem;
   }
 }
 .current-issues__issue .issue-mask img {
-  height: 150px;
+  height: 160px;
   margin-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 @media screen and (max-width: 500px) {
   .current-issues__issue .issue-mask img {
@@ -690,7 +711,7 @@ img {
 .current-issues__issue .issue-mask h3 {
   color: #FFF501;
   border-top: 1px solid #FFF501;
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 @media screen and (max-width: 500px) {
   .current-issues__issue .issue-mask h3 {
@@ -703,6 +724,11 @@ img {
 }
 .current-issues__issue p {
   margin-top: 4rem;
+}
+@media screen and (max-width: 500px) {
+  .current-issues__issue p {
+    margin-top: 2rem;
+  }
 }
 .current-issues__issue-content {
   opacity: 0;
@@ -779,7 +805,7 @@ img {
 }
 @media screen and (max-width: 500px) {
   .innovative-solutions-container .innovative-solutions__animation .battery-cell {
-    width: 60%;
+    width: 80%;
   }
 }
 .innovative-solutions-container .innovative-solutions__animation .lottie-animation {
@@ -787,7 +813,7 @@ img {
 }
 @media screen and (max-width: 500px) {
   .innovative-solutions-container .innovative-solutions__animation .lottie-animation {
-    width: 40% !important;
+    width: 50% !important;
   }
 }
 .innovative-solutions-container .innovative-solutions .silicon-without-the-cons {
@@ -853,12 +879,37 @@ img {
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 500px) {
+  .contact {
+    flex-direction: column;
+    align-items: unset;
+    margin-top: 0;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+  }
+}
 .contact__container {
   position: relative;
 }
+.contact__img--desktop {
+  display: block;
+}
 @media screen and (max-width: 500px) {
-  .contact__img {
+  .contact__img--desktop {
     display: none;
+  }
+}
+.contact__img--mobile {
+  display: none;
+  position: relative;
+  z-index: -1;
+  height: 80vh;
+  margin: 0 auto;
+  width: 90%;
+}
+@media screen and (max-width: 500px) {
+  .contact__img--mobile {
+    display: block;
   }
 }
 .contact__content {
@@ -874,8 +925,21 @@ img {
   visibility: hidden;
   opacity: 0;
 }
+@media screen and (max-width: 500px) {
+  .contact__content {
+    flex-direction: column;
+    row-gap: 2rem;
+    visibility: visible;
+    opacity: 1;
+  }
+}
 .contact__content h2 {
   font-size: 4rem;
+}
+@media screen and (max-width: 500px) {
+  .contact__content h2 {
+    font-size: 2.5rem;
+  }
 }
 .contact__content div {
   display: flex;
@@ -885,12 +949,22 @@ img {
 .contact__content div p {
   font-size: 1.4rem;
 }
+@media screen and (max-width: 500px) {
+  .contact__content div p {
+    font-size: 1rem;
+  }
+}
 .contact__img-spring {
   position: absolute;
   height: 100%;
   top: 0;
   left: -8rem;
   z-index: -1;
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .contact__img-spring {
+    left: -5rem;
+  }
 }
 @media screen and (max-width: 500px) {
   .contact__img-spring {
@@ -909,10 +983,10 @@ img {
 }
 
 .timeline-svg {
-  display: none;
   position: absolute;
   z-index: -1;
-  opacity: 0.5;
+  visibility: hidden;
+  opacity: 0;
 }
 @media screen and (max-width: 500px) {
   .timeline-svg {
