@@ -1,0 +1,181 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/typography' as *;
+@use '../abstracts/mixins' as *;
+
+.current-issues {
+    min-height: 100vh;
+    padding-bottom: 10rem;
+
+    .section-header {
+        padding-top: 5rem;
+        @include for-lg-mobiles { padding-top: 3rem; }
+    }
+
+    .current-issues-header {
+        // visibility: hidden;
+        // opacity: 0;
+        @include for-tablets {
+            display: flex; 
+            flex-direction: column;
+            row-gap: 2rem;
+            margin-bottom: 5rem;
+
+            h2, p { max-width: unset; width: 100%;}
+
+            p { font-size: 1rem; }
+        }
+        @include for-lg-mobiles { 
+            display: flex; 
+            flex-direction: column; 
+        }
+        h2 { 
+            max-width: 600px; 
+            @include for-lg-mobiles { margin-top: 0; padding-bottom: 2rem; }
+        }
+    }
+
+    &__diagram {
+        margin-bottom: 5rem;
+        position: relative;
+        padding-top: 5rem;
+        @include for-lg-mobiles { margin-top: 5rem; }
+    }
+
+    &__diagram-img {
+        width: 100%;
+        position: absolute;
+        // height: 100vh;
+        top: 3rem;
+        @include for-tablets { display: none; }
+        @include for-lg-mobiles {
+            display: none;
+            // transform: rotate(90deg);
+            // position: relative;
+
+            // img { width: 100%; height: 100%; }
+        }
+    }
+
+    &__diagram-img-mob {
+        display: none;
+        @include for-tablets { 
+            display: block; 
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            width: 80%;
+            margin: 0 auto;
+        }
+        @include for-lg-mobiles {
+            display: block;
+            position: absolute;
+            inset: 0;
+            height: 100%;
+        }
+    }
+
+    &__issue-container {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2rem;
+        width: 90%;
+        margin-left: auto;
+        margin-right: 2.5rem;
+        @include for-tablets {
+            grid-template-columns: 1fr;
+            row-gap: 1rem;
+            width: 70%;
+            margin-inline: auto;
+        }
+        @include for-lg-mobiles {
+            grid-template-columns: 1fr;
+            row-gap: 3rem;
+            margin-inline: auto;
+            width: 80%;
+            padding-block: 3rem;
+        }
+    }
+
+    &__issue {
+        .issue-mask {
+            background-color: $yellow;
+            min-height: 340px;
+            padding-top: 2rem;
+            @include for-sm-desktops {
+                min-height: 286px;
+            }
+            @include for-tablets {
+                @include custom-flex(row-reverse, space-between, center); 
+                border-bottom: 1px solid $yellow;
+                min-height: unset;
+                padding-inline: 1.5rem;
+                // margin-top: 2rem;
+                background-color: transparent;
+
+                &:first-child { padding-top: 2rem; margin-top: 2rem; }
+            }
+
+            @include for-lg-mobiles {
+                @include custom-flex(row-reverse, space-between, center);
+                border-bottom: 1px solid $yellow;
+                background-color: transparent;
+                min-height: unset;
+                padding-bottom: 1rem;
+                padding-top: 0rem;
+            }
+
+            img {
+                height: 160px;
+                margin-bottom: 1rem;
+                padding-bottom: 2rem;
+                @include for-sm-desktops { height: 120px; }
+                @include for-tablets { height: unset; padding-bottom: 1rem; margin-bottom: 0; }
+                @include for-lg-mobiles { height: 70px; margin-top: 0; }
+                // margin-inline: auto;
+            }
+        
+            h3 {
+                color: $yellow;
+                border-top: 1px solid $yellow;
+                padding-top: 2rem;
+                @include for-tablets {
+                    font-size: 2rem;
+                    border-top: none;
+                    align-self: flex-start;
+                }
+                @include for-lg-mobiles { 
+                    border-top: 0; 
+                    padding-top: 0; 
+                    font-size: 1.4rem;
+                    align-self: flex-start;
+                    width: 50%;
+                }
+            }
+        }
+        p {
+            margin-top: 4rem;
+            // text-align: justify;
+            @include for-lg-mobiles { margin-top: 2rem; }
+        }
+    }
+
+    &__issue-content {
+        opacity: 0;
+        visibility: hidden;
+
+        @include for-sm-desktops {
+            font-size: 0.9rem;
+        }
+
+        @include for-tablets {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @include for-lg-mobiles {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

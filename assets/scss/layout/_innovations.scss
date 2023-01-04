@@ -1,0 +1,152 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/typography' as *;
+@use '../abstracts/mixins' as *;
+
+.innovative-solutions-container {
+    margin-top: 10rem;
+    @include for-lg-mobiles { margin-top: 3rem; }
+
+    .section-header {
+        display: flex;
+        flex-direction: column;
+    }
+    .solutions-header {
+        visibility: hidden;
+        opacity: 0;
+
+        
+        h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        @include for-tablets {
+            h2, p {
+                width: 100%;
+            }
+
+            p { font-size: 1rem; }
+        }
+    }
+
+    .innovative-solutions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-bottom: 8rem;
+        @include for-tablets {
+            margin-top: 5rem;
+            gap: 3rem;
+        }
+        @include for-lg-mobiles {
+            grid-template-columns: 1fr;
+            row-gap: 5rem;
+            margin-top: 5rem;
+        }
+
+        &__solution {
+            opacity: 0;
+            visibility: hidden;
+            @include for-lg-mobiles {
+                grid-column: unset !important;
+                grid-row: unset !important;
+                width: 80% !important;
+            }
+            h3 {
+                color: $palegreen;
+                margin-block: 2rem;
+                font-weight: 500;
+                @include for-tablets {
+                    min-height: 5rem;
+                }
+            }
+        }
+
+        &__animation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            // height: 100%;
+            width: fit-content;
+            @include for-tablets {
+                width: 60%;
+            }
+            @include for-lg-mobiles { width: 70%; }
+
+            .battery-cell {
+                position: absolute;
+                @include for-tablets {
+                    width: 80%;
+                }
+                @include for-lg-mobiles {
+                    width: 80%;
+                }
+            }
+
+            .lottie-animation {
+                position: absolute;
+                @include for-tablets {
+                    width: 50% !important;
+                }
+                @include for-lg-mobiles {
+                    width: 50% !important;
+                }
+            }
+        }
+
+        .silicon-without-the-cons {
+            grid-column: 2/3;
+            grid-row: 1/2;
+            @include for-tablets {
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+            @include for-lg-mobiles { margin-left: auto; }
+        }
+        .solid-state {
+            grid-column: 1/2;
+            grid-row: 2/3;
+            @include for-tablets {
+                grid-column: 2/3;
+                grid-row: 1/2;
+            }
+            @include for-lg-mobiles { margin-right: auto; }
+        }
+        .sustainable-solutions {
+            grid-column: 2/3;
+            grid-row: 3/4;
+            @include for-tablets {
+                grid-column: 1/2;
+                grid-row: 2/3;
+            }
+            @include for-lg-mobiles { margin-left: auto; }
+        }
+        .seaweed-seperator {
+            grid-column: 1/2;
+            grid-row: 4/5;
+            @include for-tablets {
+                grid-column: 2/3;
+                grid-row: 2/3;
+            }
+            @include for-lg-mobiles { margin-right: auto; }
+        }
+
+        &__reference {
+            @include custom-flex(row, space-between, center);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid $secondary-color;
+            max-width: 120px;
+            margin-top: 2rem;
+            transition: all 0.3s ease-in-out;
+
+            span { font-weight: $fw-700;}
+
+            &:hover {
+                border-bottom: 1px solid $palegreen;
+
+                svg path {
+                    fill: $palegreen;
+                }
+            }
+        }
+    }
+}

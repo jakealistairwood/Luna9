@@ -1,0 +1,82 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/typography' as *;
+@use '../abstracts/mixins' as *;
+@use '../animations/fadeInEl' as *;
+
+.footer { 
+    // min-height: 100vh;
+    padding-block: 5rem;
+    @include lg-container(1280px);
+
+    @include for-tablets {
+        @include lg-container(650px);
+    }
+
+    @include for-sm-desktops {
+        @include lg-container(1110px);
+    }
+
+    @include for-lg-mobiles {
+        width: 90%;
+        margin-inline: auto;
+    }
+
+    &__btn {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid $secondary-color;
+        @include custom-flex(row, flex-start, center);
+        column-gap: 2rem;
+        width: 100%;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        padding-bottom: 0.5rem;
+
+        h3 { color: $secondary-color; }
+
+        &:hover {
+            border-bottom: 1px solid $yellow;
+
+            svg path {
+                fill: $yellow;
+            }
+        }
+    }
+
+    &__sources { 
+        display: none;
+        padding-block: 3rem;
+
+        li {
+            font-size: 1rem;
+            list-style-position: inside;
+            padding-left: 5rem; 
+            @include for-tablets { padding-left: 0; }
+            @include for-lg-mobiles { padding-left: 0; }
+            a {
+                color: $yellow;
+                text-decoration: underline;
+            }
+            span { color: $secondary-color; }
+        }
+    }
+
+    &__sources.active {
+        display: flex;
+        flex-direction: column;
+        column-gap: 5rem;
+        animation: fadeInElement ease 1s;
+        padding-inline: 15%;
+        margin-inline: auto;
+        border-bottom: 1px solid $secondary-color;
+
+        @include for-tablets {
+            padding-inline: 0;
+        }
+
+        @include for-lg-mobiles {
+            padding-inline: 0;
+            row-gap: 1rem;
+        }
+    }
+}

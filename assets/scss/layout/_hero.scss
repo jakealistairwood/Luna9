@@ -1,0 +1,101 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/typography' as *;
+@use '../abstracts/mixins' as *;
+
+.overview {
+    @include custom-flex(column, center, flex-start);
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100%;
+
+    @include for-lg-mobiles {
+        @include sm-container(500px);
+    }
+
+    h1 {
+        margin-bottom: 7rem;
+        width: 80%;
+        @include lg-container(1280px);
+
+        @include for-tablets {
+            @include lg-container(650px);
+        }
+
+        @include for-sm-desktops {
+            @include lg-container(1110px);
+        }
+        // clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+
+    .particle-box {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+
+        &__container { position: relative; }
+        &__container .atom { position: absolute; }
+    }
+
+    &__topics {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2rem;
+        @include lg-container(1280px);
+
+        @include for-sm-desktops {
+            @include lg-container(1110px);
+        }
+
+        @include for-tablets {
+            @include lg-container(650px);
+        }
+
+        @include for-lg-mobiles {
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: 4rem;
+            row-gap: 1rem;
+        }
+
+        .topic {
+            min-height: 200px;
+            position: relative;
+            margin-top: 4rem;
+
+            @include for-lg-mobiles {
+                min-height: 100px;
+                margin-top: 0rem;
+            }
+
+            .mask { position: absolute; inset: 0; z-index: 10; clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+            
+            h3 { 
+                display: flex; 
+                flex-direction: column; 
+                font-size: 0.8rem;
+            }
+
+            &--aqua {
+                .mask { background-color: $aqua; }
+                h3 { color: $aqua; }
+                a:hover svg path { fill: $aqua; }
+            }
+            &--pink { 
+                .mask { background-color: $accent-color; }
+                h3 { color: $accent-color; }
+                a:hover svg path { fill: $accent-color; }
+            }
+            &--yellow {
+                .mask { background-color: $yellow; }
+                h3 { color: $yellow; }
+                a:hover svg path { fill: $yellow; }
+            }
+            &--green {
+                .mask { background-color: $palegreen; }
+                h3 { color: $palegreen; }
+                a:hover svg path { fill: $palegreen; }
+            }
+
+            svg { margin-top: 1rem; }
+        }
+    }
+}

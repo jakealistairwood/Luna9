@@ -1,7 +1,9 @@
+import { TweenMax } from "./node_modules/gsap/gsap-core.js";
+import { DrawSVGPlugin } from "./node_modules/gsap/DrawSVGPlugin.js";
 import { timelineInfo } from "./assets/js/data.js";
 // import Particle from './assets/js/particle.js';
 import BatteryEvents from './assets/js/events.js';
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 
 
 /*  ==============================================================================
@@ -30,6 +32,7 @@ let bodyScrollHeight = body.scrollHeight;
 console.log(bodyHeight, bodyScrollHeight);
 
 let isMobileDevice = window.matchMedia('(max-width: 500px)');
+let isTabletDevice = window.matchMedia('(min-width: 501px) and (max-width: 1279px');
 let isSmDesktopDevice = window.matchMedia('(min-width: 1280px) and (max-width: 1440px)');
 let isNotMobileDevice = window.matchMedia('(min-width: 501px)');
 
@@ -46,7 +49,7 @@ const toggleSourcesDropdown = () => {
 
 const generateRandomNumberWithinRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
-const createAtom = (atomOptions, isMob, isSmDesk ) => {
+const createAtom = (atomOptions, isMob, isSmDesk, isTablet ) => {
     const { id, particleType, atomSize, imgOptions, coordinates } = atomOptions;
     let atom = document.createElement('img');
     let classesToAdd = ["atom", `${particleType}--${id}`];
@@ -62,7 +65,11 @@ const createAtom = (atomOptions, isMob, isSmDesk ) => {
     } else if (isSmDesk.matches) {
         atom.style.left = generateRandomNumberWithinRange(coordinates.smDesktop.xMin, coordinates.smDesktop.xMax) + "px";
         atom.style.top = generateRandomNumberWithinRange(coordinates.smDesktop.yMin, coordinates.smDesktop.yMax) + "px";
-    } else {
+    } else if (isTablet.matches) {
+        atom.style.left = generateRandomNumberWithinRange(coordinates.tablet.xMin, coordinates.tablet.xMax) + "px";
+        atom.style.top = generateRandomNumberWithinRange(coordinates.tablet.yMin, coordinates.tablet.yMax) + "px";
+    }
+    else {
         atom.style.left = generateRandomNumberWithinRange(coordinates.desktop.xMin, coordinates.desktop.xMax) + "px"; 
         atom.style.top = generateRandomNumberWithinRange(coordinates.desktop.yMin, coordinates.desktop.yMax) + "px";
         
@@ -90,6 +97,12 @@ for(let i = 0; i < generateRandomNumberWithinRange(30, 200); i++) {
                 yMin: 20,
                 yMax: 88
             },
+            tablet: {
+                xMin: 55,
+                xMax: 330,
+                yMin: 50,
+                yMax: 175
+            },
             smDesktop: {
                 xMin: 55,
                 xMax: 330,
@@ -103,7 +116,7 @@ for(let i = 0; i < generateRandomNumberWithinRange(30, 200); i++) {
                 yMax: 300
             }
         }
-    }, isMobileDevice, isSmDesktopDevice))
+    }, isMobileDevice, isSmDesktopDevice, isTabletDevice))
 }
 
 timelineInfo.map(el => {
@@ -213,15 +226,16 @@ const getStartingXPos = (el) => {
 
 mq.add({
     isMobile: "(max-width: 500px)",
+    isTablet: "(min-width: 501px) and (max-width: 1279px)", 
     isSmDesktop: "(min-width: 1280px) and (max-width: 1440px)",
-    isDesktop: "(min-width: 501px)",
+    isDesktop: "(min-width: 1441px)",
 }, (context) => {
-    let { isMobile, isSmDesktop, isDesktop } = context.conditions;
+    let { isMobile, isSmDesktop, isTablet, isDesktop } = context.conditions;
     let htwDiagramTl = gsap.timeline({
         scrollTrigger: {
             trigger: isDesktop ? '.how-they-work' : '.how-they-work',
             start: isDesktop ? 'top top' : 'center center',
-            end: isDesktop ? '+=20000px' : '+=10000px',
+            end: isDesktop ? '+=10000px' : '+=10000px',
             pin: true,
             // markers: true,
             scrub: true,
@@ -235,7 +249,11 @@ mq.add({
         htwDiagramTl.to(atom, {
             // x: isDesktop ? generateRandomNumberWithinRange(750, 830) + 'px' : isMobile ? generateRandomNumberWithinRange(0, 10) + 'px' : 0,
             // x: isMobile ? generateRandomNumberWithinRange(210, 230) + 'px' : generateRandomNumberWithinRange(750, 830) + "px",
-            x: isMobile ? generateRandomNumberWithinRange(210, 230) + 'px' : isSmDesktop ? generateRandomNumberWithinRange(640, 690) + 'px' : generateRandomNumberWithinRange(750, 830) + 'px',
+            x: isMobile 
+            ? generateRandomNumberWithinRange(210, 230) + 'px' 
+            : isSmDesktop ? generateRandomNumberWithinRange(640, 690) + 'px' 
+            : isTablet ? generateRandomNumberWithinRange(120, 150) + 'px'
+            : generateRandomNumberWithinRange(750, 830) + 'px',
             stagger: 0.2
         }, '>-80%')
     })
@@ -251,6 +269,11 @@ mq.add({
             x: 0
         }, '>-80%')
     })
+    htwDiagramTl.fromTo("#timeline", {
+        drawSVG: `0% ${howTheyWorkDiagram.offsetHeight}`
+    }, {
+        drawSVG: `${howTheyWorkDiagram.offsetHeight}`
+    }, 0);
 })
 
 
@@ -366,7 +389,7 @@ let batteryIssuesContent = gsap.utils.toArray('.current-issues__issue-content');
 
 mq.add({
     isMobile: "(max-width: 500px)",
-    isDesktop: "(min-width: 501px)",
+    isDesktop: "(min-width: 1280px)",
 }, (context) => {
     let { isMobile, isDesktop } = context.conditions;
     let batteryIssuesTl = gsap.timeline({
@@ -443,6 +466,39 @@ const triggerIssueAnimation = (issuesArr, contentArr) => {
 //     })
 // })
 
+
+// let eventTl = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: '.how-they-work__diagram',
+//         start: "top bottom",
+//         end: "bottom top",
+//         markers: true,
+//         scrub: true,
+//     }
+// }).fromTo("#timeline", {
+//     drawSVG: "0% -100%"
+// }, {
+//     drawSVG: "100% 100%"
+// }, 0);
+
+
+
+
+// drawTl.fromTo('#timeline', { drawSVG: 0 }, {
+//     drawSVG: 100,
+//     ease:"power1.inOut",
+//     scrollTrigger: {
+//         trigger: '.how-they-work__diagram',
+//         start: "top center",
+//         end: "+=10000",
+//         markers: true,
+//         scrub: true
+//     }
+// })
+
+
+
+
 /*
 * SECTION - Innovative Solutions 
 */
@@ -479,11 +535,13 @@ inSolutions.forEach(solution => {
 
 mq.add({
     isMobile: "(max-width: 500px)",
+    isTablet: "(min-width: 501px) and (max-width: 1279px)", 
+    isSmDesktop: "(min-width: 1280px) and (max-width: 1440px)",
     isDesktop: "(min-width: 501px)",
 }, (context) => {
-    let { isMobile, isDesktop } = context.conditions;
+    let { isMobile, isSmDesktop, isDesktop } = context.conditions;
 
-    if(isDesktop) {
+    if(isDesktop || isSmDesktop) {
         let contactTl = gsap.timeline({
             scrollTrigger: {
                 trigger: '.contact',
@@ -493,9 +551,9 @@ mq.add({
             }
         })
         contactTl.from('.contact__img', {
-            x: 200
+            x: isDesktop ? 200 : 0
         }).from('.contact__img-spring', {
-            x: -200
+            x: isDesktop ? -200 : 0
         }, '<').to('.contact__content', {
             autoAlpha: 1,
             duration: 1

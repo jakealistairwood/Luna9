@@ -1,0 +1,134 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/typography' as *;
+@use '../abstracts/mixins' as *;
+@use '../animations/fadeInEl' as *;
+
+.battery-timeline-container {
+    padding-block: 5rem;
+    header {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 2rem;
+        @include for-tablets { flex-direction: column; row-gap: 2rem; }
+        @include for-lg-mobiles { flex-direction: column; }
+        h2 {
+            // font-size: 3rem;
+            width: 100%;
+            max-width: 505px;
+
+            @include for-tablets { max-width: unset; }
+        }
+
+        p { 
+            width: 50%; 
+            @include for-tablets {
+                width: 100%;
+                font-size: 1rem;
+            }
+            @include for-lg-mobiles {
+                width: 100%;
+                font-size: 1rem;
+                padding-top: 2rem;
+            }
+        }
+    }
+
+    .battery-timeline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include for-tablets { row-gap: 5rem; margin-top: 5rem; }
+        @include for-lg-mobiles { row-gap: 6rem; }
+        
+        &__event {
+            display: flex;
+            column-gap: 4rem;
+            opacity: 0;
+            visibility: hidden;
+            @include for-lg-mobiles { flex-direction: column; }
+        }
+        
+        &__date {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            position: absolute;
+            left: -5rem;
+            border: 1px solid $accent-color;
+            padding: 0.5rem;
+
+            @include for-tablets { left: -3rem; }
+
+            @include for-lg-mobiles { left: -4rem; }
+            
+            span { 
+                @include font-styles($font-rg, $fw-700, $primary-font); line-height: $font-lg; 
+
+                @include for-tablets { font-size: 0.8rem; line-height: 1.5; }
+            }
+        }
+        
+        &__event:nth-child(even) {
+            flex-direction: row-reverse;
+            @include for-lg-mobiles { flex-direction: column; }
+        }
+        
+        &__img-container {
+            width: 50%;
+            @include for-lg-mobiles {
+                width: 90%;
+                margin-left: auto;
+            }
+        }
+        
+        &__info {
+            align-self: center;
+            position: relative;
+            width: 50%;
+            @include for-lg-mobiles { width: 80%; margin-left: auto; }
+
+            h3 {
+                color: $accent-color;
+                margin-bottom: 1rem;
+            }
+
+            ul {
+                list-style: none;
+
+                li { 
+                    color: $mid-grey;
+                    line-height: 1.4;
+                    strong { color: $secondary-color; }
+                }
+            }
+        }
+
+        &__additional-info {
+            display: none;
+        }
+
+        &__additional-info.active { 
+            display: block; 
+            margin-top: 1rem;
+            animation: fadeInElement ease 1s;
+        }
+
+        &__btn {
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+            color: $secondary-color;
+            border-bottom: 2px solid $secondary-color;
+            margin-top: 2rem;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            padding-bottom: 0.5rem;
+            @include font-styles($font-sm, $fw-800, $primary-font);
+
+            &:hover {
+                border-bottom: 2px solid $accent-color;
+            }
+        }
+    }
+}
