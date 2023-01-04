@@ -7,6 +7,7 @@
     min-height: 100vh;
     width: 100%;
     max-width: 100%;
+    position: relative;
 
     @include for-lg-mobiles {
         @include sm-container(500px);
@@ -26,11 +27,18 @@
         }
         // clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
     }
-
-    .particle-box {
+    
+    #tsparticles {
         position: absolute;
         inset: 0;
         z-index: -1;
+
+        canvas { position: absolute !important; }
+    }
+
+    .particle-box {
+        position: relative;
+
 
         &__container { position: relative; }
         &__container .atom { position: absolute; }

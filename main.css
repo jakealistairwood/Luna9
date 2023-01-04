@@ -131,6 +131,7 @@ li {
   min-height: 100vh;
   width: 100%;
   max-width: 100%;
+  position: relative;
 }
 @media screen and (max-width: 500px) {
   .overview {
@@ -160,10 +161,16 @@ li {
     margin: 0 auto;
   }
 }
-.overview .particle-box {
+.overview #tsparticles {
   position: absolute;
   inset: 0;
   z-index: -1;
+}
+.overview #tsparticles canvas {
+  position: absolute !important;
+}
+.overview .particle-box {
+  position: relative;
 }
 .overview .particle-box__container {
   position: relative;
