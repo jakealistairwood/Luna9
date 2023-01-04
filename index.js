@@ -392,8 +392,10 @@ mq.add({
     isTablet: "(min-width: 501px) and (max-width: 1279px)",
     isDesktop: "(min-width: 1280px)",
 }, (context) => {
+    
     let { isMobile, isTablet, isDesktop } = context.conditions;
-    let batteryIssuesTl = gsap.timeline({
+
+    let issTl = gsap.timeline({
         scrollTrigger: {
             trigger: '.current-issues__diagram',
             start: "top 10%",
@@ -402,40 +404,38 @@ mq.add({
             scrub: isDesktop ? true : false
         }
     })
-    batteryIssuesTl.to('.current__issues-header', {
-        autoAlpha: isDesktop ? 0 : 1
-    })
-    batteryIssuesMask.forEach(mask => {
-        batteryIssuesTl.to(mask, {
-            backgroundColor: 'transparent',
-        })
-    })
-    batteryIssuesContent.forEach(content => {
-        batteryIssuesTl.to(content, {
+
+    gsap.utils.toArray('.current-issues__issue').forEach((issue, i) => {
+        let issueMask = issue.querySelector('.issue-mask'),
+        issueContent = issue.querySelector('.current-issues__issue-content');
+        console.log(issueMask, issueContent);
+        
+        issTl.to(issueMask, {
+            backgroundColor: 'transparent'
+        }).to(issueContent, {
             autoAlpha: 1
-        }, ">-10%")
+        }, '<')
     })
 })
 
 
-const triggerIssueAnimation = (issuesArr, contentArr) => {
-    batteryIssuesTl.to('.current-issues-header', {
-        autoAlpha: 0,
-        duration: 1,
-    });
+// const triggerIssueAnimation = (issuesArr, contentArr) => {
+//     batteryIssuesTl.to('.current-issues-header', {
+//         autoAlpha: 0,
+//         duration: 1,
+//     });
 
-    issuesArr.forEach(issue => {
-        batteryIssuesTl.to(issue, {
-            backgroundColor: "transparent",
-            stagger: 1,
-        })
-    })
-    contentArr.forEach(issue => {
-        batteryIssuesTl.to(issue, {
-            autoAlpha: 1,
-        }, '+=100%')
-    }, ">-100%")
-}
+//     issuesArr.forEach(issue => {
+//         batteryIssuesTl.staggerTo(issue, {
+//             backgroundColor: "transparent",
+//         })
+//     })
+//     contentArr.forEach(issue => {
+//         batteryIssuesTl.staggerTo(issue, {
+//             autoAlpha: 1,
+//         }, '>+=100%')
+//     })
+// }
 
 // batteryIssues.forEach(issue => {
 //     gsap.to(issue, {
