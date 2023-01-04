@@ -767,6 +767,7 @@ li {
     height: 100%;
     width: 80%;
     margin: 0 auto;
+    min-height: 1700px;
   }
 }
 @media screen and (max-width: 500px) {
@@ -889,6 +890,11 @@ li {
 .current-issues__issue p {
   margin-top: 4rem;
 }
+@media screen and (min-width: 501px) and (max-width: 1279px) {
+  .current-issues__issue p {
+    margin-top: 3rem;
+  }
+}
 @media screen and (max-width: 500px) {
   .current-issues__issue p {
     margin-top: 2rem;
@@ -964,6 +970,13 @@ li {
 .innovative-solutions-container .innovative-solutions__solution {
   opacity: 0;
   visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 501px) and (max-width: 1279px) {
+  .innovative-solutions-container .innovative-solutions__solution {
+    min-height: 682px;
+  }
 }
 @media screen and (max-width: 500px) {
   .innovative-solutions-container .innovative-solutions__solution {
@@ -979,7 +992,13 @@ li {
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
   .innovative-solutions-container .innovative-solutions__solution h3 {
-    min-height: 5rem;
+    min-height: 2rem;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 1279px) {
+  .innovative-solutions-container .innovative-solutions__solution p {
+    font-size: 1rem;
   }
 }
 .innovative-solutions-container .innovative-solutions__animation {
@@ -1096,6 +1115,11 @@ li {
   margin-top: 2rem;
   transition: all 0.3s ease-in-out;
 }
+@media screen and (min-width: 501px) and (max-width: 1279px) {
+  .innovative-solutions-container .innovative-solutions__reference {
+    margin-top: auto;
+  }
+}
 .innovative-solutions-container .innovative-solutions__reference span {
   font-weight: 700;
 }
@@ -1115,6 +1139,11 @@ li {
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
   .contact {
     padding-block: 10rem;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 1279px) {
+  .contact {
+    padding-block: 5rem;
   }
 }
 @media screen and (max-width: 500px) {
@@ -1153,6 +1182,7 @@ li {
 @media screen and (min-width: 501px) and (max-width: 1279px) {
   .contact__img--mobile {
     display: block;
+    width: 100%;
   }
 }
 @media screen and (max-width: 500px) {
@@ -1173,6 +1203,14 @@ li {
   visibility: hidden;
   opacity: 0;
 }
+@media screen and (min-width: 501px) and (max-width: 1279px) {
+  .contact__content {
+    flex-direction: column;
+    row-gap: 2rem;
+    visibility: visible;
+    opacity: 1;
+  }
+}
 @media screen and (max-width: 500px) {
   .contact__content {
     flex-direction: column;
@@ -1183,6 +1221,11 @@ li {
 }
 .contact__content h2 {
   font-size: 4rem;
+}
+@media screen and (min-width: 501px) and (max-width: 1279px) {
+  .contact__content h2 {
+    font-size: 2.5rem;
+  }
 }
 @media screen and (max-width: 500px) {
   .contact__content h2 {
@@ -1196,6 +1239,11 @@ li {
 }
 .contact__content div p {
   font-size: 1.4rem;
+}
+@media screen and (min-width: 501px) and (max-width: 1279px) {
+  .contact__content div p {
+    font-size: 1.125rem;
+  }
 }
 @media screen and (max-width: 500px) {
   .contact__content div p {
@@ -1212,6 +1260,11 @@ li {
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
   .contact__img-spring {
     left: -5rem;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 1279px) {
+  .contact__img-spring {
+    display: none;
   }
 }
 @media screen and (max-width: 500px) {

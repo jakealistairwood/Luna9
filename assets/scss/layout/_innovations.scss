@@ -45,6 +45,11 @@
         &__solution {
             opacity: 0;
             visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            @include for-tablets {
+                min-height: 682px;
+            }
             @include for-lg-mobiles {
                 grid-column: unset !important;
                 grid-row: unset !important;
@@ -55,7 +60,14 @@
                 margin-block: 2rem;
                 font-weight: 500;
                 @include for-tablets {
-                    min-height: 5rem;
+                    min-height: 2rem;
+                    font-size: 1.5rem;
+                }
+            }
+
+            p {
+                @include for-tablets {
+                    font-size: 1rem;
                 }
             }
         }
@@ -137,6 +149,10 @@
             max-width: 120px;
             margin-top: 2rem;
             transition: all 0.3s ease-in-out;
+
+            @include for-tablets {
+                margin-top: auto;
+            }
 
             span { font-weight: $fw-700;}
 

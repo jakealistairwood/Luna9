@@ -1,9 +1,9 @@
-import { TweenMax } from "./node_modules/gsap/gsap-core.js";
-import { DrawSVGPlugin } from "./node_modules/gsap/DrawSVGPlugin.js";
+// import { TweenMax } from "./node_modules/gsap/gsap-core.js";
+// import { DrawSVGPlugin } from "./node_modules/gsap/DrawSVGPlugin.js";
 import { timelineInfo } from "./assets/js/data.js";
 // import Particle from './assets/js/particle.js';
 import BatteryEvents from './assets/js/events.js';
-gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
 
 /*  ==============================================================================
@@ -269,11 +269,11 @@ mq.add({
             x: 0
         }, '>-80%')
     })
-    htwDiagramTl.fromTo("#timeline", {
-        drawSVG: `0% ${howTheyWorkDiagram.offsetHeight}`
-    }, {
-        drawSVG: `${howTheyWorkDiagram.offsetHeight}`
-    }, 0);
+    // htwDiagramTl.fromTo("#timeline", {
+    //     drawSVG: `0% ${howTheyWorkDiagram.offsetHeight}`
+    // }, {
+    //     drawSVG: `${howTheyWorkDiagram.offsetHeight}`
+    // }, 0);
 })
 
 
@@ -389,9 +389,10 @@ let batteryIssuesContent = gsap.utils.toArray('.current-issues__issue-content');
 
 mq.add({
     isMobile: "(max-width: 500px)",
+    isTablet: "(min-width: 501px) and (max-width: 1279px)",
     isDesktop: "(min-width: 1280px)",
 }, (context) => {
-    let { isMobile, isDesktop } = context.conditions;
+    let { isMobile, isTablet, isDesktop } = context.conditions;
     let batteryIssuesTl = gsap.timeline({
         scrollTrigger: {
             trigger: '.current-issues__diagram',
