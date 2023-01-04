@@ -98,10 +98,10 @@ for(let i = 0; i < generateRandomNumberWithinRange(30, 200); i++) {
                 yMax: 88
             },
             tablet: {
-                xMin: 55,
-                xMax: 330,
+                xMin: 35,
+                xMax: 210,
                 yMin: 50,
-                yMax: 175
+                yMax: 146
             },
             smDesktop: {
                 xMin: 55,
@@ -252,7 +252,7 @@ mq.add({
             x: isMobile 
             ? generateRandomNumberWithinRange(210, 230) + 'px' 
             : isSmDesktop ? generateRandomNumberWithinRange(640, 690) + 'px' 
-            : isTablet ? generateRandomNumberWithinRange(120, 150) + 'px'
+            : isTablet ? generateRandomNumberWithinRange(390, 400) + 'px'
             : generateRandomNumberWithinRange(750, 830) + 'px',
             stagger: 0.2
         }, '>-80%')
@@ -538,7 +538,7 @@ mq.add({
     isMobile: "(max-width: 500px)",
     isTablet: "(min-width: 501px) and (max-width: 1279px)", 
     isSmDesktop: "(min-width: 1280px) and (max-width: 1440px)",
-    isDesktop: "(min-width: 501px)",
+    isDesktop: "(min-width: 1280px)",
 }, (context) => {
     let { isMobile, isSmDesktop, isDesktop } = context.conditions;
 

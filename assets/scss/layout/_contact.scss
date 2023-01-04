@@ -39,7 +39,7 @@
             height: 80vh;
             margin: 0 auto;
             width: 90%;
-            @include for-tablets { display: block; width: 100%; }
+            @include for-tablets { display: block; width: 400px; }
             @include for-lg-mobiles { display: block; }
         }
     }
