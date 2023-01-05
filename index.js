@@ -272,7 +272,6 @@ mq.add({
             : 'center center',
             end: isDesktop ? '+=10000px' : '+=10000px',
             pin: true,
-            markers: true,
             scrub: true,
             pinSpacing: true
         }

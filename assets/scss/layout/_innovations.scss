@@ -26,6 +26,10 @@
 
             p { font-size: 1rem; }
         }
+        @include for-mob-landscape {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 
     .innovative-solutions {
@@ -54,6 +58,10 @@
                 grid-column: unset !important;
                 grid-row: unset !important;
                 width: 80% !important;
+            }
+            @include for-mob-landscape {
+                opacity: 1;
+                visibility: visible;
             }
             h3 {
                 color: $palegreen;

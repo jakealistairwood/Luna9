@@ -58,6 +58,10 @@
             opacity: 0;
             visibility: hidden;
             @include for-lg-mobiles { flex-direction: column; }
+            @include for-mob-landscape {
+                opacity: 1;
+                visibility: visible;
+            }
         }
         
         &__date {

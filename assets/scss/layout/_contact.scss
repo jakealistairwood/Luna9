@@ -20,6 +20,9 @@
         padding-top: 2rem;
         padding-bottom: 5rem;
     }
+    @include for-mob-landscape {
+        min-height: 1000px;
+    }
 
     &__container {
         position: relative;
@@ -41,6 +44,10 @@
             width: 90%;
             @include for-tablets { display: block; width: 400px; }
             @include for-lg-mobiles { display: block; }
+            @include for-mob-landscape {
+                display: block;
+                min-height: 800px;
+            }
         }
     }
 
