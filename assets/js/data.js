@@ -55,7 +55,7 @@ export const timelineInfo = [
         additionalInfo: "Leclanche's first version of the carbon-zinc cell provided a source of power with a much longer shelf life, thanks to the addition of carbon to the cathode. He later reworked his invention by adding starch to the electrolyte to turn it into a gelatinous paste and sealed it with wax, thus creating a 'dry' and - most importantly - portable source of power. Carbon-Zinc cells existed as a primary source of energy into the 1950s.",
         infoDisplayed: false,
         imgInfo: {
-            src: './assets/img/Leclanche_svg.svg',
+            src: './assets/img/portability.svg',
             alt: 'leclanche-cell-battery'
         }
     },

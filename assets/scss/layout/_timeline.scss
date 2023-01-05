@@ -39,14 +39,14 @@
         position: absolute;
         top: 0;
         // height: 5000px;
-        left: -45px;
+        left: -25px;
         margin-top: -697px;
     }
 
     .battery-timeline {
         display: flex;
         flex-direction: column;
-        row-gap: 5rem;
+        // row-gap: 5rem;
         align-items: center;
         margin-block: 10rem;
         @include for-tablets { row-gap: 5rem; margin-top: 5rem; margin-bottom: 0; }
@@ -54,13 +54,19 @@
         
         &__event {
             display: flex;
+            justify-content: center;
+            align-items: center;
             column-gap: 4rem;
             opacity: 0;
             visibility: hidden;
-            @include for-lg-mobiles { flex-direction: column; }
+            min-height: 800px;
+            width: 100%;
+            @include for-tablets { min-height: unset; }
+            @include for-lg-mobiles { flex-direction: column; min-height: unset; }
             @include for-mob-landscape {
                 opacity: 1;
                 visibility: visible;
+                min-height: unset;
             }
         }
         

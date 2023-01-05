@@ -202,18 +202,20 @@ mq.add({
     isMobile: "(max-width: 500px)",
     isTablet: "(min-width: 501px) and (max-width: 1279px)", 
     isSmDesktop: "(min-width: 1280px) and (max-width: 1440px)",
+    isMobileLandscape: "(orientation: landscape) and (min-device-width: 300px) and (max-device-width: 1000px)",
     isDesktop: "(min-width: 1441px)",
 }, (context) => {
-    let { isMobile, isSmDesktop, isTablet, isDesktop } = context.conditions;
+    let { isMobile, isSmDesktop, isTablet, isDesktop, isMobileLandscape } = context.conditions;
     navTimeline.to('.navbar__progress-indicator', {
         width: 38,
         fill: '#000',
         scrollTrigger: {
             trigger: 'body',
             start: "top 1%",
-            end: isDesktop ? "+=45916" 
+            end: isDesktop ? "+=37916" 
             : isSmDesktop ? "+=45000"
             : isTablet ? "+=50000"
+            : isMobileLandscape ? "+=35000"
             : "+=26504",
             // end: `+=45916`,
             scrub: true
