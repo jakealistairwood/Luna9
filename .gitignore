@@ -3,3 +3,4 @@ node_modules
 package-lock.json
 main.css.map
 .npmrc
+gsap-bonus.tgz

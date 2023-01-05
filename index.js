@@ -1,11 +1,6 @@
-// import { TweenMax } from "./node_modules/gsap/gsap-core.js";
-// import { DrawSVGPlugin } from "./node_modules/gsap/DrawSVGPlugin.js";
 import { timelineInfo } from "./assets/js/data.js";
-import ScrollSmoother from "./node_modules/gsap/ScrollSmoother.js";
-// import DrawSVGPlugin from "./node_modules/gsap/DrawSVGPlugin.js";
-// import Particle from './assets/js/particle.js';
 import BatteryEvents from './assets/js/events.js';
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin);
 
 
 /*  ==============================================================================

@@ -45,11 +45,11 @@
     .battery-timeline {
         display: flex;
         flex-direction: column;
-        row-gap: 20rem;
+        row-gap: 5rem;
         align-items: center;
-        margin-top: 20rem;
-        @include for-tablets { row-gap: 5rem; margin-top: 5rem; }
-        @include for-lg-mobiles { row-gap: 6rem; }
+        margin-block: 10rem;
+        @include for-tablets { row-gap: 5rem; margin-top: 5rem; margin-bottom: 0; }
+        @include for-lg-mobiles { row-gap: 6rem; margin-block: 0; }
         
         &__event {
             display: flex;
