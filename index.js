@@ -1,6 +1,8 @@
 // import { TweenMax } from "./node_modules/gsap/gsap-core.js";
 // import { DrawSVGPlugin } from "./node_modules/gsap/DrawSVGPlugin.js";
 import { timelineInfo } from "./assets/js/data.js";
+import ScrollSmoother from "./node_modules/gsap/ScrollSmoother.js";
+// import DrawSVGPlugin from "./node_modules/gsap/DrawSVGPlugin.js";
 // import Particle from './assets/js/particle.js';
 import BatteryEvents from './assets/js/events.js';
 gsap.registerPlugin(ScrollTrigger);
@@ -164,6 +166,12 @@ sourcesBtn.addEventListener('click', toggleSourcesDropdown);
 
 let mq = gsap.matchMedia();
 
+ScrollSmoother.create({
+    smooth: 1,               // how long (in seconds) it takes to "catch up" to the native scroll position
+    effects: true,           // looks for data-speed and data-lag attributes on elements
+    smoothTouch: 0.1,        // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+  });
+
 /* ====  Navbar ==== */
 
 let navTimeline = gsap.timeline({
@@ -216,14 +224,6 @@ htwTl.to('.how-they-work__summary', {
     }
 });
 
-
-const getStartingXPos = (el) => {
-    let elID = Number(el.classList[1].toString().substring(5, 7));
-    let atomInQuestion = atomNodesArr.filter(atom => atom.id == elID);
-    return atomInQuestion[0].x;
-} 
-
-
 mq.add({
     isMobile: "(max-width: 500px)",
     isTablet: "(min-width: 501px) and (max-width: 1279px)", 
@@ -247,8 +247,6 @@ mq.add({
     })
     atoms.forEach(atom => {
         htwDiagramTl.to(atom, {
-            // x: isDesktop ? generateRandomNumberWithinRange(750, 830) + 'px' : isMobile ? generateRandomNumberWithinRange(0, 10) + 'px' : 0,
-            // x: isMobile ? generateRandomNumberWithinRange(210, 230) + 'px' : generateRandomNumberWithinRange(750, 830) + "px",
             x: isMobile 
             ? generateRandomNumberWithinRange(210, 230) + 'px' 
             : isSmDesktop ? generateRandomNumberWithinRange(640, 690) + 'px' 
@@ -265,84 +263,26 @@ mq.add({
     })
     atoms.forEach(atom => {
         htwDiagramTl.to(atom, {
-            // x: getStartingXPos(atom),
             x: 0
         }, '>-80%')
     })
-    // htwDiagramTl.fromTo("#timeline", {
-    //     drawSVG: `0% ${howTheyWorkDiagram.offsetHeight}`
-    // }, {
-    //     drawSVG: `${howTheyWorkDiagram.offsetHeight}`
-    // }, 0);
 })
 
 
-
-
-
-
-// mq.add("(min-width: 501px)", () => {
-//     let htwDiagramTl = gsap.timeline({
-//         scrollTrigger: {
-//             trigger: '.how-they-work',
-//             start: 'top top',
-//             end: '+=20000px',
-//             pin: true,
-//             scrub: true
-//         }
-//     })
-    
-//     htwDiagramTl.to('.point--one', {
-//         autoAlpha: 1
-//     })
-    
-//     atoms.forEach(atom => {
-//         htwDiagramTl.to(atom, {
-//             x: generateRandomNumberWithinRange(750, 830) + 'px',
-//             stagger: 0.2
-//         }, '>-80%')
-//     })
-    
-//     htwDiagramTl.to('.point--one', {
-//         autoAlpha: 0
-//     })
-    
-//     htwDiagramTl.to('.point--two', {
-//         autoAlpha: 1
-//     })
-    
-//     atoms.forEach(atom => {
-//         htwDiagramTl.to(atom, {
-//             // x: getStartingXPos(atom),
-//             x: 0
-//         }, '>-80%')
-//     })
+// let svgTl = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: '.how-they-work__diagram',
+//         start: "center center",
+//         end: "+=10000",
+//         markers: true,
+//         scrub: 0.5,
+//         toggleClass: 'active'
+//     }
 // })
 
-// mq.add("(max-width: 500px)", () => {
-//     let htwDiagramTl = gsap.timeline({
-//         scrollTrigger: {
-//             trigger: '.how-they-work',
-//             start: "top top",
-//             end: '+=40vh',
-//             markers: true
-//         }
-//     })
-//     htwDiagramTl.to('.point--one', {
-//         autoAlpha: 1
-//     })
-//     atoms.forEach(atom => {
-//         htwDiagramTl.to(atom, {
-//             x: generateRandomNumberWithinRange(50, 100) + "px",
-//             stagger: 0.2
-//         }, '>-80%')
-//     })
+// svgTl.from('#timeline', {
+//     drawSVG: -100
 // })
-
-
-
-
-
 
 
 
@@ -362,30 +302,10 @@ jsfEvents.forEach(jsfEvent => {
     });
 });
 
-// jsfEvents.forEach(tlEvent => {
-//     let jsfTl = gsap.timeline({
-//         scrollTrigger: {
-//             trigger: '.battery-timeline__event',
-//             start: 'top top',
-//             markers: true,
-//             scrub: true
-//         }
-//     });
-//     jsfTl.staggerTo(tlEvent, 0.5, {
-//         autoAlpha: 1,
-//     })
-// })
 
 /* 
 * SECTION - Current Issues 
 */
-
-
-let batteryIssuesMask = gsap.utils.toArray('.issue-mask');
-let batteryIssuesContent = gsap.utils.toArray('.current-issues__issue-content');
-
-
-
 
 mq.add({
     isMobile: "(max-width: 500px)",
@@ -417,55 +337,6 @@ mq.add({
         }, '<')
     })
 })
-
-
-// const triggerIssueAnimation = (issuesArr, contentArr) => {
-//     batteryIssuesTl.to('.current-issues-header', {
-//         autoAlpha: 0,
-//         duration: 1,
-//     });
-
-//     issuesArr.forEach(issue => {
-//         batteryIssuesTl.staggerTo(issue, {
-//             backgroundColor: "transparent",
-//         })
-//     })
-//     contentArr.forEach(issue => {
-//         batteryIssuesTl.staggerTo(issue, {
-//             autoAlpha: 1,
-//         }, '>+=100%')
-//     })
-// }
-
-// batteryIssues.forEach(issue => {
-//     gsap.to(issue, {
-//         backgroundColor: "transparent",
-//         scrollTrigger: {
-//             trigger: 'issue',       
-//             start: "top top",
-//             scrub: true,
-//             pin: true,
-//         }
-//     })
-// })
-
-
-// gsap.set(batteryIssues, { backgroundColor: '#FFF501' });
-// console.log(batteryIssues);
-
-// batteryIssues.forEach(battery => {
-//     let batteryIssueTl = gsap.timeline({
-//         scrollTrigger: {
-//             trigger: '.current-issues__diagram',
-//             start: "center top",
-//             pin: true,
-//             scrub: true,
-//         }
-//     })
-//     batteryIssueTl.to(battery, {
-//         backgroundColor: "transparent",
-//     })
-// })
 
 
 // let eventTl = gsap.timeline({
@@ -561,3 +432,6 @@ mq.add({
         })
     }
 })
+
+
+

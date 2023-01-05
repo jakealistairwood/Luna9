@@ -33,6 +33,10 @@ a {
     color: inherit;
 }
 
+img {
+    will-change: transform;
+}
+
 section {
     @include lg-container(1280px);
     margin-block: 3rem;
@@ -93,6 +97,7 @@ img {
 }
 
 .timeline-svg {
+    display: none;
     position: absolute;
     z-index: -1;
     left: 42%;

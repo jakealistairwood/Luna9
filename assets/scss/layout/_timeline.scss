@@ -5,6 +5,7 @@
 
 .battery-timeline-container {
     padding-block: 5rem;
+    position: relative;
     header {
         display: flex;
         justify-content: space-between;
@@ -33,10 +34,20 @@
         }
     }
 
+    .battery-tl {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: -45px;
+        margin-top: -697px;
+    }
+
     .battery-timeline {
         display: flex;
         flex-direction: column;
+        row-gap: 20rem;
         align-items: center;
+        margin-top: 20rem;
         @include for-tablets { row-gap: 5rem; margin-top: 5rem; }
         @include for-lg-mobiles { row-gap: 6rem; }
         
