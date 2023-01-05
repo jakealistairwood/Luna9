@@ -177,15 +177,44 @@ let navTimeline = gsap.timeline({
     }
 });
 
-navTimeline.to('.navbar__progress-indicator', {
-    width: 38,
-    fill: 'green',
-    scrollTrigger: {
-        trigger: 'body',
-        start: "top 1%",
-        end: `+=45916`,
-        scrub: true
-    }
+// navTimeline.to('.navbar__progress-indicator', {
+//     width: 38,
+//     fill: 'green',
+//     scrollTrigger: {
+//         trigger: 'body',
+//         start: "top 1%",
+//         end: `+=45916`,
+//         scrub: true
+//     }
+// })
+
+let bodyH = document.body;
+let html = document.documentElement;
+
+let heights = Math.max(bodyH.scrollHeight, bodyH.offsetHeight, html.scrollHeight, html.offsetHeight);
+console.log(heights);
+
+mq.add({
+    isMobile: "(max-width: 500px)",
+    isTablet: "(min-width: 501px) and (max-width: 1279px)", 
+    isSmDesktop: "(min-width: 1280px) and (max-width: 1440px)",
+    isDesktop: "(min-width: 1441px)",
+}, (context) => {
+    let { isMobile, isSmDesktop, isTablet, isDesktop } = context.conditions;
+    navTimeline.to('.navbar__progress-indicator', {
+        width: 38,
+        fill: '#000',
+        scrollTrigger: {
+            trigger: 'body',
+            start: "top 1%",
+            end: isDesktop ? "+=45916" 
+            : isSmDesktop ? "+=45000"
+            : isTablet ? "+=50000"
+            : "+=26504",
+            // end: `+=45916`,
+            scrub: true
+        }
+    })
 })
 
 /*

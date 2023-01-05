@@ -138,6 +138,7 @@ li {
     max-width: 500px;
     width: 90%;
     margin: 0 auto;
+    width: 100% !important;
   }
 }
 .overview h1 {
@@ -159,6 +160,11 @@ li {
     max-width: 1110px;
     width: 100%;
     margin: 0 auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  .overview h1 {
+    padding-left: 5%;
   }
 }
 .overview #tsparticles {
@@ -205,6 +211,7 @@ li {
     grid-template-columns: repeat(2, 1fr);
     margin-top: 4rem;
     row-gap: 1rem;
+    padding-inline: 5%;
   }
 }
 .overview__topics .topic {
