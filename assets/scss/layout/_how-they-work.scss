@@ -69,6 +69,10 @@
                     width: 100%; 
                     font-size: 0.9rem;
                 }
+
+                @include for-mob-landscape {
+                    font-size: 0.9rem;
+                }
             }
 
             p:first-child {
@@ -93,6 +97,10 @@
                     width: 100%; 
                     font-size: 0.9rem; 
                     margin-bottom: 1rem;
+                }
+
+                @include for-mob-landscape {
+                    font-size: 0.9rem;
                 }
             }
         }
