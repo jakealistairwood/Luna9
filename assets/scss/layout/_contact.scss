@@ -58,6 +58,10 @@
         visibility: hidden;
         opacity: 0;
 
+        @include for-sm-desktops {
+            column-gap: 3rem;
+        }
+
         @include for-tablets {
             flex-direction: column;
             row-gap: 2rem;
@@ -74,6 +78,7 @@
 
         h2 {
             font-size: 4rem;
+            @include for-sm-desktops { font-size: 3rem; }
             @include for-tablets { font-size: 2.5rem; }
             @include for-lg-mobiles { font-size: 2.5rem; }
         }
@@ -85,6 +90,7 @@
 
             p {
                 font-size: 1.4rem;
+                @include for-sm-desktops { font-size: 1.2rem; width: 80%; }
                 @include for-tablets { font-size: 1.125rem; }
                 @include for-lg-mobiles { font-size: 1rem; }
             }

@@ -5,6 +5,7 @@
 .current-issues {
     min-height: 100vh;
     padding-bottom: 10rem;
+    position: relative;
 
     .section-header {
         padding-top: 5rem;
@@ -31,6 +32,18 @@
         h2 { 
             max-width: 600px; 
             @include for-lg-mobiles { margin-top: 0; padding-bottom: 2rem; }
+        }
+    }
+
+    .cell-grid-decoration {
+        position: absolute;
+
+        &--one {
+            top: -300px;
+            width: 80%;
+            left: 50%;
+
+            @include for-lg-mobiles { display: none; }
         }
     }
 

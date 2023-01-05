@@ -347,7 +347,7 @@ mq.add({
         scrollTrigger: {
             trigger: '.current-issues__diagram',
             start: "top 10%",
-            end: isDesktop ? "+=15000px" : "",
+            end: isDesktop ? "+=10000px" : "",
             pin: isDesktop ? true : false,
             scrub: isDesktop ? true : false
         }

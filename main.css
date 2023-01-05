@@ -588,7 +588,6 @@ li {
   }
 }
 .battery-timeline-container .battery-tl {
-  display: none;
   position: absolute;
   top: 0;
   left: -45px;
@@ -728,6 +727,7 @@ li {
 .current-issues {
   min-height: 100vh;
   padding-bottom: 10rem;
+  position: relative;
 }
 .current-issues .section-header {
   padding-top: 5rem;
@@ -765,6 +765,19 @@ li {
   .current-issues .current-issues-header h2 {
     margin-top: 0;
     padding-bottom: 2rem;
+  }
+}
+.current-issues .cell-grid-decoration {
+  position: absolute;
+}
+.current-issues .cell-grid-decoration--one {
+  top: -300px;
+  width: 80%;
+  left: 50%;
+}
+@media screen and (max-width: 500px) {
+  .current-issues .cell-grid-decoration--one {
+    display: none;
   }
 }
 .current-issues__diagram {
@@ -1239,6 +1252,11 @@ li {
   visibility: hidden;
   opacity: 0;
 }
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .contact__content {
+    column-gap: 3rem;
+  }
+}
 @media screen and (min-width: 501px) and (max-width: 1279px) {
   .contact__content {
     flex-direction: column;
@@ -1258,6 +1276,11 @@ li {
 .contact__content h2 {
   font-size: 4rem;
 }
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .contact__content h2 {
+    font-size: 3rem;
+  }
+}
 @media screen and (min-width: 501px) and (max-width: 1279px) {
   .contact__content h2 {
     font-size: 2.5rem;
@@ -1275,6 +1298,12 @@ li {
 }
 .contact__content div p {
   font-size: 1.4rem;
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .contact__content div p {
+    font-size: 1.2rem;
+    width: 80%;
+  }
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
   .contact__content div p {
