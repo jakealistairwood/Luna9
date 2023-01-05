@@ -9,6 +9,9 @@
     @include for-lg-mobiles {
         @include sm-container(500px);
     }
+    @include for-mob-landscape {
+        padding-top: 5rem;
+    }
 
     &__summary {
         opacity: 0;
@@ -38,6 +41,10 @@
                 flex-direction: column; 
                 margin-bottom: 2rem; 
                 margin-top: 1rem;
+            }
+
+            @include for-mob-landscape {
+                margin-bottom: 1rem;
             }
 
             p {
@@ -99,6 +106,10 @@
                 margin-top: 0;
                 .point { font-size: 0.9rem };
             }
+            @include for-mob-landscape {
+                margin-block: 0rem;
+                margin-top: 3rem;
+            }
 
             .point--one {
                 visibility: hidden;
@@ -127,6 +138,11 @@
             min-height: 150px;
             width: 100%;
             margin-inline: auto;
+        }
+
+        @include for-mob-landscape {
+            margin-top: 1.5rem;
+            padding-bottom: 3em;
         }
 
         .atom {

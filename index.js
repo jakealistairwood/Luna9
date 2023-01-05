@@ -168,7 +168,7 @@ if(ScrollTrigger.isTouch !== 1) {
 ScrollSmoother.create({
     smooth: 1,               // how long (in seconds) it takes to "catch up" to the native scroll position
     effects: true,           // looks for data-speed and data-lag attributes on elements
-    // smoothTouch: 0.1,        // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+    smoothTouch: 0.1,        // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
   });
 
 /* ====  Navbar ==== */
@@ -257,15 +257,21 @@ mq.add({
     isTablet: "(min-width: 501px) and (max-width: 1279px)", 
     isSmDesktop: "(min-width: 1280px) and (max-width: 1440px)",
     isDesktop: "(min-width: 1441px)",
+    isMobileLandscape: "(orientation: landscape) and (min-device-width: 300px) and (max-device-width: 900px)"
 }, (context) => {
-    let { isMobile, isSmDesktop, isTablet, isDesktop } = context.conditions;
+    let { isMobile, isSmDesktop, isTablet, isDesktop, isMobileLandscape } = context.conditions;
     let htwDiagramTl = gsap.timeline({
         scrollTrigger: {
-            trigger: isDesktop ? '.how-they-work' : '.how-they-work',
-            start: isDesktop ? 'top top' : 'center center',
+            trigger: isDesktop 
+            ? '.how-they-work' 
+            : isMobileLandscape ? '.how-they-work__diagram'
+            : '.how-they-work',
+            start: isDesktop 
+            ? 'top top'
+            : isMobileLandscape ? 'top center'
+            : 'center center',
             end: isDesktop ? '+=10000px' : '+=10000px',
             pin: true,
-            // markers: true,
             scrub: true,
             pinSpacing: true
         }

@@ -29,6 +29,11 @@
 
         @include for-lg-mobiles { padding-left: 5%; }
         // clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+
+        @include for-mob-landscape {
+            font-size: 2.4rem;
+            padding-top: 8rem;
+        }
     }
     
     #tsparticles {
@@ -68,6 +73,10 @@
             padding-inline: 5%;
         }
 
+        @include for-mob-landscape {
+            padding-bottom: 5rem;
+        }
+
         .topic {
             min-height: 200px;
             position: relative;
@@ -76,6 +85,10 @@
             @include for-lg-mobiles {
                 min-height: 100px;
                 margin-top: 0rem;
+            }
+
+            @include for-mob-landscape {
+                min-height: 100px;
             }
 
             .mask { position: absolute; inset: 0; z-index: 10; clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }

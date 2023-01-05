@@ -46,3 +46,9 @@
         @content;
     }
 }
+
+@mixin for-mob-landscape {
+    @media screen and (orientation: landscape) and (min-device-width: 300px) and (max-device-width: 900px) {
+        @content;
+    }
+}

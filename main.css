@@ -167,6 +167,12 @@ li {
     padding-left: 5%;
   }
 }
+@media screen and (orientation: landscape) and (min-device-width: 300px) and (max-device-width: 900px) {
+  .overview h1 {
+    font-size: 2.4rem;
+    padding-top: 8rem;
+  }
+}
 .overview #tsparticles {
   position: absolute;
   inset: 0;
@@ -214,6 +220,11 @@ li {
     padding-inline: 5%;
   }
 }
+@media screen and (orientation: landscape) and (min-device-width: 300px) and (max-device-width: 900px) {
+  .overview__topics {
+    padding-bottom: 5rem;
+  }
+}
 .overview__topics .topic {
   min-height: 200px;
   position: relative;
@@ -223,6 +234,11 @@ li {
   .overview__topics .topic {
     min-height: 100px;
     margin-top: 0rem;
+  }
+}
+@media screen and (orientation: landscape) and (min-device-width: 300px) and (max-device-width: 900px) {
+  .overview__topics .topic {
+    min-height: 100px;
   }
 }
 .overview__topics .topic .mask {
@@ -301,6 +317,11 @@ li {
     margin: 0 auto;
   }
 }
+@media screen and (orientation: landscape) and (min-device-width: 300px) and (max-device-width: 900px) {
+  .how-they-work {
+    padding-top: 5rem;
+  }
+}
 .how-they-work__summary {
   opacity: 0;
   visibility: hidden;
@@ -340,6 +361,11 @@ li {
     flex-direction: column;
     margin-bottom: 2rem;
     margin-top: 1rem;
+  }
+}
+@media screen and (orientation: landscape) and (min-device-width: 300px) and (max-device-width: 900px) {
+  .how-they-work__summary div {
+    margin-bottom: 1rem;
   }
 }
 .how-they-work__summary div p {
@@ -413,6 +439,12 @@ li {
     font-size: 0.9rem;
   }
 }
+@media screen and (orientation: landscape) and (min-device-width: 300px) and (max-device-width: 900px) {
+  .how-they-work__summary h5 {
+    margin-block: 0rem;
+    margin-top: 3rem;
+  }
+}
 .how-they-work__summary h5 .point--one {
   visibility: hidden;
   opacity: 0;
@@ -437,6 +469,12 @@ li {
     min-height: 150px;
     width: 100%;
     margin-inline: auto;
+  }
+}
+@media screen and (orientation: landscape) and (min-device-width: 300px) and (max-device-width: 900px) {
+  .how-they-work__diagram {
+    margin-top: 1.5rem;
+    padding-bottom: 3em;
   }
 }
 .how-they-work__diagram .atom {
