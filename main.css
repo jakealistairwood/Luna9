@@ -588,6 +588,7 @@ li {
   }
 }
 .battery-timeline-container .battery-tl {
+  display: none;
   position: absolute;
   top: 0;
   left: -45px;
