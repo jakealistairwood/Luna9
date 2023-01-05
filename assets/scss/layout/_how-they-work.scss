@@ -18,6 +18,11 @@
         visibility: hidden;
         @include for-lg-mobiles { margin-top: -5rem; }
 
+        @include for-mob-landscape {
+            opacity: 1;
+            visibility: visible;
+        }
+
         h2 { 
             margin-bottom: 1.5rem; 
             @media screen and (min-width: 1280px) and (max-width: 1440px) {
