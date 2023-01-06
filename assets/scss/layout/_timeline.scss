@@ -91,7 +91,10 @@
             width: 100%;
             @include for-sm-desktops { min-height: 660px; }
             @include for-tablets { min-height: unset; }
-            @include for-lg-mobiles { flex-direction: column; min-height: unset; }
+            @include for-lg-mobiles { 
+                flex-direction: column; 
+                min-height: 570px;
+            }
             @include for-mob-landscape {
                 opacity: 1;
                 visibility: visible;
@@ -108,7 +111,9 @@
             border: 1px solid $accent-color;
             padding: 0.5rem;
 
-            @include for-tablets { left: -3rem; }
+            @include for-tablets {
+                left: -4.2rem; 
+            }
 
             @include for-lg-mobiles { left: -4rem; }
             
@@ -131,7 +136,13 @@
                 }
             }
 
-            .battery-timeline__date { left: -3.5rem; }
+            .battery-timeline__date { 
+                left: -3.5rem; 
+
+                @include for-lg-mobiles {
+                    left: -4.2rem;
+                }
+            }
         }
         
         &__img-container {
@@ -139,6 +150,8 @@
             @include for-lg-mobiles {
                 width: 90%;
                 margin-left: auto;
+
+                img { width: 80%; margin-left: 50px; }
             }
         }
         
@@ -146,11 +159,19 @@
             align-self: center;
             position: relative;
             width: 50%;
-            @include for-lg-mobiles { width: 80%; margin-left: auto; }
+            @include for-lg-mobiles { 
+                width: 80%; 
+                margin-left: auto; 
+                padding-top: 2rem;
+            }
 
             h3 {
                 color: $accent-color;
                 margin-bottom: 1rem;
+
+                @include for-lg-mobiles {
+                    font-size: 1.4rem;
+                }
             }
 
             ul {
@@ -159,6 +180,9 @@
                 li { 
                     color: $mid-grey;
                     line-height: 1.4;
+                    @include for-lg-mobiles {
+                        font-size: 1rem;
+                    }
                     strong { color: $secondary-color; }
                 }
             }
@@ -166,6 +190,12 @@
 
         &__additional-info {
             display: none;
+
+            p {
+                @include for-lg-mobiles {
+                    font-size: 0.8rem;
+                }
+            }
         }
 
         &__additional-info.active { 

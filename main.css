@@ -756,7 +756,7 @@ li {
 @media screen and (max-width: 500px) {
   .battery-timeline-container .battery-timeline__event {
     flex-direction: column;
-    min-height: unset;
+    min-height: 570px;
   }
 }
 @media screen and (orientation: landscape) and (min-device-width: 300px) and (max-device-width: 900px) {
@@ -777,7 +777,7 @@ li {
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
   .battery-timeline-container .battery-timeline__date {
-    left: -3rem;
+    left: -4.2rem;
   }
 }
 @media screen and (max-width: 500px) {
@@ -816,6 +816,11 @@ li {
 .battery-timeline-container .battery-timeline__event:nth-child(even) .battery-timeline__date {
   left: -3.5rem;
 }
+@media screen and (max-width: 500px) {
+  .battery-timeline-container .battery-timeline__event:nth-child(even) .battery-timeline__date {
+    left: -4.2rem;
+  }
+}
 .battery-timeline-container .battery-timeline__img-container {
   width: 50%;
 }
@@ -823,6 +828,10 @@ li {
   .battery-timeline-container .battery-timeline__img-container {
     width: 90%;
     margin-left: auto;
+  }
+  .battery-timeline-container .battery-timeline__img-container img {
+    width: 80%;
+    margin-left: 50px;
   }
 }
 .battery-timeline-container .battery-timeline__info {
@@ -834,11 +843,17 @@ li {
   .battery-timeline-container .battery-timeline__info {
     width: 80%;
     margin-left: auto;
+    padding-top: 2rem;
   }
 }
 .battery-timeline-container .battery-timeline__info h3 {
   color: #FF00BA;
   margin-bottom: 1rem;
+}
+@media screen and (max-width: 500px) {
+  .battery-timeline-container .battery-timeline__info h3 {
+    font-size: 1.4rem;
+  }
 }
 .battery-timeline-container .battery-timeline__info ul {
   list-style: none;
@@ -847,11 +862,21 @@ li {
   color: #9D9D9D;
   line-height: 1.4;
 }
+@media screen and (max-width: 500px) {
+  .battery-timeline-container .battery-timeline__info ul li {
+    font-size: 1rem;
+  }
+}
 .battery-timeline-container .battery-timeline__info ul li strong {
   color: #fff;
 }
 .battery-timeline-container .battery-timeline__additional-info {
   display: none;
+}
+@media screen and (max-width: 500px) {
+  .battery-timeline-container .battery-timeline__additional-info p {
+    font-size: 0.8rem;
+  }
 }
 .battery-timeline-container .battery-timeline__additional-info.active {
   display: block;
@@ -887,7 +912,7 @@ li {
 }
 @media screen and (max-width: 500px) {
   .current-issues .section-header {
-    padding-top: 5rem;
+    padding-top: 12rem;
   }
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
