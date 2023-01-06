@@ -502,7 +502,9 @@ li {
 }
 @media screen and (max-width: 500px) {
   .how-they-work__diagram .seperator-detail {
-    display: none;
+    display: block;
+    height: 350px;
+    right: calc(50% + 5px);
   }
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
@@ -664,8 +666,8 @@ li {
 }
 @media screen and (max-width: 500px) {
   .battery-timeline-container header p {
-    width: 100%;
-    font-size: 1rem;
+    width: 80%;
+    font-size: 0.9rem;
     padding-top: 2rem;
     padding-left: 0;
   }
@@ -688,6 +690,14 @@ li {
 .battery-timeline-container .battery-tl--smDesktop {
   display: none;
   margin-top: 0;
+}
+.battery-timeline-container .battery-tl--mobile {
+  display: none;
+}
+@media screen and (max-width: 500px) {
+  .battery-timeline-container .battery-tl--mobile {
+    display: block;
+  }
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
   .battery-timeline-container .battery-tl--smDesktop {
@@ -717,8 +727,9 @@ li {
 }
 @media screen and (max-width: 500px) {
   .battery-timeline-container .battery-timeline {
-    row-gap: 6rem;
+    row-gap: 5rem;
     margin-block: 0;
+    padding-top: 8rem;
   }
 }
 .battery-timeline-container .battery-timeline__event {
@@ -797,6 +808,11 @@ li {
 .battery-timeline-container .battery-timeline__event:nth-child(even) .battery-timeline__info {
   padding-left: 2rem;
 }
+@media screen and (max-width: 500px) {
+  .battery-timeline-container .battery-timeline__event:nth-child(even) .battery-timeline__info {
+    padding-left: 0;
+  }
+}
 .battery-timeline-container .battery-timeline__event:nth-child(even) .battery-timeline__date {
   left: -3.5rem;
 }
@@ -871,7 +887,7 @@ li {
 }
 @media screen and (max-width: 500px) {
   .current-issues .section-header {
-    padding-top: 3rem;
+    padding-top: 5rem;
   }
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {

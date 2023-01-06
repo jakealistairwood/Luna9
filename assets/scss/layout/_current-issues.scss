@@ -9,7 +9,7 @@
 
     .section-header {
         padding-top: 5rem;
-        @include for-lg-mobiles { padding-top: 3rem; }
+        @include for-lg-mobiles { padding-top: 5rem; }
     }
 
     .current-issues-header {
