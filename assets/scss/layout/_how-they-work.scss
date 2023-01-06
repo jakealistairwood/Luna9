@@ -14,15 +14,20 @@
         padding-top: 5rem;
     }
 
-    .seperator-detail {
-        width: 4px;
-        height: 620px;
-        background-color: $secondary-color;
-        position: absolute;
-        bottom: 0;
-        right: 631px;
-        // display: none;
-    }
+    // .seperator-detail {
+    //     width: 4px;
+    //     height: 468px;
+    //     background-color: $secondary-color;
+    //     position: absolute;
+    //     bottom: 0;
+    //     // right: 631px;
+    //     right: 50%;
+    //     // display: none;
+
+    //     @include for-sm-desktops { height: 338px; }
+    //     @include for-tablets { display: none; }
+    //     @include for-lg-mobiles { display: none; }
+    // }
 
     &__summary {
         opacity: 0;
@@ -155,6 +160,25 @@
     &__diagram {
         margin-top: 3rem;
         position: relative;
+
+        .seperator-detail {
+            width: 4px;
+            height: 468px;
+            background-color: $secondary-color;
+            position: absolute;
+            bottom: 0;
+            // right: 631px;
+            right: calc(50% - 7px);
+            // display: none;
+            top: 0;
+    
+            @include for-sm-desktops { 
+                height: 550px;
+                right: calc(50% + 2px); 
+            }
+            @include for-tablets { display: none; }
+            @include for-lg-mobiles { display: none; }
+        }
 
         @include for-sm-desktops {
             margin-top: 1rem;

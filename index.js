@@ -23,11 +23,6 @@ const sourcesBtn = document.querySelector('.footer__btn');
 
 ==============================================================================  */
 
-let bodyHeight = body.offsetHeight;
-let bodyScrollHeight = body.scrollHeight;
-
-console.log(bodyHeight, bodyScrollHeight);
-
 let isMobileDevice = window.matchMedia('(max-width: 500px)');
 let isTabletDevice = window.matchMedia('(min-width: 501px) and (max-width: 1279px');
 let isSmDesktopDevice = window.matchMedia('(min-width: 1280px) and (max-width: 1440px)');
@@ -160,10 +155,6 @@ sourcesBtn.addEventListener('click', toggleSourcesDropdown);
 */
 
 let mq = gsap.matchMedia();
-
-if(ScrollTrigger.isTouch !== 1) {
-    
-}
 
 ScrollSmoother.create({
     smooth: 1,               // how long (in seconds) it takes to "catch up" to the native scroll position
@@ -337,7 +328,6 @@ jsfEvents.forEach(jsfEvent => {
         }
     });
 });
-
 
 /* 
 * SECTION - Current Issues 

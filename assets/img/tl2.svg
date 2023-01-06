@@ -1,17 +1,17 @@
-<svg width="1344" height="6973" viewBox="0 0 1344 6973" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="670" y="2" width="4" height="2001" fill="white"/>
-<rect y="1999" width="670" height="4" fill="white"/>
-<rect y="2003" width="4" height="800" fill="white"/>
-<rect x="4" y="2799" width="670" height="4" fill="white"/>
-<rect x="670" y="2803" width="4" height="800" fill="white"/>
-<rect y="3599" width="670" height="4" fill="white"/>
-<rect y="3603" width="4" height="800" fill="white"/>
-<rect x="4" y="4399" width="670" height="4" fill="white"/>
-<rect x="670" y="4403" width="4" height="800" fill="white"/>
-<rect y="5199" width="670" height="4" fill="white"/>
-<rect y="5203" width="4" height="800" fill="white"/>
-<rect x="4" y="5999" width="670" height="4" fill="white"/>
-<rect x="670" y="6003" width="4" height="800" fill="white"/>
-<rect x="370" y="6799" width="300" height="4" fill="white"/>
-<rect x="370" y="6803" width="4" height="170" fill="white"/>
+<svg width="1344" height="6505" viewBox="0 0 1344 6505" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="666.5" y="0.5" width="3" height="1399" fill="white" stroke="white"/>
+<rect x="0.5" y="1400.5" width="669" height="3" fill="white" stroke="white"/>
+<rect x="0.5" y="1404.5" width="3" height="799" fill="white" stroke="white"/>
+<rect x="4.5" y="2200.5" width="669" height="3" fill="white" stroke="white"/>
+<rect x="670.5" y="2204.5" width="3" height="799" fill="white" stroke="white"/>
+<rect x="0.5" y="3000.5" width="669" height="3" fill="white" stroke="white"/>
+<rect x="0.5" y="3004.5" width="3" height="799" fill="white" stroke="white"/>
+<rect x="4.5" y="3800.5" width="669" height="3" fill="white" stroke="white"/>
+<rect x="670.5" y="3804.5" width="3" height="799" fill="white" stroke="white"/>
+<rect x="0.5" y="4600.5" width="669" height="3" fill="white" stroke="white"/>
+<rect x="0.5" y="4604.5" width="3" height="799" fill="white" stroke="white"/>
+<rect x="4.5" y="5400.5" width="669" height="3" fill="white" stroke="white"/>
+<rect x="670.5" y="5404.5" width="3" height="799" fill="white" stroke="white"/>
+<rect x="370.5" y="6200.5" width="299" height="3" fill="white" stroke="white"/>
+<rect x="370.5" y="6204.5" width="3" height="300" fill="white" stroke="white"/>
 </svg>
