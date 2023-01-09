@@ -1,6 +1,6 @@
 import { timelineInfo } from "./assets/js/data.js";
 import BatteryEvents from './assets/js/events.js';
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin, ScrollToPlugin);
 
 
 /*  ==============================================================================
@@ -171,6 +171,19 @@ let navTimeline = gsap.timeline({
         toggleClass: { targets: '.luna9', className: 'active'}
     }
 });
+
+
+let sectionAnchors = document.querySelectorAll('.section-anchor');
+
+sectionAnchors.forEach(anchor => {
+    anchor.addEventListener('click', e => {
+        e.preventDefault();
+        console.log(anchor);
+        let scrollToThisSection = anchor.getAttribute('href');
+        gsap.to(window, { ease: "power3.inOut", scrollTo: scrollToThisSection })
+    })
+})
+
 
 // navTimeline.to('.navbar__progress-indicator', {
 //     width: 38,
