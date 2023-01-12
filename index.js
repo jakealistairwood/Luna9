@@ -1,6 +1,6 @@
 import { timelineInfo } from "./assets/js/data.js";
 import BatteryEvents from './assets/js/events.js';
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, DrawSVGPlugin, ScrollToPlugin, MorphSVGPlugin, MotionPathPlugin);
 
 
 /*  ==============================================================================
@@ -29,6 +29,9 @@ let isSmDesktopDevice = window.matchMedia('(min-width: 1280px) and (max-width: 1
 let isNotMobileDevice = window.matchMedia('(min-width: 501px)');
 
 let atomNodesArr = [];
+let sectionAnchorClicked = false;
+
+let disabled = false;
 
 const toggleSourcesDropdown = () => {
     document.querySelector('.footer__sources').classList.toggle('active');
@@ -129,7 +132,6 @@ timelineInfo.forEach(el => {
 /* Timeline SVG */
 let htwDiagramDocHeight = window.pageYOffset + howTheyWorkDiagram.getBoundingClientRect().top;
 let jsfContainerBottomPos = window.pageYOffset + jsfContainer.getBoundingClientRect().bottom;
-console.log(htwDiagramDocHeight);
 timelineSVG.style.position = "absolute";
 timelineSVG.style.top = htwDiagramDocHeight;
 timelineSVG.style.bottom - jsfContainerBottomPos;
@@ -160,6 +162,7 @@ ScrollSmoother.create({
     smooth: 1,               // how long (in seconds) it takes to "catch up" to the native scroll position
     effects: true,           // looks for data-speed and data-lag attributes on elements
     smoothTouch: 0.1,        // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+    normalizeScroll: false
   });
 
 /* ====  Navbar ==== */
@@ -168,21 +171,34 @@ let navTimeline = gsap.timeline({
     scrollTrigger: {
         trigger: 'body',
         start: "top top",
-        toggleClass: { targets: '.luna9', className: 'active'}
+        toggleClass: { targets: '.luna9', className: 'active'},
     }
 });
 
 
-let sectionAnchors = document.querySelectorAll('.section-anchor');
+// let sectionAnchors = document.querySelectorAll('.section-anchor');
 
-sectionAnchors.forEach(anchor => {
-    anchor.addEventListener('click', e => {
-        e.preventDefault();
-        console.log(anchor);
-        let scrollToThisSection = anchor.getAttribute('href');
-        gsap.to(window, { ease: "power3.inOut", scrollTo: scrollToThisSection })
-    })
-})
+// sectionAnchors.forEach(anchor => {
+//     anchor.addEventListener('click', e => {
+//         e.preventDefault();
+//         console.log(anchor);
+//         sectionAnchorClicked = true;
+
+//         if(sectionAnchorClicked) {
+//             ScrollTrigger.getById('htwDiagramTl').disable();
+//             ScrollTrigger.getById('currentIssuesTl').disable();
+//         }
+
+
+
+//         let scrollToThisSection = anchor.getAttribute('href');
+//         gsap.to(window, { ease: "power3.inOut", scrollTo: scrollToThisSection })
+
+//         ScrollTrigger.getById('htwDiagramTl').enable();
+//         ScrollTrigger.getById('currentIssuesTl').enable();
+//         sectionAnchorClicked = false;
+//     })
+// })
 
 
 // navTimeline.to('.navbar__progress-indicator', {
@@ -195,12 +211,6 @@ sectionAnchors.forEach(anchor => {
 //         scrub: true
 //     }
 // })
-
-let bodyH = document.body;
-let html = document.documentElement;
-
-let heights = Math.max(bodyH.scrollHeight, bodyH.offsetHeight, html.scrollHeight, html.offsetHeight);
-console.log(heights);
 
 mq.add({
     isMobile: "(max-width: 500px)",
@@ -279,7 +289,21 @@ mq.add({
             end: isDesktop ? '+=10000px' : '+=10000px',
             pin: true,
             scrub: true,
-            pinSpacing: true
+            pinSpacing: true,
+            id: "htwDiagramTl",
+            onUpdate: killWhenFast
+            // onEnter: (self) => {
+            //     console.log(self);
+            //     if(sectionAnchorClicked) {
+            //         self.disable(true, true);
+            //         self.animation.progress(1);
+            //     } else {
+            //         self.enable();
+            //     }
+            // },
+            // onLeave: (self) => {
+            //     if()
+            // }
         }
     })
     htwDiagramTl.to('.point--one', {
@@ -360,14 +384,15 @@ mq.add({
             start: "top 10%",
             end: isDesktop ? "+=10000px" : "",
             pin: isDesktop ? true : false,
-            scrub: isDesktop ? true : false
+            scrub: isDesktop ? true : false,
+            id: 'currentIssuesTl',
+            onUpdate: checkDisabled
         }
     })
 
     gsap.utils.toArray('.current-issues__issue').forEach((issue, i) => {
         let issueMask = issue.querySelector('.issue-mask'),
         issueContent = issue.querySelector('.current-issues__issue-content');
-        console.log(issueMask, issueContent);
         
         issTl.to(issueMask, {
             backgroundColor: 'transparent'
@@ -377,23 +402,112 @@ mq.add({
     })
 })
 
+// mq.add({
+//     isMobile: "(max-width: 500px)",
+//     isLgDesktop: "(min-width: 1440px)"
+// }, (context) => {
+//     let { isMobile, isLgDesktop } = context.conditions;
 
-// let eventTl = gsap.timeline({
-//     scrollTrigger: {
-//         trigger: '.how-they-work__diagram',
-//         start: "top bottom",
-//         end: "bottom top",
-//         markers: true,
-//         scrub: true,
+//     if(isMobile) {
+//         let timelineDrawTl = gsap.timeline({
+//             scrollTrigger: {
+//                 trigger: '.battery-timeline-container',
+//                 start: "top bottom", 
+//                 end: "bottom bottom",
+//                 markers: true,
+//                 scrub: true
+//             }
+//         })
+//         timelineDrawTl.from('.st1', {
+//             drawSVG: 0
+//         })
+//     } else {
+//         let timelineDrawTl = gsap.timeline({
+//             scrollTrigger: {
+//                 trigger: '.battery-timeline-container',
+//                 start: "20% top",
+//                 end: "+=8000",
+//                 scrub: true,
+//                 markers: true
+//             }
+//         })
+        
+//         timelineDrawTl.from('.st0', {
+//             drawSVG: 0
+//         })
 //     }
-// }).fromTo("#timeline", {
-//     drawSVG: "0% -100%"
-// }, {
-//     drawSVG: "100% 100%"
-// }, 0);
 
+// })
 
+mq.add({
+    isMobile: "(max-width: 500px)",
+    isTablet: "(min-width: 501px) and (max-width: 1279px)",
+    isDesktop: "(min-width: 1280px)",
+}, (context) => {
+    let { isMobile, isTablet, isDesktop } = context.conditions;
 
+    if(isDesktop) {
+        let timelineDrawTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.battery-timeline-container',
+                start: "top top",
+                end: "+=8200",
+                scrub: true,
+                // onUpdate: (this) => {
+                //     let currentProgress = this.progress();
+                //     checkTimelineProgress(currentProgress);
+                //     console.log(currentProgress);
+                //     // if(currentProgress = 0.5640248) {
+        
+                //     // }
+                // }
+            }
+        }).from(".st0", {
+            drawSVG: 0
+        })
+    } 
+    // else if(isMobile) {
+    //     let timelineDrawTl = gsap.timeline({
+    //         scrollTrigger: {
+    //             trigger: '.battery-timeline-container',
+    //             start: 'top top',
+    //             end: "+=6000",
+    //             scrub: true
+    //         }
+    //     }).from('.st1', {
+    //         drawSVG: 0
+    //     })
+    // }
+})
+
+// let timelineDrawTl = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: '.battery-timeline-container',
+//         start: "top top",
+//         end: "+=8200",
+//         scrub: true,
+//         // onUpdate: (this) => {
+//         //     let currentProgress = this.progress();
+//         //     checkTimelineProgress(currentProgress);
+//         //     console.log(currentProgress);
+//         //     // if(currentProgress = 0.5640248) {
+
+//         //     // }
+//         // }
+//     }
+// }).from(".st0", {
+//     drawSVG: 0
+// })
+// timelineDrawTl.to('.timeline-tracker', {
+//     motionPath: {
+//         path: MorphSVGPlugin.convertToPath(".st0"),
+//         align: MorphSVGPlugin.convertToPath(".st0"),
+//         allowOrigin: [0.5, 0.5],
+//     }
+// })  
+// timelineDrawTl.from('.st0', {
+//     drawSVG: 0
+// });
 
 // drawTl.fromTo('#timeline', { drawSVG: 0 }, {
 //     drawSVG: 100,
@@ -471,6 +585,78 @@ mq.add({
         })
     }
 })
+
+
+
+// let sectionAnchors = document.querySelectorAll('.section-anchor');
+
+// sectionAnchors.forEach(anchor => {
+//     anchor.addEventListener('click', e => {
+//         e.preventDefault();
+//         console.log(anchor);
+//         sectionAnchorClicked = true;
+
+//         if(sectionAnchorClicked) {
+//             ScrollTrigger.getById('htwDiagramTl').disable();
+//             ScrollTrigger.getById('currentIssuesTl').disable();
+//         }
+
+
+
+//         let scrollToThisSection = anchor.getAttribute('href');
+//         gsap.to(window, { ease: "power3.inOut", scrollTo: scrollToThisSection })
+
+//         ScrollTrigger.getById('htwDiagramTl').enable();
+//         ScrollTrigger.getById('currentIssuesTl').enable();
+//         sectionAnchorClicked = false;
+//     })
+// })
+
+gsap.utils.toArray('.section-anchor').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+        console.log(disabled);
+        e.preventDefault();
+        gsap.to(window, {
+            onStart: () => disabled = true,
+            onComplete: () => {
+                disabled = false,
+                console.log(disabled);
+            },    
+            onUpdate: () => console.log(disabled),
+            scrollTo: e.currentTarget.getAttribute('href')
+        })
+        console.log(disabled);
+    })
+})
+
+let sections = gsap.utils.toArray('.section-control')
+
+sections.forEach(section => {
+    gsap.to(section, {
+        ease: "none",
+        scrollTrigger: {
+            trigger: section,
+            scrub: 1,
+            end: () => "+=" + window.innerHeight * sections.length,
+            onUpdate: checkDisabled
+        }
+    })
+})
+
+function checkDisabled(self) {
+    if(disabled) {
+        let tween = self.getTween();
+        tween && tween.progress(1);
+        self.animation.progress(self.progress === 1 ? 1 : 0);
+        console.log("function ran");
+    }
+}
+
+function killWhenFast(self) {
+    let tween = self.getTween();
+    tween && Math.abs(self.getVelocity()) > 2500 && tween.progress(1);
+}
+
 
 
 
