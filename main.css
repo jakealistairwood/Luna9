@@ -708,6 +708,7 @@ li {
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
   .battery-timeline-container .battery-tl--smDesktop {
     display: block;
+    width: 50%;
   }
   .battery-timeline-container .battery-tl--lgDesktop {
     display: none;

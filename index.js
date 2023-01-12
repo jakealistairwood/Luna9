@@ -442,11 +442,12 @@ mq.add({
 mq.add({
     isMobile: "(max-width: 500px)",
     isTablet: "(min-width: 501px) and (max-width: 1279px)",
-    isDesktop: "(min-width: 1280px)",
+    isSmDesktop: "(min-width: 1280px) and (max-width: 1440px)",
+    isLgDesktop: "(min-width: 1441px)",
 }, (context) => {
-    let { isMobile, isTablet, isDesktop } = context.conditions;
+    let { isMobile, isTablet, isSmDesktop, isLgDesktop } = context.conditions;
 
-    if(isDesktop) {
+    if(isLgDesktop) {
         let timelineDrawTl = gsap.timeline({
             scrollTrigger: {
                 trigger: '.battery-timeline-container',
@@ -466,6 +467,28 @@ mq.add({
             drawSVG: 0
         })
     } 
+    if(isSmDesktop) {
+        console.log("current viewport is small desktop");
+        let timelineDrawTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.battery-timeline-container',
+                start: "top top",
+                end: "+=7500",
+                scrub: true,
+                markers: true
+                // onUpdate: (this) => {
+                //     let currentProgress = this.progress();
+                //     checkTimelineProgress(currentProgress);
+                //     console.log(currentProgress);
+                //     // if(currentProgress = 0.5640248) {
+        
+                //     // }
+                // }
+            }
+        }).from(".st2", {
+            drawSVG: 0
+        })
+    }
     // else if(isMobile) {
     //     let timelineDrawTl = gsap.timeline({
     //         scrollTrigger: {

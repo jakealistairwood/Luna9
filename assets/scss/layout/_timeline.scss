@@ -60,7 +60,10 @@
         }
 
         @include for-sm-desktops {
-            &--smDesktop { display: block;}
+            &--smDesktop { 
+                display: block;
+                width:50%;
+            }
             &--lgDesktop { display: none; }
         }
     }
