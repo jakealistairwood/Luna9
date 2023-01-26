@@ -519,7 +519,6 @@ mq.add({
                 start: "top top",
                 end: "+=7000",
                 scrub: true,
-                markers: true
                 // onUpdate: (this) => {
                 //     let currentProgress = this.progress();
                 //     checkTimelineProgress(currentProgress);
