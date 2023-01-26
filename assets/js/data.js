@@ -10,7 +10,7 @@ export const timelineInfo = [
         additionalInfo: "Volta was inspired by the electric eel's organ and its natural ability to create, store, and discharge electricity. The first true battery was created in a similar structure using copper and zinc discs, seperated by brine-soaked cloth to enhance conductivity. It produced a stable, consistent current for a short time, paving the way for batteries as we know them today.",
         infoDisplayed: false,
         imgInfo: {
-            src: './assets/img/voltaic-pile.png',
+            src: './assets/img/Voltaic_svg.svg',
             alt: 'voltaic-pile-battery'
         }
     },
@@ -25,7 +25,7 @@ export const timelineInfo = [
         additionalInfo: 'The Daniell Cell was developed as a safer and more stable alternative to the Voltaic Pile. Also known as the porous pot cell, it consists of a zinc anode submerged in an earthenware pot containing zinc sulphate solution, which was then in turn placed into a copper can containing copper sulphate solution. The Copper pot acted as the batterys cathode.',
         infoDisplayed: false,
         imgInfo: {
-            src: './assets/img/daniell-cell.png',
+            src: './assets/img/daniell-cell.svg',
             alt: 'daniell-cell-battery'
         }
     },
@@ -40,7 +40,7 @@ export const timelineInfo = [
         additionalInfo: 'Up until this point, the pioneers of electrochemistry had created primary cells - single-use sources of power which are drained once the chemical reactions are complete. The lead acid battery changed everything, as its chemical reaction can be reversed - a discovery that brought about the amazing practicalities of rechargeability. This technology is still used to start most internal combustion engine cars today.',
         infoDisplayed: false,
         imgInfo: {
-            src: './assets/img/lead-acid-battery.png',
+            src: './assets/img/lead-acid.svg',
             alt: 'lead-acid-battery'
         }
     },
@@ -55,7 +55,7 @@ export const timelineInfo = [
         additionalInfo: "Leclanche's first version of the carbon-zinc cell provided a source of power with a much longer shelf life, thanks to the addition of carbon to the cathode. He later reworked his invention by adding starch to the electrolyte to turn it into a gelatinous paste and sealed it with wax, thus creating a 'dry' and - most importantly - portable source of power. Carbon-Zinc cells existed as a primary source of energy into the 1950s.",
         infoDisplayed: false,
         imgInfo: {
-            src: './assets/img/portability.svg',
+            src: './assets/img/Leclanche_svg.svg',
             alt: 'leclanche-cell-battery'
         }
     },
@@ -85,7 +85,7 @@ export const timelineInfo = [
         additionalInfo: "Although alkaline electrolytes were nothing new by this time in the battery's history (for example Thomas Edison famously created an alkaline storage battery in 1901), the modern and widespread use of alkaline cells is thanks to an engineer at the Everready Battery Company. Tasked to find a life-extending solution for Carbon-Zinc batteries, Urry developed a prototype that used zinc powder instead of foil. He showcased his invention using toy cars, easily outlasting the leading competitor.",
         infoDisplayed: false,
         imgInfo: {
-            src: './assets/img/alkaline-battery.png',
+            src: './assets/img/alkaline.svg',
             alt: 'primary-alkaline-battery'
         }
     },

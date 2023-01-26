@@ -73,10 +73,11 @@ li {
 }
 
 .header {
-  background: #000000;
-  background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
-  background: -o-linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 0, 0)), to(rgba(0, 0, 0, 0)));
+  background: #171329;
+  background: rgb(23, 19, 41);
+  background: linear-gradient(to bottom, rgb(23, 19, 41) 0%, rgba(23, 19, 41, 0) 100%);
+  background: -o-linear-gradient(180deg, rgb(23, 19, 41) 0%, rgba(23, 19, 41, 0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(23, 19, 41)), to(rgba(23, 19, 41, 0)));
   position: fixed;
   right: 0;
   left: 0;
@@ -462,6 +463,22 @@ li {
   line-height: 1.2;
   display: flex;
   align-items: center;
+}
+@media screen and (min-width: 501px) and (max-width: 1279px) {
+  .how-they-work__summary h5 .point {
+    flex-direction: column;
+    row-gap: 1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .how-they-work__summary h5 .point .aqua {
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 1279px) and (max-width: 500px) {
+  .how-they-work__summary h5 .point .aqua {
+    padding-left: 2.5rem;
+  }
 }
 @media screen and (max-width: 500px) {
   .how-they-work__summary h5 .point {

@@ -147,7 +147,19 @@
                 line-height: 1.2;
                 display: flex;
                 align-items: center;
+                @include for-tablets {
+                    flex-direction: column;
+                    row-gap: 1rem;
+                    justify-content: flex-start;
+                    align-items: flex-start;
 
+                    .aqua {
+                        display: inline-block;
+                        @include for-lg-mobiles {
+                            padding-left: 2.5rem;
+                        }
+                    }
+                }
                 @include for-lg-mobiles {
                     flex-direction: column;
                     row-gap: 1rem;
