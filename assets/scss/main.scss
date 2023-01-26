@@ -59,18 +59,18 @@ section {
         margin-inline: auto;
     }
 
-    &::after {
-        position: absolute;
-        content: '';
-        background-image: url('../assets/img/Section\ divider.svg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 5px;
-    }
+    // &::after {
+    //     position: absolute;
+    //     content: '';
+    //     background-image: url('../assets/img/Section\ divider.svg');
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+    //     width: 100%;
+    //     bottom: 0;
+    //     left: 0;
+    //     right: 0;
+    //     height: 5px;
+    // }
 }
 
 p {
