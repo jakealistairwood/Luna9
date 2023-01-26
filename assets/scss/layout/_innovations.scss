@@ -50,7 +50,7 @@
     .innovative-solutions {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        column-gap: 10rem;
+        column-gap: 15rem;
         padding-bottom: 8rem;
         @include for-tablets {
             margin-top: 5rem;
@@ -132,17 +132,18 @@
         .silicon-without-the-cons {
             grid-column: 2/3;
             grid-row: 1/2;
-            margin-top: -10rem;
+            margin-top: -20rem;
             @include for-tablets {
                 grid-column: 1/2;
                 grid-row: 1/2;
+                margin-top: 0;
             }
             @include for-lg-mobiles { margin-left: auto; margin-top: 0; }
         }
         .solid-state {
             grid-column: 1/2;
             grid-row: 2/3;
-            margin-top: -10rem;
+            margin-top: -15rem;
             @include for-tablets {
                 grid-column: 2/3;
                 grid-row: 1/2;
@@ -153,7 +154,7 @@
         .sustainable-solutions {
             grid-column: 2/3;
             grid-row: 3/4;
-            margin-top: -5rem;
+            margin-top: -12rem;
             @include for-tablets {
                 grid-column: 1/2;
                 grid-row: 2/3;
@@ -164,7 +165,7 @@
         .seaweed-seperator {
             grid-column: 1/2;
             grid-row: 4/5;
-            margin-top: -10rem;
+            margin-top: -20rem;
             @include for-tablets {
                 grid-column: 2/3;
                 grid-row: 2/3;

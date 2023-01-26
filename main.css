@@ -1249,7 +1249,7 @@ li {
 .innovative-solutions-container .innovative-solutions {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 10rem;
+  column-gap: 15rem;
   padding-bottom: 8rem;
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
@@ -1351,12 +1351,13 @@ li {
 .innovative-solutions-container .innovative-solutions .silicon-without-the-cons {
   grid-column: 2/3;
   grid-row: 1/2;
-  margin-top: -10rem;
+  margin-top: -20rem;
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
   .innovative-solutions-container .innovative-solutions .silicon-without-the-cons {
     grid-column: 1/2;
     grid-row: 1/2;
+    margin-top: 0;
   }
 }
 @media screen and (max-width: 500px) {
@@ -1368,7 +1369,7 @@ li {
 .innovative-solutions-container .innovative-solutions .solid-state {
   grid-column: 1/2;
   grid-row: 2/3;
-  margin-top: -10rem;
+  margin-top: -15rem;
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
   .innovative-solutions-container .innovative-solutions .solid-state {
@@ -1386,7 +1387,7 @@ li {
 .innovative-solutions-container .innovative-solutions .sustainable-solutions {
   grid-column: 2/3;
   grid-row: 3/4;
-  margin-top: -5rem;
+  margin-top: -12rem;
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
   .innovative-solutions-container .innovative-solutions .sustainable-solutions {
@@ -1404,7 +1405,7 @@ li {
 .innovative-solutions-container .innovative-solutions .seaweed-seperator {
   grid-column: 1/2;
   grid-row: 4/5;
-  margin-top: -10rem;
+  margin-top: -20rem;
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
   .innovative-solutions-container .innovative-solutions .seaweed-seperator {
