@@ -496,7 +496,7 @@ mq.add({
             scrollTrigger: {
                 trigger: '.battery-timeline-container',
                 start: "top top",
-                end: "+=7450",
+                end: "+=6450",
                 scrub: true,
                 // onUpdate: (this) => {
                 //     let currentProgress = this.progress();

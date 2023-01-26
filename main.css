@@ -460,6 +460,36 @@ li {
   margin-block: 0;
   padding-bottom: 2rem;
   line-height: 1.2;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 500px) {
+  .how-they-work__summary h5 .point {
+    flex-direction: column;
+    row-gap: 1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .how-they-work__summary h5 .point .aqua {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 500px) and (max-width: 500px) {
+  .how-they-work__summary h5 .point .aqua {
+    padding-left: 2.5rem;
+  }
+}
+.how-they-work__summary h5 .point img {
+  width: 50px;
+  margin-right: 1rem;
+}
+@media screen and (max-width: 500px) {
+  .how-they-work__summary h5 .point img {
+    display: inline-block;
+    width: 30px;
+    position: absolute;
+    top: -0.3rem;
+  }
 }
 @media screen and (max-width: 500px) {
   .how-they-work__summary h5 .point {
@@ -479,6 +509,7 @@ li {
 }
 .how-they-work__summary h5 .aqua {
   color: #00FFF5;
+  padding-right: 10px;
 }
 .how-they-work__diagram {
   margin-top: 3rem;
@@ -515,7 +546,7 @@ li {
   .how-they-work__diagram .seperator-detail {
     display: block;
     height: 350px;
-    right: calc(50% + 5px);
+    right: calc(50% + 0.5vw);
   }
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
@@ -663,6 +694,12 @@ li {
     max-width: unset;
   }
 }
+@media screen and (max-width: 500px) {
+  .battery-timeline-container header h2 {
+    max-width: 280px;
+    padding-top: 2rem;
+  }
+}
 .battery-timeline-container header p {
   width: 50%;
   padding-left: 3.5rem;
@@ -738,7 +775,7 @@ li {
 }
 @media screen and (max-width: 500px) {
   .battery-timeline-container .battery-timeline {
-    row-gap: 6rem;
+    row-gap: 8rem;
     margin-block: 0;
     padding-top: 8rem;
   }
@@ -1063,6 +1100,7 @@ li {
     min-height: unset;
     padding-inline: 1.5rem;
     background-color: transparent;
+    border-radius: 0;
   }
   .current-issues__issue .issue-mask:first-child {
     padding-top: 2rem;
@@ -1080,6 +1118,7 @@ li {
     min-height: unset;
     padding-bottom: 1rem;
     padding-top: 0rem;
+    border-radius: 0;
   }
 }
 .current-issues__issue .issue-mask img {
@@ -1197,14 +1236,20 @@ li {
 }
 .innovative-solutions-container .decoration-grid {
   position: absolute;
+  z-index: -1;
+}
+.innovative-solutions-container .decoration-grid--top {
   top: -20rem;
   right: 0;
-  z-index: -1;
+}
+.innovative-solutions-container .decoration-grid--bottom {
+  bottom: 0;
+  right: -20rem;
 }
 .innovative-solutions-container .innovative-solutions {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 5rem;
+  column-gap: 10rem;
   padding-bottom: 8rem;
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
@@ -1306,6 +1351,7 @@ li {
 .innovative-solutions-container .innovative-solutions .silicon-without-the-cons {
   grid-column: 2/3;
   grid-row: 1/2;
+  margin-top: -10rem;
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
   .innovative-solutions-container .innovative-solutions .silicon-without-the-cons {
@@ -1316,6 +1362,7 @@ li {
 @media screen and (max-width: 500px) {
   .innovative-solutions-container .innovative-solutions .silicon-without-the-cons {
     margin-left: auto;
+    margin-top: 0;
   }
 }
 .innovative-solutions-container .innovative-solutions .solid-state {

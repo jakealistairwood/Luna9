@@ -35,15 +35,22 @@
 
     .decoration-grid {
         position: absolute;
-        top: -20rem;
-        right: 0;
         z-index: -1;
+
+        &--top {
+            top: -20rem;
+            right: 0;
+        }
+        &--bottom {
+            bottom: 0;
+            right: -20rem;
+        }
     }
 
     .innovative-solutions {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        column-gap: 5rem;
+        column-gap: 10rem;
         padding-bottom: 8rem;
         @include for-tablets {
             margin-top: 5rem;
@@ -125,11 +132,12 @@
         .silicon-without-the-cons {
             grid-column: 2/3;
             grid-row: 1/2;
+            margin-top: -10rem;
             @include for-tablets {
                 grid-column: 1/2;
                 grid-row: 1/2;
             }
-            @include for-lg-mobiles { margin-left: auto; }
+            @include for-lg-mobiles { margin-left: auto; margin-top: 0; }
         }
         .solid-state {
             grid-column: 1/2;

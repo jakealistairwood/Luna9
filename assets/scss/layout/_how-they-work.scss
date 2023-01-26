@@ -145,6 +145,33 @@
                 margin-block: 0;
                 padding-bottom: 2rem;
                 line-height: 1.2;
+                display: flex;
+                align-items: center;
+
+                @include for-lg-mobiles {
+                    flex-direction: column;
+                    row-gap: 1rem;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+
+                    .aqua {
+                        display: inline-block;
+                        @include for-lg-mobiles {
+                            padding-left: 2.5rem;
+                        }
+                    }
+                }
+
+                img {
+                    width: 50px;
+                    margin-right: 1rem;
+                    @include for-lg-mobiles {
+                        display: inline-block;
+                        width: 30px;
+                        position: absolute;
+                        top: -0.3rem;
+                    }
+                }
 
                 @include for-lg-mobiles {
                     font-size: 1rem;
@@ -164,7 +191,7 @@
                 top: 0;
             }
 
-            .aqua { color: $aqua; }
+            .aqua { color: $aqua; padding-right: 10px; }
         }
     }
 
@@ -197,7 +224,7 @@
             @include for-lg-mobiles { 
                 display: block; 
                 height: 350px;
-                right: calc(50% + 5px);
+                right: calc(50% + 0.5vw);
             }
         }
 
