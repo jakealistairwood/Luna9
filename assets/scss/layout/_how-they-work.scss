@@ -201,6 +201,11 @@
                 position: absolute;
                 left: 0;
                 top: 0;
+                @include for-sm-desktops {
+                    align-items: flex-start;
+                    img { margin-top: 8px; }
+                }
+
             }
 
             .aqua { color: $aqua; padding-right: 10px; }

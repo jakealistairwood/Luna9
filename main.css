@@ -524,6 +524,14 @@ li {
   left: 0;
   top: 0;
 }
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .how-they-work__summary h5 .point--two {
+    align-items: flex-start;
+  }
+  .how-they-work__summary h5 .point--two img {
+    margin-top: 8px;
+  }
+}
 .how-they-work__summary h5 .aqua {
   color: #00FFF5;
   padding-right: 10px;
