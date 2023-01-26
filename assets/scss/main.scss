@@ -37,6 +37,10 @@ img {
     will-change: transform;
 }
 
+sup {
+    color: $accent-color;
+}
+
 section {
     @include lg-container(1280px);
     margin-block: 3rem;

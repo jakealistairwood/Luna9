@@ -125,7 +125,7 @@
             position: relative;
             min-height: 1.5rem;
             font-size: 1.5rem;
-            margin-block: 2rem;
+            // margin-block: 2rem;
             font-weight: 400;
             @media screen and (min-width: 1280px) and (max-width: 1440px) {
                 font-size: 1.2rem;
@@ -138,6 +138,13 @@
             @include for-mob-landscape {
                 margin-block: 0rem;
                 margin-top: 3rem;
+            }
+
+            .point {
+                font-size: 2.2rem;
+                margin-block: 0;
+                padding-bottom: 2rem;
+                line-height: 1.2;
             }
 
             .point--one {
@@ -171,6 +178,7 @@
             right: calc(50% - 7px);
             // display: none;
             top: 0;
+            z-index: 10;
 
             @media screen and (min-width: 2200px) {
                 height: 700px;
@@ -232,7 +240,7 @@
             &--cathode { left: 190px; }
             &--anode { left: 985px; }
             &--seperator { left: 50%; transform: translateX(-50%); top: 3rem; }
-            &--electrolyte { left: 50%; transform: translateX(-50%); bottom: 0; height: fit-content; }
+            &--electrolyte { left: 80%; top: 0; height: fit-content; }
 
             @include for-sm-desktops {
                 &--cathode { left: 165px }

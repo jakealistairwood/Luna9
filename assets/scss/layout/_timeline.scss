@@ -191,6 +191,14 @@
             }
         }
 
+        &__info.active {
+            // animation: fadeInElement ease 2s;
+            .battery-timeline__additional-info {
+                display: block;
+                margin-top: 1rem;
+            }
+        }
+
         &__additional-info {
             display: none;
 
@@ -201,11 +209,11 @@
             }
         }
 
-        &__additional-info.active { 
-            display: block; 
-            margin-top: 1rem;
-            animation: fadeInElement ease 1s;
-        }
+        // &__additional-info.active { 
+        //     display: block; 
+        //     margin-top: 1rem;
+        //     animation: fadeInElement ease 1s;
+        // }
 
         &__btn {
             display: flex;

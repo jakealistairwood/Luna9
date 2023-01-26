@@ -37,6 +37,7 @@
 
     .cell-grid-decoration {
         position: absolute;
+        z-index: -1;
 
         &--one {
             top: -300px;
@@ -116,6 +117,7 @@
             background-color: $yellow;
             min-height: 340px;
             padding-top: 2rem;
+            border-radius: 12px;
             @include for-sm-desktops {
                 min-height: 286px;
             }

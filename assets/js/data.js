@@ -67,7 +67,7 @@ export const timelineInfo = [
         location: 'Sweden',
         voltageOutput: '1.2V',
         date: 1899,
-        additionalInfo: 'Created to rival the lead-acid cell, which was proving to be bulky in size but lacking in power, the NiCd cell developed by Jungner was robust, fast to change and offered a higher energy density than the older lead-acid tech. However, Cadmium is highly toxic, meaning that the cells needed to be carefully sealed and still presented a risk. This was revolutionised in the 1990s with the adaptation of nickel-metal-hydride to reduce toxicity, and these types of cells are still widely used today.',
+        additionalInfo: 'Created to rival the lead-acid cell, which was proving to be bulky in size but lacking in power, the NiCd cell developed by Jungner was robust, fast to charge and offered a higher energy density than the older lead-acid tech. However, Cadmium is highly toxic, meaning that the cells needed to be carefully sealed and still presented a risk. This was revolutionised in the 1990s with the adaptation of nickel-metal-hydride to reduce toxicity, and these types of cells are still widely used today.',
         infoDisplayed: false,
         imgInfo: {
             src: './assets/img/Nickel_svg.svg',
@@ -90,7 +90,7 @@ export const timelineInfo = [
         }
     },
     {
-        title: 'The lithium ion battery',
+        title: 'The lithium-ion battery',
         name: 'Lithium-ion Cells',
         id: 'lithium-ion-cells',
         inventedBy: 'Dr. Akira Yoshino, Dr. Stanley Whittingham and Dr. John Goodenough',

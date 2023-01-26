@@ -439,7 +439,6 @@ li {
   position: relative;
   min-height: 1.5rem;
   font-size: 1.5rem;
-  margin-block: 2rem;
   font-weight: 400;
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
@@ -461,6 +460,12 @@ li {
     margin-block: 0rem;
     margin-top: 3rem;
   }
+}
+.how-they-work__summary h5 .point {
+  font-size: 2.2rem;
+  margin-block: 0;
+  padding-bottom: 2rem;
+  line-height: 1.2;
 }
 .how-they-work__summary h5 .point--one {
   visibility: hidden;
@@ -488,6 +493,7 @@ li {
   bottom: 0;
   right: calc(50% - 7px);
   top: 0;
+  z-index: 10;
 }
 @media screen and (min-width: 2200px) {
   .how-they-work__diagram .seperator-detail {
@@ -548,8 +554,8 @@ li {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #000;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #171329;
+  background-color: rgba(23, 19, 41, 0.2);
   backdrop-filter: blur(3px);
   z-index: 10;
   padding: 0.5rem 1rem;
@@ -571,9 +577,8 @@ li {
   top: 3rem;
 }
 .how-they-work__diagram .diagram-label--electrolyte {
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
+  left: 80%;
+  top: 0;
   height: fit-content;
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
@@ -877,6 +882,10 @@ li {
 .battery-timeline-container .battery-timeline__info ul li strong {
   color: #fff;
 }
+.battery-timeline-container .battery-timeline__info.active .battery-timeline__additional-info {
+  display: block;
+  margin-top: 1rem;
+}
 .battery-timeline-container .battery-timeline__additional-info {
   display: none;
 }
@@ -884,11 +893,6 @@ li {
   .battery-timeline-container .battery-timeline__additional-info p {
     font-size: 0.8rem;
   }
-}
-.battery-timeline-container .battery-timeline__additional-info.active {
-  display: block;
-  margin-top: 1rem;
-  animation: fadeInElement ease 1s;
 }
 .battery-timeline-container .battery-timeline__btn {
   display: flex;
@@ -954,6 +958,7 @@ li {
 }
 .current-issues .cell-grid-decoration {
   position: absolute;
+  z-index: -1;
 }
 .current-issues .cell-grid-decoration--one {
   top: -300px;
@@ -1042,6 +1047,7 @@ li {
   background-color: #FFF501;
   min-height: 340px;
   padding-top: 2rem;
+  border-radius: 12px;
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
   .current-issues__issue .issue-mask {
@@ -1158,6 +1164,7 @@ li {
 
 .innovative-solutions-container {
   margin-top: 10rem;
+  position: relative;
 }
 @media screen and (max-width: 500px) {
   .innovative-solutions-container {
@@ -1173,7 +1180,7 @@ li {
   opacity: 0;
 }
 .innovative-solutions-container .solutions-header h2 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 4.5rem;
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
   .innovative-solutions-container .solutions-header h2, .innovative-solutions-container .solutions-header p {
@@ -1189,9 +1196,16 @@ li {
     visibility: visible;
   }
 }
+.innovative-solutions-container .decoration-grid {
+  position: absolute;
+  top: -20rem;
+  right: 0;
+  z-index: -1;
+}
 .innovative-solutions-container .innovative-solutions {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  column-gap: 5rem;
   padding-bottom: 8rem;
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
@@ -1308,46 +1322,55 @@ li {
 .innovative-solutions-container .innovative-solutions .solid-state {
   grid-column: 1/2;
   grid-row: 2/3;
+  margin-top: -10rem;
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
   .innovative-solutions-container .innovative-solutions .solid-state {
     grid-column: 2/3;
     grid-row: 1/2;
+    margin-top: 0;
   }
 }
 @media screen and (max-width: 500px) {
   .innovative-solutions-container .innovative-solutions .solid-state {
     margin-right: auto;
+    margin-top: 0;
   }
 }
 .innovative-solutions-container .innovative-solutions .sustainable-solutions {
   grid-column: 2/3;
   grid-row: 3/4;
+  margin-top: -5rem;
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
   .innovative-solutions-container .innovative-solutions .sustainable-solutions {
     grid-column: 1/2;
     grid-row: 2/3;
+    margin-top: 0;
   }
 }
 @media screen and (max-width: 500px) {
   .innovative-solutions-container .innovative-solutions .sustainable-solutions {
     margin-left: auto;
+    margin-top: 0;
   }
 }
 .innovative-solutions-container .innovative-solutions .seaweed-seperator {
   grid-column: 1/2;
   grid-row: 4/5;
+  margin-top: -10rem;
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
   .innovative-solutions-container .innovative-solutions .seaweed-seperator {
     grid-column: 2/3;
     grid-row: 2/3;
+    margin-top: 0;
   }
 }
 @media screen and (max-width: 500px) {
   .innovative-solutions-container .innovative-solutions .seaweed-seperator {
     margin-right: auto;
+    margin-top: 0;
   }
 }
 .innovative-solutions-container .innovative-solutions__reference {
@@ -1548,7 +1571,7 @@ li {
 .contact__btn {
   padding: 0.5rem 1rem;
   background-color: #fff;
-  color: #000;
+  color: #171329;
   font-weight: 700;
   border-radius: 5px;
   max-width: 204px;
@@ -1660,7 +1683,7 @@ li {
 }
 
 body {
-  background: #000;
+  background: #171329;
   color: #fff;
   min-height: 500vh;
   width: 100%;
@@ -1677,6 +1700,10 @@ a {
 
 img {
   will-change: transform;
+}
+
+sup {
+  color: #FF00BA;
 }
 
 section {

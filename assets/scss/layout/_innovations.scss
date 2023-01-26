@@ -5,6 +5,7 @@
 .innovative-solutions-container {
     margin-top: 10rem;
     @include for-lg-mobiles { margin-top: 3rem; }
+    position: relative;
 
     .section-header {
         display: flex;
@@ -16,7 +17,7 @@
 
         
         h2 {
-            margin-bottom: 1.5rem;
+            margin-bottom: 4.5rem;
         }
 
         @include for-tablets {
@@ -32,9 +33,17 @@
         }
     }
 
+    .decoration-grid {
+        position: absolute;
+        top: -20rem;
+        right: 0;
+        z-index: -1;
+    }
+
     .innovative-solutions {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        column-gap: 5rem;
         padding-bottom: 8rem;
         @include for-tablets {
             margin-top: 5rem;
@@ -125,29 +134,35 @@
         .solid-state {
             grid-column: 1/2;
             grid-row: 2/3;
+            margin-top: -10rem;
             @include for-tablets {
                 grid-column: 2/3;
                 grid-row: 1/2;
+                margin-top: 0;
             }
-            @include for-lg-mobiles { margin-right: auto; }
+            @include for-lg-mobiles { margin-right: auto; margin-top: 0; }
         }
         .sustainable-solutions {
             grid-column: 2/3;
             grid-row: 3/4;
+            margin-top: -5rem;
             @include for-tablets {
                 grid-column: 1/2;
                 grid-row: 2/3;
+                margin-top: 0;
             }
-            @include for-lg-mobiles { margin-left: auto; }
+            @include for-lg-mobiles { margin-left: auto; margin-top: 0}
         }
         .seaweed-seperator {
             grid-column: 1/2;
             grid-row: 4/5;
+            margin-top: -10rem;
             @include for-tablets {
                 grid-column: 2/3;
                 grid-row: 2/3;
+                margin-top: 0;
             }
-            @include for-lg-mobiles { margin-right: auto; }
+            @include for-lg-mobiles { margin-right: auto; margin-top: 0; }
         }
 
         &__reference {

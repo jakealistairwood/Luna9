@@ -119,14 +119,14 @@ timelineInfo.map(el => {
     timelineContainer.innerHTML += batteryEvent.renderEvent();
 });
 
-timelineInfo.forEach(el => {
-    let btnRef = document.querySelector(`.btn--${el.id}`);
-    let infoToDisplay = document.querySelector(`.additional-info--${el.id}`);
-    btnRef.addEventListener('click', () => {
-        document.querySelector(`.additional-info--${el.id}`).classList.toggle('active');
-        infoToDisplay.classList.contains("active") ? btnRef.innerText = "Close" : btnRef.innerText = "Learn More";
-    })
-})
+// timelineInfo.forEach(el => {
+//     let btnRef = document.querySelector(`.btn--${el.id}`);
+//     let infoToDisplay = document.querySelector(`.additional-info--${el.id}`);
+//     btnRef.addEventListener('click', () => {
+//         document.querySelector(`.additional-info--${el.id}`).classList.toggle('active');
+//         infoToDisplay.classList.contains("active") ? btnRef.innerText = "Close" : btnRef.innerText = "Learn More";
+//     })
+// })
 
 
 /* Timeline SVG */
@@ -439,6 +439,30 @@ mq.add({
 
 // })
 
+const displayInfo = (el, btn) => {
+    console.log(el);
+    el.classList.toggle('active');
+    el.classList.contains("active") ? btn.innerText = "Close" : btn.innerText = "Learn More";
+    gsap.fromTo(el, {
+        opacity: 0,
+        duration: 1,
+        delay: 0.5
+    }, {
+        opacity: 1,
+        duration: 1.5
+    });
+}
+
+gsap.utils.toArray('.battery-timeline__info').forEach(block => {
+    console.log(block);
+    let learnMoreBtn = block.querySelector('.battery-timeline__btn');
+    console.log(learnMoreBtn);
+    learnMoreBtn.addEventListener('click', () => {
+        displayInfo(block, learnMoreBtn);
+    });
+
+})
+
 mq.add({
     isMobile: "(max-width: 500px)",
     isTablet: "(min-width: 501px) and (max-width: 1279px)",
@@ -608,6 +632,26 @@ mq.add({
         })
     }
 })
+
+
+gsap.utils.toArray('.innovative-solutions__animation').forEach(animation => {
+    let batteryCell = animation.querySelector('.battery-cell');
+    let lottieAnimation = animation.querySelector('.lottie-animation');
+    let rightAnimation = animation.classList.contains('innovative-solutions__animation--right');
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: animation,
+            scrub: true,
+            duration: 2
+        }
+    }).from(batteryCell, {
+        x: rightAnimation ? 100 : -100, 
+        y: -100
+    }).from(lottieAnimation, {
+        autoAlpha: 0
+    })
+});
 
 
 

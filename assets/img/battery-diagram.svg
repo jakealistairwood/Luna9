@@ -76,7 +76,7 @@
     <line id="Line_189" data-name="Line 189" x1="350" y2="350" transform="translate(860 40)" fill="none" stroke="#9d9d9d" stroke-width="1"/>
     <line id="Line_190" data-name="Line 190" x1="356.969" y2="356.969" transform="translate(840 33.031)" fill="none" stroke="#9d9d9d" stroke-width="1"/>
     <line id="Line_191" data-name="Line 191" x1="360" y2="360" transform="translate(820 30)" fill="none" stroke="#9d9d9d" stroke-width="1"/>
-    <rect id="Rectangle_15" data-name="Rectangle 15" width="380" height="300" rx="30" transform="translate(820 60)" stroke="#9d9d9d" stroke-width="1"/>
-    <rect id="Rectangle_16" data-name="Rectangle 16" width="380" height="300" rx="30" transform="translate(60 60)" stroke="#9d9d9d" stroke-width="1"/>
+    <rect id="Rectangle_15" data-name="Rectangle 15" width="380" height="300" rx="30" transform="translate(820 60)" fill="#171329" stroke="#9d9d9d" stroke-width="1"/>
+    <rect id="Rectangle_16" data-name="Rectangle 16" width="380" height="300" rx="30" transform="translate(60 60)" fill="#171329" stroke="#9d9d9d" stroke-width="1"/>
   </g>
 </svg>
