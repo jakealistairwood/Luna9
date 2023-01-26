@@ -52,7 +52,7 @@
             justify-content: space-between;
             column-gap: 5rem;
             margin-top: 3rem;
-            margin-bottom: 5rem;
+            margin-bottom: 3rem;
 
             @include for-tablets {
                 flex-direction: column;
@@ -141,10 +141,14 @@
             }
 
             .point {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
                 margin-block: 0;
                 padding-bottom: 2rem;
                 line-height: 1.2;
+
+                @include for-lg-mobiles {
+                    font-size: 1rem;
+                }
             }
 
             .point--one {

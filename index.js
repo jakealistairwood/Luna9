@@ -242,13 +242,36 @@ mq.add({
 */
 
 let heroTimeline = gsap.timeline();
-heroTimeline.from('.topic-header', {
-    y: 500,
-    duration: 1,
-    height: 500 
-}).to('.mask', {
-    clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)',
-});
+
+heroTimeline.fromTo('h1', {
+    autoAlpha: 0,
+    duration: 0.5,
+    y: -100
+}, {
+    autoAlpha: 0.2,
+    duration: 0.7,
+    y: 0
+}).to('h1', {
+    autoAlpha: 1,
+    duration: 1
+})
+
+gsap.utils.toArray('.topic').forEach(topic => {
+    heroTimeline.from(topic, {
+        y: 200,
+        autoAlpha: 0
+    }, "<")
+})
+
+
+
+// heroTimeline.from('.topic', {
+//     autoAlpha: 0,
+//     duration: 1,
+//     y: 100,
+// }).to('.mask', {
+//     clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)',
+// });
 
 /*
 * SECTION - How Batteries Work? 
@@ -286,7 +309,7 @@ mq.add({
             ? 'top top'
             : isMobileLandscape ? 'top center'
             : 'center center',
-            end: isDesktop ? '+=10000px' : '+=10000px',
+            end: isDesktop ? '+=7000px' : '+=10000px',
             pin: true,
             scrub: true,
             pinSpacing: true,
@@ -382,7 +405,7 @@ mq.add({
         scrollTrigger: {
             trigger: '.current-issues__diagram',
             start: "top 10%",
-            end: isDesktop ? "+=10000px" : "",
+            end: isDesktop ? "+=6600px" : "",
             pin: isDesktop ? true : false,
             scrub: isDesktop ? true : false,
             id: 'currentIssuesTl',
@@ -440,7 +463,6 @@ mq.add({
 // })
 
 const displayInfo = (el, btn) => {
-    console.log(el);
     el.classList.toggle('active');
     el.classList.contains("active") ? btn.innerText = "Close" : btn.innerText = "Learn More";
     gsap.fromTo(el, {
@@ -454,9 +476,7 @@ const displayInfo = (el, btn) => {
 }
 
 gsap.utils.toArray('.battery-timeline__info').forEach(block => {
-    console.log(block);
     let learnMoreBtn = block.querySelector('.battery-timeline__btn');
-    console.log(learnMoreBtn);
     learnMoreBtn.addEventListener('click', () => {
         displayInfo(block, learnMoreBtn);
     });
@@ -679,16 +699,24 @@ gsap.utils.toArray('.innovative-solutions__animation').forEach(animation => {
 //     })
 // })
 
+gsap.utils.toArray('.reference').forEach(ref => {
+    ref.addEventListener('click', (e) => {
+        e.preventDefault();
+        if(!document.querySelector('.footer__sources').classList.contains("active")){
+            document.querySelector('.footer__sources').classList.add("active");
+        }
+        gsap.to(window, {
+            scrollTo: e.currentTarget.getAttribute('href')
+        })
+    })
+})
+
 gsap.utils.toArray('.section-anchor').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
-        console.log(disabled);
         e.preventDefault();
         gsap.to(window, {
             onStart: () => disabled = true,
-            onComplete: () => {
-                disabled = false,
-                console.log(disabled);
-            },    
+            onComplete: () => disabled = false,    
             onUpdate: () => console.log(disabled),
             scrollTo: e.currentTarget.getAttribute('href')
         })
