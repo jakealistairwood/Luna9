@@ -238,7 +238,7 @@ mq.add({
             : isSmDesktop ? "+=40000"
             : isTablet ? "+=50000"
             : isMobileLandscape ? "+=42000"
-            : "+=26504",
+            : "+=28504",
             // end: `+=45916`,
             scrub: true
         }

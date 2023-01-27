@@ -7,6 +7,10 @@
     padding-bottom: 10rem;
     position: relative;
 
+    @include for-lg-mobiles {
+        padding-bottom: 0;
+    }
+
     .section-header {
         padding-top: 5rem;
         @include for-lg-mobiles { padding-top: 8rem; }

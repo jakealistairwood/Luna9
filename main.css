@@ -1003,6 +1003,11 @@ li {
   padding-bottom: 10rem;
   position: relative;
 }
+@media screen and (max-width: 500px) {
+  .current-issues {
+    padding-bottom: 0;
+  }
+}
 .current-issues .section-header {
   padding-top: 5rem;
 }
