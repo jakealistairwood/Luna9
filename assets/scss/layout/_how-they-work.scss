@@ -314,6 +314,9 @@
                 &--cathode { left: 25px; }
                 &--anode { left: 245px; }
                 &--seperator { top: -2.5rem; }
+                &--electrolyte {
+                    bottom: -3.5rem;
+                }
             }
         }
     }
