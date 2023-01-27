@@ -248,6 +248,19 @@
                 display: block; 
                 height: 350px;
                 right: calc(50% + 0.5vw);
+                width: 4px;
+            }
+        }
+
+        .electrolyte-indicator {
+            display: none;
+            position: absolute;
+            right: 100px;
+            bottom: -0.7rem;
+
+
+            @include for-lg-mobiles {
+                display: block !important;
             }
         }
 

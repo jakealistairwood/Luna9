@@ -572,6 +572,18 @@ li {
     display: block;
     height: 350px;
     right: calc(50% + 0.5vw);
+    width: 4px;
+  }
+}
+.how-they-work__diagram .electrolyte-indicator {
+  display: none;
+  position: absolute;
+  right: 100px;
+  bottom: -0.7rem;
+}
+@media screen and (max-width: 500px) {
+  .how-they-work__diagram .electrolyte-indicator {
+    display: block !important;
   }
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
