@@ -311,6 +311,7 @@ li {
     max-width: 500px;
     width: 90%;
     margin: 0 auto;
+    margin-bottom: 0;
   }
 }
 @media screen and (orientation: landscape) and (min-device-width: 300px) and (max-device-width: 900px) {
@@ -339,6 +340,7 @@ li {
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
   .how-they-work__summary h2 {
     font-size: 3rem;
+    margin-top: 5rem;
   }
 }
 @media screen and (max-width: 500px) {
@@ -439,7 +441,7 @@ li {
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
   .how-they-work__summary h5 {
     font-size: 1.2rem;
-    margin-block: 1rem;
+    margin-block: 0rem;
   }
 }
 @media screen and (max-width: 500px) {
@@ -463,6 +465,11 @@ li {
   line-height: 1.2;
   display: flex;
   align-items: center;
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .how-they-work__summary h5 .point {
+    font-size: 1.4rem;
+  }
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
   .how-they-work__summary h5 .point {
@@ -524,14 +531,6 @@ li {
   left: 0;
   top: 0;
 }
-@media screen and (min-width: 1280px) and (max-width: 1440px) {
-  .how-they-work__summary h5 .point--two {
-    align-items: flex-start;
-  }
-  .how-they-work__summary h5 .point--two img {
-    margin-top: 8px;
-  }
-}
 .how-they-work__summary h5 .aqua {
   color: #00FFF5;
   padding-right: 10px;
@@ -558,7 +557,7 @@ li {
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
   .how-they-work__diagram .seperator-detail {
-    height: 550px;
+    height: 300px;
     right: calc(50% + 2px);
   }
 }
@@ -576,7 +575,7 @@ li {
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
   .how-they-work__diagram {
-    margin-top: 1rem;
+    margin-top: 0;
     min-height: 150px;
     width: 100%;
     margin-inline: auto;
@@ -632,9 +631,10 @@ li {
   top: 3rem;
 }
 .how-they-work__diagram .diagram-label--electrolyte {
-  left: 80%;
-  top: 0;
+  left: 53%;
+  top: unset;
   height: fit-content;
+  bottom: 4rem;
 }
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
   .how-they-work__diagram .diagram-label--cathode {
@@ -800,9 +800,24 @@ li {
 }
 @media screen and (max-width: 500px) {
   .battery-timeline-container .battery-timeline {
-    row-gap: 8rem;
+    row-gap: 10rem;
     margin-block: 0;
     padding-top: 8rem;
+  }
+}
+@media screen and (max-width: 395px) {
+  .battery-timeline-container .battery-timeline {
+    row-gap: 6rem;
+  }
+}
+@media screen and (max-width: 380px) {
+  .battery-timeline-container .battery-timeline {
+    row-gap: 4rem;
+  }
+}
+@media screen and (max-width: 365px) {
+  .battery-timeline-container .battery-timeline {
+    row-gap: 3rem;
   }
 }
 .battery-timeline-container .battery-timeline__event {
@@ -984,7 +999,22 @@ li {
 }
 @media screen and (max-width: 500px) {
   .current-issues .section-header {
-    padding-top: 20rem;
+    padding-top: 8rem;
+  }
+}
+@media screen and (max-width: 395px) {
+  .current-issues .section-header {
+    padding-top: 12rem;
+  }
+}
+@media screen and (max-width: 380px) {
+  .current-issues .section-header {
+    padding-top: 5rem;
+  }
+}
+@media screen and (max-width: 365px) {
+  .current-issues .section-header {
+    padding-top: 2rem;
   }
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {

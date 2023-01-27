@@ -16,6 +16,7 @@ const jsfContainer = document.querySelector('.battery-timeline-container');
 const batteryIssuesDiagram = document.querySelector('.current-issues__diagram-img');
 const timelineSVG = document.querySelector('.timeline-svg');
 const sourcesBtn = document.querySelector('.footer__btn');
+const seperator = document.querySelector('.seperator-detail');
 
 /*  ==============================================================================
 
@@ -32,6 +33,13 @@ let atomNodesArr = [];
 let sectionAnchorClicked = false;
 
 let disabled = false;
+
+if(window.matchMedia("(max-width: 500px)")) {
+    seperator.style.height = howTheyWorkDiagram.clientHeight + 170 + "px";
+} else {
+    seperator.style.height = howTheyWorkDiagram.clientHeight + "px";
+}
+
 
 const toggleSourcesDropdown = () => {
     document.querySelector('.footer__sources').classList.toggle('active');
@@ -221,15 +229,14 @@ mq.add({
 }, (context) => {
     let { isMobile, isSmDesktop, isTablet, isDesktop, isMobileLandscape } = context.conditions;
     navTimeline.to('.navbar__progress-indicator', {
-        width: 38,
-        fill: '#000',
+        width: 42,
         scrollTrigger: {
             trigger: 'body',
             start: "top 1%",
             end: isDesktop ? "+=37916" 
-            : isSmDesktop ? "+=45000"
+            : isSmDesktop ? "+=40000"
             : isTablet ? "+=50000"
-            : isMobileLandscape ? "+=35000"
+            : isMobileLandscape ? "+=42000"
             : "+=26504",
             // end: `+=45916`,
             scrub: true

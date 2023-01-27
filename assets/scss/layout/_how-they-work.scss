@@ -9,6 +9,7 @@
     @include custom-flex(column, center, flex-start);
     @include for-lg-mobiles {
         @include sm-container(500px);
+        margin-bottom: 0;
     }
     @include for-mob-landscape {
         padding-top: 5rem;
@@ -43,6 +44,7 @@
             margin-bottom: 1.5rem; 
             @media screen and (min-width: 1280px) and (max-width: 1440px) {
                 font-size: 3rem;
+                margin-top: 5rem;
             }
             @include for-lg-mobiles { margin-block: 0.5rem; }
         }
@@ -127,9 +129,9 @@
             font-size: 1.5rem;
             // margin-block: 2rem;
             font-weight: 400;
-            @media screen and (min-width: 1280px) and (max-width: 1440px) {
+            @include for-sm-desktops {
                 font-size: 1.2rem;
-                margin-block: 1rem;
+                margin-block: 0rem;
             }
             @include for-lg-mobiles {
                 margin-top: 0;
@@ -147,6 +149,9 @@
                 line-height: 1.2;
                 display: flex;
                 align-items: center;
+                @include for-sm-desktops {
+                    font-size: 1.4rem;
+                }
                 @include for-tablets {
                     flex-direction: column;
                     row-gap: 1rem;
@@ -202,8 +207,8 @@
                 left: 0;
                 top: 0;
                 @include for-sm-desktops {
-                    align-items: flex-start;
-                    img { margin-top: 8px; }
+                    // align-items: flex-start;
+                    // img { margin-top: 8px; }
                 }
 
             }
@@ -234,7 +239,7 @@
             }
     
             @include for-sm-desktops { 
-                height: 550px;
+                height: 300px;
                 right: calc(50% + 2px); 
             }
             @include for-tablets { display: none; }
@@ -246,7 +251,7 @@
         }
 
         @include for-sm-desktops {
-            margin-top: 1rem;
+            margin-top: 0;
             // width: 80%;
             min-height: 150px;
             width: 100%;
@@ -288,7 +293,12 @@
             &--cathode { left: 190px; }
             &--anode { left: 985px; }
             &--seperator { left: 50%; transform: translateX(-50%); top: 3rem; }
-            &--electrolyte { left: 80%; top: 0; height: fit-content; }
+            &--electrolyte { 
+                left: 53%; 
+                top: unset; 
+                height: fit-content; 
+                bottom: 4rem; 
+            }
 
             @include for-sm-desktops {
                 &--cathode { left: 165px }
