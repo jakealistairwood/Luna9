@@ -670,6 +670,7 @@ li {
   }
   .how-they-work__diagram .diagram-label--electrolyte {
     bottom: -3.5rem;
+    left: 60%;
   }
 }
 .how-they-work__diagram-img--default {
