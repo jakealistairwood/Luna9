@@ -540,12 +540,12 @@ li {
   position: relative;
 }
 .how-they-work__diagram .seperator-detail {
-  width: 4px;
+  width: 6px;
   height: 468px;
   background-color: #fff;
   position: absolute;
   bottom: 0;
-  right: calc(50% - 7px);
+  right: calc(50% - 8px);
   top: 0;
   z-index: 10;
 }
@@ -1820,7 +1820,7 @@ img {
 }
 
 sup {
-  color: #FF00BA;
+  color: #fff;
 }
 
 section {

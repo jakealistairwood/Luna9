@@ -222,13 +222,13 @@
         position: relative;
 
         .seperator-detail {
-            width: 4px;
+            width: 6px;
             height: 468px;
             background-color: $secondary-color;
             position: absolute;
             bottom: 0;
             // right: 631px;
-            right: calc(50% - 7px);
+            right: calc(50% - 8px);
             // display: none;
             top: 0;
             z-index: 10;

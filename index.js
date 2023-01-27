@@ -35,10 +35,9 @@ let sectionAnchorClicked = false;
 let disabled = false;
 
 if(window.matchMedia("(max-width: 500px)").matches) {
-    console.log("function rand");
     seperator.style.height = howTheyWorkDiagram.clientHeight + 170 + "px";
 } else {
-    seperator.style.height = howTheyWorkDiagram.clientHeight + "px";
+    seperator.style.height = howTheyWorkDiagram.clientHeight + 54 + "px";
 }
 
 
@@ -505,7 +504,8 @@ mq.add({
                 trigger: '.battery-timeline-container',
                 start: "top top",
                 end: "+=6450",
-                scrub: true,
+                scrub: 3,
+                // delay: 3
                 // onUpdate: (this) => {
                 //     let currentProgress = this.progress();
                 //     checkTimelineProgress(currentProgress);
@@ -526,7 +526,10 @@ mq.add({
                 trigger: '.battery-timeline-container',
                 start: "top top",
                 end: "+=6300",
-                scrub: true,
+                scrub: 2,
+                // onEnter: () => {
+                //     console.log("hello")
+                // }
                 // onUpdate: (this) => {
                 //     let currentProgress = this.progress();
                 //     checkTimelineProgress(currentProgress);
@@ -537,7 +540,7 @@ mq.add({
                 // }
             }
         }).from(".st2", {
-            drawSVG: 0
+            drawSVG: 0,
         })
     }
     // else if(isMobile) {
