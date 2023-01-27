@@ -578,7 +578,7 @@ li {
 .how-they-work__diagram .electrolyte-indicator {
   display: none;
   position: absolute;
-  right: 100px;
+  right: 135px;
   bottom: -0.7rem;
 }
 @media screen and (max-width: 500px) {
@@ -682,7 +682,7 @@ li {
   }
   .how-they-work__diagram .diagram-label--electrolyte {
     bottom: -3.5rem;
-    left: 60%;
+    left: 53%;
   }
 }
 .how-they-work__diagram-img--default {
