@@ -666,6 +666,7 @@ li {
   }
   .how-they-work__diagram .diagram-label--seperator {
     top: -2.5rem;
+    left: calc(50% - 5px);
   }
   .how-they-work__diagram .diagram-label--electrolyte {
     bottom: -3.5rem;

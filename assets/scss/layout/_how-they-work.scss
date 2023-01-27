@@ -318,7 +318,7 @@
             @include for-lg-mobiles {
                 &--cathode { left: 25px; }
                 &--anode { left: 245px; }
-                &--seperator { top: -2.5rem; }
+                &--seperator { top: -2.5rem; left: calc(50% - 5px); }
                 &--electrolyte {
                     bottom: -3.5rem;
                 }
