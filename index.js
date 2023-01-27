@@ -34,7 +34,8 @@ let sectionAnchorClicked = false;
 
 let disabled = false;
 
-if(window.matchMedia("(max-width: 500px)")) {
+if(window.matchMedia("(max-width: 500px)").matches) {
+    console.log("function rand");
     seperator.style.height = howTheyWorkDiagram.clientHeight + 170 + "px";
 } else {
     seperator.style.height = howTheyWorkDiagram.clientHeight + "px";
@@ -524,7 +525,7 @@ mq.add({
             scrollTrigger: {
                 trigger: '.battery-timeline-container',
                 start: "top top",
-                end: "+=7000",
+                end: "+=6300",
                 scrub: true,
                 // onUpdate: (this) => {
                 //     let currentProgress = this.progress();

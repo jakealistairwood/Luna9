@@ -558,7 +558,8 @@ li {
 @media screen and (min-width: 1280px) and (max-width: 1440px) {
   .how-they-work__diagram .seperator-detail {
     height: 300px;
-    right: calc(50% + 2px);
+    right: calc(50% + 0.2vw);
+    width: 6px;
   }
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {
@@ -642,6 +643,10 @@ li {
   }
   .how-they-work__diagram .diagram-label--anode {
     left: 842px;
+  }
+  .how-they-work__diagram .diagram-label--seperator {
+    left: 50%;
+    transform: translateX(calc(-50% - 4px));
   }
 }
 @media screen and (min-width: 501px) and (max-width: 1279px) {

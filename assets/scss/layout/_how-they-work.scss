@@ -240,7 +240,8 @@
     
             @include for-sm-desktops { 
                 height: 300px;
-                right: calc(50% + 2px); 
+                right: calc(50% + 0.2vw); 
+                width: 6px;
             }
             @include for-tablets { display: none; }
             @include for-lg-mobiles { 
@@ -303,6 +304,10 @@
             @include for-sm-desktops {
                 &--cathode { left: 165px }
                 &--anode { left: 842px; }
+                &--seperator {
+                    left: 50%;
+                    transform: translateX(calc(-50% - 4px));
+                }
             }
 
             @include for-tablets {
